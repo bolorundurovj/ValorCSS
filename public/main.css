@@ -4097,6 +4097,158 @@ body {
   line-height: 1.5;
 }
 
+/* _flex.scss */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+/* _grid.scss */
+.grid {
+  display: grid;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 100%);
+}
+
+.grid-rows-1 {
+  grid-template-rows: repeat(1, 100%);
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 50%);
+}
+
+.grid-rows-2 {
+  grid-template-rows: repeat(2, 50%);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 33.3333333333%);
+}
+
+.grid-rows-3 {
+  grid-template-rows: repeat(3, 33.3333333333%);
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 25%);
+}
+
+.grid-rows-4 {
+  grid-template-rows: repeat(4, 25%);
+}
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, 20%);
+}
+
+.grid-rows-5 {
+  grid-template-rows: repeat(5, 20%);
+}
+
+.grid-cols-6 {
+  grid-template-columns: repeat(6, 16.6666666667%);
+}
+
+.grid-rows-6 {
+  grid-template-rows: repeat(6, 16.6666666667%);
+}
+
+.grid-cols-7 {
+  grid-template-columns: repeat(7, 14.2857142857%);
+}
+
+.grid-rows-7 {
+  grid-template-rows: repeat(7, 14.2857142857%);
+}
+
+.grid-cols-8 {
+  grid-template-columns: repeat(8, 12.5%);
+}
+
+.grid-rows-8 {
+  grid-template-rows: repeat(8, 12.5%);
+}
+
+.grid-cols-9 {
+  grid-template-columns: repeat(9, 11.1111111111%);
+}
+
+.grid-rows-9 {
+  grid-template-rows: repeat(9, 11.1111111111%);
+}
+
+.grid-cols-10 {
+  grid-template-columns: repeat(10, 10%);
+}
+
+.grid-rows-10 {
+  grid-template-rows: repeat(10, 10%);
+}
+
+.grid-cols-11 {
+  grid-template-columns: repeat(11, 9.0909090909%);
+}
+
+.grid-rows-11 {
+  grid-template-rows: repeat(11, 9.0909090909%);
+}
+
+.grid-cols-12 {
+  grid-template-columns: repeat(12, 8.3333333333%);
+}
+
+.grid-rows-12 {
+  grid-template-rows: repeat(12, 8.3333333333%);
+}
+
+.grid-gap {
+  gap: 1rem;
+}
+
 /* _button.scss */
 /* Button base styles */
 .btn {

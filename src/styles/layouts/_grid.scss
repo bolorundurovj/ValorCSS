@@ -1,0 +1,30 @@
+/* _grid.scss */
+
+.grid {
+  display: grid;
+}
+
+.grid {
+  display: grid;
+}
+
+@function generate-grid-template-columns($columns) {
+  @return repeat($columns, calc(100% / $columns));
+}
+
+@function generate-grid-template-rows($rows) {
+  @return repeat($rows, calc(100% / $rows));
+}
+
+@for $i from 1 through 12 {
+  .grid-cols-#{$i} {
+    grid-template-columns: generate-grid-template-columns($i);
+  }
+  .grid-rows-#{$i} {
+    grid-template-rows: generate-grid-template-rows($i);
+  }
+}
+
+.grid-gap {
+  gap: 1rem;
+}
