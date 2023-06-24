@@ -1,0 +1,47 @@
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Media queries */
+@mixin screen-sm {
+  @media (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+@mixin screen-md {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin screen-lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin screen-xl {
+  @media (min-width: $breakpoint-xl) {
+    @content;
+  }
+}
+

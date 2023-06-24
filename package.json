@@ -1,0 +1,23 @@
+{
+  "name": "ValorCSS",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com-bolorundurovj:bolorundurovj/ValorCSS.git",
+  "author": "Valiant-Joshua Bolorunduro <valiantjoshuabolorunduro@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start:dev": "nodemon index.js",
+    "build": "sass src/styles/main.scss dist/main.css",
+    "build:copy": "sass src/styles/main.scss dist/main.css && cp dist/main.css public/main.css"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "sass": "^1.63.6"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

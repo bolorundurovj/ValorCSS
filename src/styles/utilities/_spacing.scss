@@ -1,0 +1,22 @@
+/* Utility classes for spacing */
+.m-0 {
+  margin: 0;
+}
+
+.m-1 {
+  margin: $spacing-unit;
+}
+
+.m-2 {
+  margin: calc($spacing-unit * 2);
+}
+
+.mt-1 {
+  margin-top: $spacing-unit;
+}
+
+.mt-2 {
+  margin-top: calc($spacing-unit * 2);
+}
+
+
