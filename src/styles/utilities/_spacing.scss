@@ -26,7 +26,7 @@
     }
 
     @each $value in $sequence {
-      $calculated-value: $value * $spacing-unit; // Calculate the value based on the spacing unit
+      $calculated-value: $value * $spacing-small; // Calculate the value based on the spacing unit
       $formatted-value: if($value == 0, 0, $calculated-value); // Format value as 0 if it is zero
 
       $utilities: generateMargin($property, $formatted-value);
