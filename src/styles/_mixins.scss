@@ -45,3 +45,8 @@
   }
 }
 
+@mixin mt-custom($value) {
+  .mt-#{$value} {
+    margin-top: $value;
+  }
+}

@@ -1,22 +1,44 @@
 /* Utility classes for spacing */
-.m-0 {
-  margin: 0;
+@import "../_variables.scss";
+
+@function generateMargin($property, $value) {
+  @return (
+          "#{str-slice($property, 0, 2)}-#{$value}": (
+                  #{$property}: $value
+          )
+  );
 }
 
-.m-1 {
-  margin: $spacing-unit;
+@mixin generateUtilities() {
+  $properties: (
+          "margin-top": "mt",
+          "margin-bottom": "mb",
+          "margin-left": "ml",
+          "margin-right": "mr",
+          "margin": "m"
+  );
+
+  @each $property, $abbreviation in $properties {
+    $sequence: (); // Empty sequence
+
+    @for $i from 0 through 200 {
+      $sequence: append($sequence, $i*2); // Append the value to the sequence
+    }
+
+    @each $value in $sequence {
+      $calculated-value: $value * $spacing-unit; // Calculate the value based on the spacing unit
+      $formatted-value: if($value == 0, 0, $calculated-value); // Format value as 0 if it is zero
+
+      $utilities: generateMargin($property, $formatted-value);
+      @each $key, $properties in $utilities {
+        .#{$abbreviation}-#{$value} {
+          @each $property, $value in $properties {
+            #{$property}: $value;
+          }
+        }
+      }
+    }
+  }
 }
 
-.m-2 {
-  margin: calc($spacing-unit * 2);
-}
-
-.mt-1 {
-  margin-top: $spacing-unit;
-}
-
-.mt-2 {
-  margin-top: calc($spacing-unit * 2);
-}
-
-
+@include generateUtilities();
