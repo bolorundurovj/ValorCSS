@@ -19,9 +19,9 @@
   );
 
   @each $property, $abbreviation in $properties {
-    $sequence: (); // Empty sequence
+    $sequence: (0,1); // Initial sequence
 
-    @for $i from 0 through 200 {
+    @for $i from 1 through 200 {
       $sequence: append($sequence, $i*2); // Append the value to the sequence
     }
 
