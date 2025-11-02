@@ -1,19 +1,579 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>ValorCSS</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
-</head>
-<body class="card">
-    <h1>ValorCSS</h1>
-    <p class="mt-2">ValorCSS is a CSS framework that is designed to be simple and easy to use.</p>
-    <p class="mt-2">It is currently in development and is not ready for use.</p>
-    <p class="mt-1">Check back later for updates.</p>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ValorCSS - Modern CSS Framework Documentation</title>
+  <link rel="stylesheet" href="dist/main.css">
+  <style>
+    /* Custom styles for documentation hub */
+    .hero-gradient {
+      background: linear-gradient(135deg, #0093E9 0%, #80D0C7 100%);
+    }
 
-    <section class="mt-8">
-    <p>lorem20</p>
-    <p class="mt-12">lorem20</p>
-    </section>
+    .search-wrapper {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 1rem 1rem 1rem 3rem;
+      font-size: 1.125rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: #206bc4;
+      box-shadow: 0 0 0 3px rgba(32, 107, 196, 0.1);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.25rem;
+      color: #64748b;
+    }
+
+    .component-card {
+      transition: all 0.3s ease;
+      cursor: pointer;
+      height: 100%;
+    }
+
+    .component-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    }
+
+    .example-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .example-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #0093E9 0%, #80D0C7 100%);
+    }
+
+    .framework-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      background: rgba(32, 107, 196, 0.1);
+      color: #206bc4;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .coming-soon {
+      opacity: 0.6;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navigation -->
+  <nav class="navbar bg-white shadow-sm sticky" style="position: sticky; top: 0; z-index: 1000;">
+    <a href="/" class="navbar__brand text-2xl font-bold" style="background: linear-gradient(135deg, #0093E9 0%, #80D0C7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">ValorCSS</a>
+    <ul class="navbar__nav">
+      <li class="navbar__item">
+        <a href="#components" class="navbar__link">Components</a>
+      </li>
+      <li class="navbar__item">
+        <a href="#examples" class="navbar__link">Examples</a>
+      </li>
+      <li class="navbar__item">
+        <a href="#getting-started" class="navbar__link">Get Started</a>
+      </li>
+      <li class="navbar__item">
+        <a href="https://github.com/bolorundurovj/ValorCSS" target="_blank" class="navbar__link">GitHub</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-gradient text-white p-64">
+    <div class="max-w-screen-lg mx-auto text-center">
+      <h1 class="text-6xl font-bold mb-6">ValorCSS</h1>
+      <p class="text-2xl mb-8 opacity-90">
+        A modern, utility-first CSS framework combining Tailwind's approach with Tabler's aesthetic
+      </p>
+
+      <!-- Stats -->
+      <div class="flex justify-center gap-16 mb-12">
+        <div>
+          <div class="text-5xl font-bold">14</div>
+          <div class="text-base opacity-75">Components</div>
+        </div>
+        <div>
+          <div class="text-5xl font-bold">500+</div>
+          <div class="text-base opacity-75">Utilities</div>
+        </div>
+        <div>
+          <div class="text-5xl font-bold">32KB</div>
+          <div class="text-base opacity-75">Optimized</div>
+        </div>
+      </div>
+
+      <!-- Search -->
+      <div class="search-wrapper mb-8">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          class="search-input bg-white text-gray-900"
+          placeholder="Search components, utilities, or documentation..."
+          id="searchInput"
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="flex justify-center gap-4">
+        <a href="#getting-started" class="btn btn-lg bg-white text-primary">
+          Get Started
+        </a>
+        <a href="examples/components.html" class="btn btn-lg btn-outline-white border-white text-white">
+          View Components
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Started Section -->
+  <section id="getting-started" class="p-64 bg-white">
+    <div class="max-w-screen-lg mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-semibold text-gray-900 mb-4">Quick Start</h2>
+        <p class="text-lg text-gray-600">Get up and running with ValorCSS in seconds</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-8 mb-12">
+        <!-- Installation -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">1. Installation</h3>
+          </div>
+          <div class="card__body">
+            <p class="card__text mb-4">Clone the repository or download the CSS:</p>
+            <pre class="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto"><code>git clone git@github.com:bolorundurovj/ValorCSS.git</code></pre>
+          </div>
+        </div>
+
+        <!-- Include CSS -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">2. Include CSS</h3>
+          </div>
+          <div class="card__body">
+            <p class="card__text mb-4">Add the stylesheet to your HTML:</p>
+            <pre class="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto"><code>&lt;link rel="stylesheet"
+  href="dist/main.min.css"&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Start Building -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">3. Start Building</h3>
+          </div>
+          <div class="card__body">
+            <p class="card__text mb-4">Use utility classes and components:</p>
+            <pre class="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto"><code>&lt;div class="flex items-center gap-4"&gt;
+  &lt;button class="btn btn-primary"&gt;
+    Click me
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- Build from Source -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">4. Build from Source</h3>
+          </div>
+          <div class="card__body">
+            <p class="card__text mb-4">Customize and build with SCSS:</p>
+            <pre class="bg-gray-900 text-white p-4 rounded-lg overflow-x-auto"><code>yarn install
+yarn build:prod</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <div class="grid grid-cols-3 gap-6">
+        <div class="text-center">
+          <div class="text-4xl mb-3">⚡</div>
+          <h4 class="font-semibold mb-2">Lightning Fast</h4>
+          <p class="text-sm text-gray-600">Optimized with PurgeCSS for minimal file sizes</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-3">🎨</div>
+          <h4 class="font-semibold mb-2">Beautiful Design</h4>
+          <p class="text-sm text-gray-600">Tabler-inspired aesthetic with clean components</p>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl mb-3">🔧</div>
+          <h4 class="font-semibold mb-2">Utility-First</h4>
+          <p class="text-sm text-gray-600">500+ utility classes for rapid development</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Components Section -->
+  <section id="components" class="p-64 bg-gray-50">
+    <div class="max-w-screen-lg mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-semibold text-gray-900 mb-4">14 Professional Components</h2>
+        <p class="text-lg text-gray-600">Production-ready components following BEM methodology</p>
+      </div>
+
+      <div class="grid grid-cols-4 gap-6" id="componentsGrid">
+        <!-- Buttons -->
+        <div class="card component-card" onclick="window.location.href='examples/components.html#buttons'">
+          <div class="card__body text-center">
+            <div class="text-3xl mb-3">🔘</div>
+            <h4 class="font-semibold mb-1">Buttons</h4>
+            <p class="text-sm text-gray-600">Multiple variants & sizes</p>
+          </div>
+        </div>
+
+        <!-- Forms -->
+        <div class="card component-card" onclick="window.location.href='examples/forms.html'">
+          <div class="card__body text-center">
+            <div class="text-3xl mb-3">📝</div>
+            <h4 class="font-semibold mb-1">Forms</h4>
+            <p class="text-sm text-gray-600">Inputs, checkboxes, switches</p>
+          </div>
+        </div>
+
+        <!-- Cards -->
+        <div class="card component-card" onclick="window.location.href='examples/components.html#cards'">
+          <div class="card__body text-center">
+            <div class="text-3xl mb-3">🃏</div>
+            <h4 class="font-semibold mb-1">Cards</h4>
+            <p class="text-sm text-gray-600">Flexible content containers</p>
+          </div>
+        </div>
+
+        <!-- Modals -->
+        <div class="card component-card" onclick="window.location.href='examples/components.html#modals'">
+          <div class="card__body text-center">
+            <div class="text-3xl mb-3">🪟</div>
+            <h4 class="font-semibold mb-1">Modals</h4>
+            <p class="text-sm text-gray-600">Dialog boxes & overlays</p>
+          </div>
+        </div>
+
+        <!-- Toasts -->
+        <div class="card component-card" onclick="window.location.href='examples/components.html#toasts'">
+          <div class="card__body text-center">
+            <div class="text-3xl mb-3">🔔</div>
+            <h4 class="font-semibold mb-1">Toasts</h4>
+            <p class="text-sm text-gray-600">Notification messages</p>
+          </div>
+        </div>
+
+        <!-- Alerts -->
+        <div class="card component-card" onclick="window.location.href='examples/components.html#alerts'">
+          <div class="card__body text-center">
+            <div class="text-3xl mb-3">⚠️</div>
+            <h4 class="font-semibold mb-1">Alerts</h4>
+            <p class="text-sm text-gray-600">Contextual feedback messages</p>
+          </div>
+        </div>
+
+        <!-- Badges -->
+        <div class="card component-card" onclick="window.location.href='examples/components.html#badges'">
+          <div class="card__body text-center">
+            <div class="text-3xl mb-3">🏷️</div>
+            <h4 class="font-semibold mb-1">Badges</h4>
+            <p class="text-sm text-gray-600">Labels and counters</p>
+          </div>
+        </div>
+
+        <!-- Tables -->
+        <div class="card component-card" onclick="window.location.href='examples/components.html#tables'">
+          <div class="card__body text-center">
+            <div class="text-3xl mb-3">📊</div>
+            <h4 class="font-semibold mb-1">Tables</h4>
+            <p class="text-sm text-gray-600">Data tables with sorting</p>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="card component-card" onclick="window.location.href='examples/components.html#navigation'">
+          <div class="card__body text-center">
+            <div class="text-3xl mb-3">🧭</div>
+            <h4 class="font-semibold mb-1">Navigation</h4>
+            <p class="text-sm text-gray-600">Navbars & breadcrumbs</p>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="card component-card" onclick="window.location.href='examples/components.html#tabs'">
+          <div class="card__body text-center">
+            <div class="text-3xl mb-3">📑</div>
+            <h4 class="font-semibold mb-1">Tabs</h4>
+            <p class="text-sm text-gray-600">Tabbed content panels</p>
+          </div>
+        </div>
+
+        <!-- Accordion -->
+        <div class="card component-card" onclick="window.location.href='examples/components.html#accordion'">
+          <div class="card__body text-center">
+            <div class="text-3xl mb-3">📋</div>
+            <h4 class="font-semibold mb-1">Accordion</h4>
+            <p class="text-sm text-gray-600">Collapsible sections</p>
+          </div>
+        </div>
+
+        <!-- Dropdown -->
+        <div class="card component-card" onclick="window.location.href='examples/components.html#dropdown'">
+          <div class="card__body text-center">
+            <div class="text-3xl mb-3">⬇️</div>
+            <h4 class="font-semibold mb-1">Dropdown</h4>
+            <p class="text-sm text-gray-600">Contextual menus</p>
+          </div>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="card component-card" onclick="window.location.href='examples/dashboard.html'">
+          <div class="card__body text-center">
+            <div class="text-3xl mb-3">📱</div>
+            <h4 class="font-semibold mb-1">Dashboard</h4>
+            <p class="text-sm text-gray-600">Sidebar & topbar layout</p>
+          </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="card component-card" onclick="window.location.href='examples/components.html#stats'">
+          <div class="card__body text-center">
+            <div class="text-3xl mb-3">📈</div>
+            <h4 class="font-semibold mb-1">Stats Cards</h4>
+            <p class="text-sm text-gray-600">Metric display cards</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="examples/components.html" class="btn btn-primary btn-lg">
+          View All Components →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Examples Section -->
+  <section id="examples" class="p-64 bg-white">
+    <div class="max-w-screen-lg mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-semibold text-gray-900 mb-4">Example Templates</h2>
+        <p class="text-lg text-gray-600">Real-world templates to kickstart your projects</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-8">
+        <!-- Components Showcase -->
+        <div class="card example-card card--hover">
+          <div class="card__body">
+            <h3 class="card__title mb-2">Component Showcase</h3>
+            <p class="card__text mb-4">
+              Comprehensive showcase of all 14 components with interactive examples and code samples.
+            </p>
+            <div class="flex gap-2 mb-4">
+              <span class="badge badge--primary">Interactive</span>
+              <span class="badge badge--info">Code Samples</span>
+            </div>
+            <a href="examples/components.html" class="btn btn-primary">View Example →</a>
+          </div>
+        </div>
+
+        <!-- Landing Page -->
+        <div class="card example-card card--hover">
+          <div class="card__body">
+            <h3 class="card__title mb-2">Landing Page</h3>
+            <p class="card__text mb-4">
+              Modern marketing landing page with hero section, features, stats, and call-to-action.
+            </p>
+            <div class="flex gap-2 mb-4">
+              <span class="badge badge--success">Marketing</span>
+              <span class="badge badge--info">Responsive</span>
+            </div>
+            <a href="examples/landing.html" class="btn btn-primary">View Example →</a>
+          </div>
+        </div>
+
+        <!-- Dashboard -->
+        <div class="card example-card card--hover">
+          <div class="card__body">
+            <h3 class="card__title mb-2">Dashboard Application</h3>
+            <p class="card__text mb-4">
+              Complete admin dashboard with sidebar navigation, stats cards, charts, and tables.
+            </p>
+            <div class="flex gap-2 mb-4">
+              <span class="badge badge--warning">Admin</span>
+              <span class="badge badge--info">Full Layout</span>
+            </div>
+            <a href="examples/dashboard.html" class="btn btn-primary">View Example →</a>
+          </div>
+        </div>
+
+        <!-- Forms -->
+        <div class="card example-card card--hover">
+          <div class="card__body">
+            <h3 class="card__title mb-2">Forms & Validation</h3>
+            <p class="card__text mb-4">
+              Comprehensive form examples with validation states, input groups, and various controls.
+            </p>
+            <div class="flex gap-2 mb-4">
+              <span class="badge badge--danger">Forms</span>
+              <span class="badge badge--info">Validation</span>
+            </div>
+            <a href="examples/forms.html" class="btn btn-primary">View Example →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Framework Integration Section -->
+  <section class="p-64 bg-gray-50">
+    <div class="max-w-screen-lg mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-semibold text-gray-900 mb-4">Framework Integration</h2>
+        <p class="text-lg text-gray-600">Component libraries for popular frontend frameworks</p>
+        <span class="framework-badge mt-4">Coming Soon - Phase 2</span>
+      </div>
+
+      <div class="grid grid-cols-3 gap-8">
+        <!-- React -->
+        <div class="card coming-soon">
+          <div class="card__body text-center">
+            <div class="text-5xl mb-4">⚛️</div>
+            <h3 class="card__title mb-2">React Components</h3>
+            <p class="card__text mb-4">
+              Fully typed React components with hooks and modern patterns
+            </p>
+            <span class="badge badge--info">Coming Q2 2025</span>
+          </div>
+        </div>
+
+        <!-- Vue -->
+        <div class="card coming-soon">
+          <div class="card__body text-center">
+            <div class="text-5xl mb-4">💚</div>
+            <h3 class="card__title mb-2">Vue Components</h3>
+            <p class="card__text mb-4">
+              Vue 3 components with Composition API and TypeScript support
+            </p>
+            <span class="badge badge--success">Coming Q2 2025</span>
+          </div>
+        </div>
+
+        <!-- Svelte -->
+        <div class="card coming-soon">
+          <div class="card__body text-center">
+            <div class="text-5xl mb-4">🔥</div>
+            <h3 class="card__title mb-2">Svelte Components</h3>
+            <p class="card__text mb-4">
+              Reactive Svelte components with minimal bundle size
+            </p>
+            <span class="badge badge--danger">Coming Q2 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white p-16">
+    <div class="max-w-screen-lg mx-auto">
+      <div class="grid grid-cols-4 gap-8 mb-8">
+        <div>
+          <h4 class="font-semibold mb-4 text-xl">ValorCSS</h4>
+          <p class="text-sm opacity-75">
+            A modern CSS framework for building beautiful web applications.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Documentation</h4>
+          <ul class="text-sm space-y-2">
+            <li><a href="#getting-started" class="opacity-75 hover:opacity-100">Getting Started</a></li>
+            <li><a href="#components" class="opacity-75 hover:opacity-100">Components</a></li>
+            <li><a href="README.md" class="opacity-75 hover:opacity-100">Full Docs</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Examples</h4>
+          <ul class="text-sm space-y-2">
+            <li><a href="examples/landing.html" class="opacity-75 hover:opacity-100">Landing Page</a></li>
+            <li><a href="examples/dashboard.html" class="opacity-75 hover:opacity-100">Dashboard</a></li>
+            <li><a href="examples/forms.html" class="opacity-75 hover:opacity-100">Forms</a></li>
+            <li><a href="examples/components.html" class="opacity-75 hover:opacity-100">Components</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Community</h4>
+          <ul class="text-sm space-y-2">
+            <li><a href="https://github.com/bolorundurovj/ValorCSS" target="_blank" class="opacity-75 hover:opacity-100">GitHub</a></li>
+            <li><a href="https://github.com/bolorundurovj/ValorCSS/issues" target="_blank" class="opacity-75 hover:opacity-100">Issues</a></li>
+            <li><a href="ENHANCEMENT_PLAN.md" class="opacity-75 hover:opacity-100">Roadmap</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-8 text-center text-sm opacity-75">
+        <p>&copy; 2025 ValorCSS. Built by Valiant-Joshua Bolorunduro. MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search functionality -->
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const componentsGrid = document.getElementById('componentsGrid');
+    const componentCards = componentsGrid.querySelectorAll('.component-card');
+
+    searchInput.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase().trim();
+
+      componentCards.forEach(card => {
+        const title = card.querySelector('h4').textContent.toLowerCase();
+        const description = card.querySelector('p').textContent.toLowerCase();
+
+        if (title.includes(searchTerm) || description.includes(searchTerm) || searchTerm === '') {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
