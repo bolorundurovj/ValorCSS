@@ -374,3 +374,13 @@
 /* Non-BEM aliases */
 .stat-label { @extend .stat__label; }
 .stat-value { @extend .stat__value; }
+.stat-change { @extend .stat__change; }
+
+.stats-card-body { @extend .stats-card__body; }
+.stats-card-content { @extend .stats-card__content; }
+.stats-card-icon { @extend .stats-card__icon; }
+.stats-card-label { @extend .stats-card__label; }
+.stats-card-value { @extend .stats-card__value; }
+.stats-card-change { @extend .stats-card__change; }
+.stats-card-description { @extend .stats-card__description; }
+.stats-card-footer { @extend .stats-card__footer; }

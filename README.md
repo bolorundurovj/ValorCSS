@@ -72,7 +72,9 @@ ValorCSS provides comprehensive utility classes for common CSS properties:
 
 ### Components
 
-All components support both BEM and legacy non-BEM naming:
+ValorCSS components follow a hybrid naming approach:
+- **BEM Components** (Cards, Modals, Tables, Alerts, Badges, Navigation, Tabs, Accordion, Dropdown, Dashboard, Stats): Use BEM methodology with legacy non-BEM aliases for compatibility
+- **Non-BEM Components** (Buttons, Forms): Use traditional class names for familiarity and ease of use
 
 #### Buttons
 
@@ -95,7 +97,10 @@ All components support both BEM and legacy non-BEM naming:
 
 #### Cards
 
+Cards support both BEM and non-BEM naming:
+
 ```html
+<!-- BEM syntax (primary) -->
 <div class="card">
   <div class="card__header">
     <h3 class="card__title">Card Title</h3>
@@ -108,10 +113,21 @@ All components support both BEM and legacy non-BEM naming:
   </div>
 </div>
 
-<!-- Hover effect -->
-<div class="card card--hover">
-  Hover over me
+<!-- Non-BEM syntax (legacy aliases work too) -->
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-title">Card Title</h3>
+  </div>
+  <div class="card-body">
+    <p class="card-text">Card content goes here</p>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-primary">Action</button>
+  </div>
 </div>
+
+<!-- Hover effect -->
+<div class="card card--hover">Hover over me</div>
 
 <!-- Colored cards -->
 <div class="card card--primary">Primary card</div>

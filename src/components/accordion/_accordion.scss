@@ -395,4 +395,7 @@
 /* Non-BEM aliases */
 .accordion-item { @extend .accordion__item; }
 .accordion-button { @extend .accordion__button; }
+.accordion-title { @extend .accordion__title; }
+.accordion-icon { @extend .accordion__icon; }
 .accordion-body { @extend .accordion__body; }
+.accordion-content { @extend .accordion__content; }
