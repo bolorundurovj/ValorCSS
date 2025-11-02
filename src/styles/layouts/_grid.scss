@@ -4,16 +4,12 @@
   display: grid;
 }
 
-.grid {
-  display: grid;
-}
-
 @function generate-grid-template-columns($columns) {
-  @return repeat($columns, calc(100% / $columns));
+  @return repeat($columns, 1fr);
 }
 
 @function generate-grid-template-rows($rows) {
-  @return repeat($rows, calc(100% / $rows));
+  @return repeat($rows, auto);
 }
 
 @for $i from 1 through 12 {

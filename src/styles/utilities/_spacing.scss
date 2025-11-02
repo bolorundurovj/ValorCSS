@@ -1,44 +1,54 @@
 /* Utility classes for spacing */
 @import "../_variables.scss";
 
-@function generateMargin($property, $value) {
-  @return (
-          "#{str-slice($property, 0, 2)}-#{$value}": (
-                  #{$property}: $value
-          )
-  );
-}
+// Tailwind-inspired spacing scale
+// Values: 0, 1, 2, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96
+$spacing-scale: (
+  0: 0,
+  1: 0.25rem,   // 4px
+  2: 0.5rem,    // 8px
+  4: 1rem,      // 16px
+  8: 2rem,      // 32px
+  12: 3rem,     // 48px
+  16: 4rem,     // 64px
+  20: 5rem,     // 80px
+  24: 6rem,     // 96px
+  32: 8rem,     // 128px
+  40: 10rem,    // 160px
+  48: 12rem,    // 192px
+  64: 16rem,    // 256px
+  80: 20rem,    // 320px
+  96: 24rem     // 384px
+);
 
-@mixin generateUtilities() {
-  $properties: (
-          "margin-top": "mt",
-          "margin-bottom": "mb",
-          "margin-left": "ml",
-          "margin-right": "mr",
-          "margin": "m"
-  );
-
-  @each $property, $abbreviation in $properties {
-    $sequence: (0,1); // Initial sequence
-
-    @for $i from 1 through 200 {
-      $sequence: append($sequence, $i*2); // Append the value to the sequence
-    }
-
-    @each $value in $sequence {
-      $calculated-value: $value * $spacing-small; // Calculate the value based on the spacing unit
-      $formatted-value: if($value == 0, 0, $calculated-value); // Format value as 0 if it is zero
-
-      $utilities: generateMargin($property, $formatted-value);
-      @each $key, $properties in $utilities {
-        .#{$abbreviation}-#{$value} {
-          @each $property, $value in $properties {
-            #{$property}: $value;
-          }
-        }
-      }
-    }
+// Margin utilities
+@each $key, $value in $spacing-scale {
+  .m-#{$key} { margin: $value; }
+  .mt-#{$key} { margin-top: $value; }
+  .mr-#{$key} { margin-right: $value; }
+  .mb-#{$key} { margin-bottom: $value; }
+  .ml-#{$key} { margin-left: $value; }
+  .mx-#{$key} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+  .my-#{$key} {
+    margin-top: $value;
+    margin-bottom: $value;
   }
 }
 
-@include generateUtilities();
+// Auto margin utilities
+.m-auto { margin: auto; }
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.mt-auto { margin-top: auto; }
+.mr-auto { margin-right: auto; }
+.mb-auto { margin-bottom: auto; }
+.ml-auto { margin-left: auto; }

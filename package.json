@@ -10,14 +10,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "start:dev": "nodemon index.js",
-    "build": "sass src/styles/main.scss dist/main.css",
-    "build:copy": "sass src/styles/main.scss dist/main.css && cp dist/main.css public/main.css"
+    "build": "sass src/styles/main.scss dist/main.css --style=expanded --source-map",
+    "build:prod": "sass src/styles/main.scss dist/main.min.css --style=compressed --no-source-map",
+    "build:all": "npm run build && npm run build:prod && cp dist/main.css public/main.css",
+    "watch": "sass --watch src/styles/main.scss dist/main.css --style=expanded --source-map"
   },
   "devDependencies": {
+    "express": "^4.20.0",
     "nodemon": "^2.0.22",
     "sass": "^1.63.6"
   },
-  "dependencies": {
-    "express": "^4.20.0"
-  }
+  "dependencies": {}
 }

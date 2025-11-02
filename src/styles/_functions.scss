@@ -1,23 +1,2 @@
-@function generateMarginTop($value) {
-  @return (
-          "mt-#{$value}": (
-                  "margin-top": $value
-          )
-  );
-}
-
-@mixin generateUtilities() {
-  @for $i from 1 through 100 {
-    $value: $i * 10px;
-    $utilities: generateMarginTop($value);
-    @each $key, $properties in $utilities {
-      .#{$key} {
-        @each $property, $value in $properties {
-          #{$property}: $value;
-        }
-      }
-    }
-  }
-}
-
-@include generateUtilities();
+// This file is reserved for utility functions
+// Margin/padding generation is now handled in utilities/_spacing.scss
