@@ -73,7 +73,7 @@ ValorCSS provides comprehensive utility classes for common CSS properties:
 ### Components
 
 ValorCSS components follow a hybrid naming approach:
-- **BEM Components** (Cards, Modals, Tables, Alerts, Badges, Navigation, Tabs, Accordion, Dropdown, Dashboard, Stats): Use BEM methodology with legacy non-BEM aliases for compatibility
+- **BEM Components** (Cards, Modals, Toasts, Tables, Alerts, Badges, Navigation, Tabs, Accordion, Dropdown, Dashboard, Stats): Use BEM methodology with legacy non-BEM aliases for compatibility
 - **Non-BEM Components** (Buttons, Forms): Use traditional class names for familiarity and ease of use
 
 #### Buttons
@@ -205,6 +205,54 @@ Cards support both BEM and non-BEM naming:
 <div class="modal__dialog modal__dialog--sm">Small modal</div>
 <div class="modal__dialog modal__dialog--lg">Large modal</div>
 <div class="modal__dialog modal__dialog--xl">Extra large modal</div>
+```
+
+#### Toast Notifications
+
+```html
+<!-- Toast Container -->
+<div class="toast-container toast-container--top-right">
+  <!-- Success Toast -->
+  <div class="toast toast--success">
+    <div class="toast__icon">✓</div>
+    <div class="toast__content">
+      <div class="toast__title">Success!</div>
+      <div class="toast__message">Your changes have been saved successfully.</div>
+    </div>
+    <button class="toast__close">&times;</button>
+  </div>
+
+  <!-- Error Toast -->
+  <div class="toast toast--danger">
+    <div class="toast__icon">✕</div>
+    <div class="toast__content">
+      <div class="toast__title">Error</div>
+      <div class="toast__message">Something went wrong. Please try again.</div>
+    </div>
+    <button class="toast__close">&times;</button>
+  </div>
+</div>
+
+<!-- Container Positions -->
+<div class="toast-container toast-container--top-left">...</div>
+<div class="toast-container toast-container--top-center">...</div>
+<div class="toast-container toast-container--bottom-right">...</div>
+<div class="toast-container toast-container--bottom-left">...</div>
+<div class="toast-container toast-container--bottom-center">...</div>
+
+<!-- Toast with Actions -->
+<div class="toast toast--info">
+  <div class="toast__icon">ℹ</div>
+  <div class="toast__content">
+    <div class="toast__title">New Update Available</div>
+    <div class="toast__message">Version 2.0 is ready to install.</div>
+    <div class="toast__actions">
+      <button class="btn btn-sm btn-primary">Update</button>
+      <button class="btn btn-sm btn-secondary">Later</button>
+    </div>
+  </div>
+  <button class="toast__close">&times;</button>
+</div>
 ```
 
 #### Tables
