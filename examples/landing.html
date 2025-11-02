@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ValorCSS - Modern CSS Framework</title>
+  <link rel="stylesheet" href="../dist/main.css">
+  <style>
+    /* Additional landing page specific styles */
+    .hero-gradient {
+      background: linear-gradient(135deg, #0093E9 0%, #80D0C7 100%);
+    }
+    .feature-icon {
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navigation -->
+  <nav class="navbar bg-white shadow-sm">
+    <a href="#" class="navbar__brand">ValorCSS</a>
+    <ul class="navbar__nav">
+      <li class="navbar__item">
+        <a href="#features" class="navbar__link navbar__link--active">Features</a>
+      </li>
+      <li class="navbar__item">
+        <a href="#components" class="navbar__link">Components</a>
+      </li>
+      <li class="navbar__item">
+        <a href="#docs" class="navbar__link">Docs</a>
+      </li>
+      <li class="navbar__item">
+        <a href="#" class="btn btn-primary btn-sm">Get Started</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-gradient text-white p-64">
+    <div class="max-w-screen-lg mx-auto text-center">
+      <h1 class="text-5xl font-bold mb-4">Build Faster with ValorCSS</h1>
+      <p class="text-xl mb-8 opacity-90">
+        A modern, utility-first CSS framework combining Tailwind's utility approach with Tabler's clean aesthetic.
+      </p>
+      <div class="flex justify-center gap-4">
+        <button class="btn btn-lg bg-white text-primary">
+          Download Now
+        </button>
+        <button class="btn btn-lg btn-outline-white border-white text-white">
+          View on GitHub
+        </button>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="flex justify-center gap-16 mt-16">
+        <div>
+          <div class="text-4xl font-bold">32KB</div>
+          <div class="text-sm opacity-75">Optimized Size</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold">13+</div>
+          <div class="text-sm opacity-75">Components</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold">500+</div>
+          <div class="text-sm opacity-75">Utility Classes</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="p-64 bg-white">
+    <div class="max-w-screen-lg mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-semibold text-gray-900 mb-4">Why ValorCSS?</h2>
+        <p class="text-lg text-gray-600">Everything you need to build beautiful, modern web applications</p>
+      </div>
+
+      <div class="grid grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="card card--hover text-center">
+          <div class="card__body">
+            <div class="feature-icon mb-4">⚡</div>
+            <h3 class="card__title">Lightning Fast</h3>
+            <p class="card__text">
+              Optimized for performance with PurgeCSS. Only 32KB when minified and purged.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="card card--hover text-center">
+          <div class="card__body">
+            <div class="feature-icon mb-4">🎨</div>
+            <h3 class="card__title">Beautiful Design</h3>
+            <p class="card__text">
+              Tabler-inspired aesthetic with clean, professional components and subtle shadows.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="card card--hover text-center">
+          <div class="card__body">
+            <div class="feature-icon mb-4">📱</div>
+            <h3 class="card__title">Fully Responsive</h3>
+            <p class="card__text">
+              Mobile-first design with responsive utilities for all breakpoints.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="card card--hover text-center">
+          <div class="card__body">
+            <div class="feature-icon mb-4">🔧</div>
+            <h3 class="card__title">Utility-First</h3>
+            <p class="card__text">
+              500+ utility classes for rapid development without writing custom CSS.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="card card--hover text-center">
+          <div class="card__body">
+            <div class="feature-icon mb-4">🌙</div>
+            <h3 class="card__title">Dark Mode Ready</h3>
+            <p class="card__text">
+              Built-in dark theme support using CSS custom properties.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="card card--hover text-center">
+          <div class="card__body">
+            <div class="feature-icon mb-4">📦</div>
+            <h3 class="card__title">BEM Components</h3>
+            <p class="card__text">
+              Professional UI components following BEM methodology with legacy support.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Components Preview Section -->
+  <section id="components" class="p-64 bg-gray-50">
+    <div class="max-w-screen-lg mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-semibold text-gray-900 mb-4">Professional Components</h2>
+        <p class="text-lg text-gray-600">13 ready-to-use components for any project</p>
+      </div>
+
+      <!-- Component Examples Grid -->
+      <div class="grid grid-cols-2 gap-8">
+
+        <!-- Buttons Example -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">Buttons</h3>
+          </div>
+          <div class="card__body">
+            <div class="flex gap-2 flex-wrap">
+              <button class="btn btn-primary">Primary</button>
+              <button class="btn btn-success">Success</button>
+              <button class="btn btn-outline-primary">Outline</button>
+              <button class="btn btn-sm btn-secondary">Small</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Alerts Example -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">Alerts</h3>
+          </div>
+          <div class="card__body">
+            <div class="alert alert--success mb-2">
+              <strong>Success!</strong> Everything is working.
+            </div>
+            <div class="alert alert--warning">
+              <strong>Warning!</strong> Please check this.
+            </div>
+          </div>
+        </div>
+
+        <!-- Forms Example -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">Forms</h3>
+          </div>
+          <div class="card__body">
+            <div class="form-group mb-4">
+              <label class="form-label">Email address</label>
+              <input type="email" class="form-control" placeholder="Enter email">
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="check1">
+              <label class="form-check-label" for="check1">Remember me</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Badges Example -->
+        <div class="card">
+          <div class="card__header">
+            <h3 class="card__title">Badges</h3>
+          </div>
+          <div class="card__body">
+            <div class="flex gap-2 items-center flex-wrap">
+              <span class="badge badge--primary">Primary</span>
+              <span class="badge badge--success">Success</span>
+              <span class="badge badge--danger">Danger</span>
+              <span class="badge badge--pill badge--info">Pill</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats/Metrics Section -->
+  <section class="p-64 bg-white">
+    <div class="max-w-screen-lg mx-auto">
+      <div class="stats-group stats-group--4-col">
+
+        <div class="stats-card stats-card--primary">
+          <div class="stats-card__body">
+            <div class="stats-card__content">
+              <span class="stats-card__label">Downloads</span>
+              <span class="stats-card__value">12.5K</span>
+              <span class="stats-card__change stats-card__change--positive">
+                ↑ 24%
+              </span>
+            </div>
+            <div class="stats-card__icon">📥</div>
+          </div>
+        </div>
+
+        <div class="stats-card stats-card--success">
+          <div class="stats-card__body">
+            <div class="stats-card__content">
+              <span class="stats-card__label">Active Users</span>
+              <span class="stats-card__value">3.2K</span>
+              <span class="stats-card__change stats-card__change--positive">
+                ↑ 18%
+              </span>
+            </div>
+            <div class="stats-card__icon">👥</div>
+          </div>
+        </div>
+
+        <div class="stats-card stats-card--info">
+          <div class="stats-card__body">
+            <div class="stats-card__content">
+              <span class="stats-card__label">Projects</span>
+              <span class="stats-card__value">847</span>
+              <span class="stats-card__change stats-card__change--positive">
+                ↑ 12%
+              </span>
+            </div>
+            <div class="stats-card__icon">📦</div>
+          </div>
+        </div>
+
+        <div class="stats-card stats-card--warning">
+          <div class="stats-card__body">
+            <div class="stats-card__content">
+              <span class="stats-card__label">Stars</span>
+              <span class="stats-card__value">1.4K</span>
+              <span class="stats-card__change stats-card__change--positive">
+                ↑ 32%
+              </span>
+            </div>
+            <div class="stats-card__icon">⭐</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="p-64 bg-primary text-white">
+    <div class="max-w-screen-lg mx-auto text-center">
+      <h2 class="text-4xl font-semibold mb-4">Ready to get started?</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Download ValorCSS now and start building beautiful web applications in minutes.
+      </p>
+      <div class="flex justify-center gap-4">
+        <button class="btn btn-lg bg-white text-primary">
+          Get Started
+        </button>
+        <button class="btn btn-lg btn-outline-white border-white text-white">
+          Read Documentation
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white p-16">
+    <div class="max-w-screen-lg mx-auto">
+      <div class="grid grid-cols-4 gap-8 mb-8">
+        <div>
+          <h4 class="font-semibold mb-4">ValorCSS</h4>
+          <p class="text-sm opacity-75">
+            A modern CSS framework for building beautiful web applications.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Product</h4>
+          <ul class="text-sm space-y-2">
+            <li><a href="#" class="opacity-75 hover:opacity-100">Features</a></li>
+            <li><a href="#" class="opacity-75 hover:opacity-100">Components</a></li>
+            <li><a href="#" class="opacity-75 hover:opacity-100">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Resources</h4>
+          <ul class="text-sm space-y-2">
+            <li><a href="#" class="opacity-75 hover:opacity-100">Documentation</a></li>
+            <li><a href="#" class="opacity-75 hover:opacity-100">Examples</a></li>
+            <li><a href="#" class="opacity-75 hover:opacity-100">GitHub</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Company</h4>
+          <ul class="text-sm space-y-2">
+            <li><a href="#" class="opacity-75 hover:opacity-100">About</a></li>
+            <li><a href="#" class="opacity-75 hover:opacity-100">Blog</a></li>
+            <li><a href="#" class="opacity-75 hover:opacity-100">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-8 text-center text-sm opacity-75">
+        <p>&copy; 2025 ValorCSS. Built by Valiant-Joshua Bolorunduro. MIT License.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

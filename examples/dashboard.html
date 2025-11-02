@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - ValorCSS</title>
+  <link rel="stylesheet" href="../dist/main.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+    .avatar {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0093E9 0%, #80D0C7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar__header">
+        <a href="#" class="sidebar__brand">
+          <span style="font-size: 1.5rem;">📊</span>
+          <span>Dashboard</span>
+        </a>
+      </div>
+
+      <div class="sidebar__body">
+        <ul class="sidebar__nav">
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link sidebar__link--active">
+              <span>📈</span>
+              <span>Overview</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <span>👥</span>
+              <span>Users</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <span>📦</span>
+              <span>Products</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <span>💰</span>
+              <span>Sales</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <span>📊</span>
+              <span>Analytics</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="sidebar__label">Settings</div>
+
+        <ul class="sidebar__nav">
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <span>⚙️</span>
+              <span>Preferences</span>
+            </a>
+          </li>
+          <li class="sidebar__item">
+            <a href="#" class="sidebar__link">
+              <span>🔔</span>
+              <span>Notifications</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar__footer">
+        <div class="flex items-center gap-3">
+          <div class="avatar">JD</div>
+          <div class="text-sm">
+            <div class="font-semibold text-gray-900">John Doe</div>
+            <div class="text-gray-600 text-xs">Admin</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard__main">
+
+      <!-- Topbar -->
+      <div class="topbar">
+        <div class="topbar__left">
+          <button class="topbar__toggle">☰</button>
+          <h1 class="topbar__title">Overview</h1>
+        </div>
+
+        <div class="topbar__right">
+          <div class="topbar__search">
+            <input type="search" class="form-control form-control-sm" placeholder="Search...">
+          </div>
+
+          <button class="topbar__notifications">
+            🔔
+            <span class="badge badge--danger badge--sm" style="position: absolute; top: 0.25rem; right: 0.25rem;">3</span>
+          </button>
+
+          <div class="topbar__user">
+            <div class="avatar">JD</div>
+            <span class="topbar__user-name">John Doe</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page Content -->
+      <div class="content">
+
+        <!-- Page Header -->
+        <div class="content__header">
+          <div class="flex justify-between items-center">
+            <div>
+              <h2 class="content__title">Dashboard Overview</h2>
+              <p class="content__subtitle">Welcome back! Here's what's happening today.</p>
+            </div>
+            <div>
+              <button class="btn btn-primary">
+                <span>+</span>
+                <span>New Report</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-group stats-group--4-col mb-8">
+
+          <div class="stats-card stats-card--primary">
+            <div class="stats-card__body">
+              <div class="stats-card__content">
+                <span class="stats-card__label">Total Revenue</span>
+                <span class="stats-card__value">$45,231</span>
+                <span class="stats-card__change stats-card__change--positive">
+                  ↑ 20.1%
+                </span>
+              </div>
+              <div class="stats-card__icon">💰</div>
+            </div>
+          </div>
+
+          <div class="stats-card stats-card--success">
+            <div class="stats-card__body">
+              <div class="stats-card__content">
+                <span class="stats-card__label">New Customers</span>
+                <span class="stats-card__value">+2,350</span>
+                <span class="stats-card__change stats-card__change--positive">
+                  ↑ 12.5%
+                </span>
+              </div>
+              <div class="stats-card__icon">👥</div>
+            </div>
+          </div>
+
+          <div class="stats-card stats-card--warning">
+            <div class="stats-card__body">
+              <div class="stats-card__content">
+                <span class="stats-card__label">Pending Orders</span>
+                <span class="stats-card__value">184</span>
+                <span class="stats-card__change stats-card__change--neutral">
+                  → 0%
+                </span>
+              </div>
+              <div class="stats-card__icon">📦</div>
+            </div>
+          </div>
+
+          <div class="stats-card stats-card--info">
+            <div class="stats-card__body">
+              <div class="stats-card__content">
+                <span class="stats-card__label">Active Sessions</span>
+                <span class="stats-card__value">1,234</span>
+                <span class="stats-card__change stats-card__change--positive">
+                  ↑ 8.2%
+                </span>
+              </div>
+              <div class="stats-card__icon">🌐</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Content Grid -->
+        <div class="grid grid-cols-2 gap-6">
+
+          <!-- Recent Orders Table -->
+          <div class="card" style="grid-column: span 2;">
+            <div class="card__header">
+              <h3 class="card__title">Recent Orders</h3>
+            </div>
+            <div class="card__body" style="padding: 0;">
+              <div class="table-responsive">
+                <table class="table table--hover">
+                  <thead>
+                    <tr>
+                      <th>Order ID</th>
+                      <th>Customer</th>
+                      <th>Product</th>
+                      <th>Amount</th>
+                      <th>Status</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>#ORD-001</strong></td>
+                      <td>John Smith</td>
+                      <td>Premium Package</td>
+                      <td>$299.00</td>
+                      <td><span class="badge badge--success">Completed</span></td>
+                      <td>Nov 2, 2025</td>
+                    </tr>
+                    <tr>
+                      <td><strong>#ORD-002</strong></td>
+                      <td>Sarah Johnson</td>
+                      <td>Starter Package</td>
+                      <td>$99.00</td>
+                      <td><span class="badge badge--warning">Pending</span></td>
+                      <td>Nov 2, 2025</td>
+                    </tr>
+                    <tr>
+                      <td><strong>#ORD-003</strong></td>
+                      <td>Mike Williams</td>
+                      <td>Enterprise Package</td>
+                      <td>$599.00</td>
+                      <td><span class="badge badge--success">Completed</span></td>
+                      <td>Nov 1, 2025</td>
+                    </tr>
+                    <tr>
+                      <td><strong>#ORD-004</strong></td>
+                      <td>Emily Brown</td>
+                      <td>Premium Package</td>
+                      <td>$299.00</td>
+                      <td><span class="badge badge--info">Processing</span></td>
+                      <td>Nov 1, 2025</td>
+                    </tr>
+                    <tr>
+                      <td><strong>#ORD-005</strong></td>
+                      <td>David Lee</td>
+                      <td>Starter Package</td>
+                      <td>$99.00</td>
+                      <td><span class="badge badge--danger">Cancelled</span></td>
+                      <td>Oct 31, 2025</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card__footer">
+              <a href="#" class="card__link">View all orders</a>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="card">
+            <div class="card__header">
+              <h3 class="card__title">Quick Actions</h3>
+            </div>
+            <div class="card__body">
+              <div class="flex flex-col gap-2">
+                <button class="btn btn-outline-primary w-full text-left">
+                  <span>+ Create Invoice</span>
+                </button>
+                <button class="btn btn-outline-success w-full text-left">
+                  <span>+ Add Customer</span>
+                </button>
+                <button class="btn btn-outline-info w-full text-left">
+                  <span>+ New Product</span>
+                </button>
+                <button class="btn btn-outline-secondary w-full text-left">
+                  <span>📊 Generate Report</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="card">
+            <div class="card__header">
+              <h3 class="card__title">Recent Activity</h3>
+            </div>
+            <div class="card__body">
+              <div class="flex flex-col gap-4">
+
+                <div class="flex gap-3">
+                  <div class="avatar" style="width: 2rem; height: 2rem; font-size: 0.75rem;">JD</div>
+                  <div class="flex-1">
+                    <div class="text-sm font-medium text-gray-900">John Doe completed order #ORD-001</div>
+                    <div class="text-xs text-gray-500">2 minutes ago</div>
+                  </div>
+                </div>
+
+                <div class="flex gap-3">
+                  <div class="avatar" style="width: 2rem; height: 2rem; font-size: 0.75rem; background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);">SJ</div>
+                  <div class="flex-1">
+                    <div class="text-sm font-medium text-gray-900">Sarah Johnson created new account</div>
+                    <div class="text-xs text-gray-500">15 minutes ago</div>
+                  </div>
+                </div>
+
+                <div class="flex gap-3">
+                  <div class="avatar" style="width: 2rem; height: 2rem; font-size: 0.75rem; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">MW</div>
+                  <div class="flex-1">
+                    <div class="text-sm font-medium text-gray-900">Mike Williams updated product catalog</div>
+                    <div class="text-xs text-gray-500">1 hour ago</div>
+                  </div>
+                </div>
+
+                <div class="flex gap-3">
+                  <div class="avatar" style="width: 2rem; height: 2rem; font-size: 0.75rem; background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);">EB</div>
+                  <div class="flex-1">
+                    <div class="text-sm font-medium text-gray-900">Emily Brown left a review</div>
+                    <div class="text-xs text-gray-500">3 hours ago</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="card__footer">
+              <a href="#" class="card__link">View all activity</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Tabs Example -->
+        <div class="card mt-6">
+          <div class="tabs tabs--card">
+            <ul class="tabs__nav">
+              <li class="tabs__item">
+                <button class="tabs__link tabs__link--active">Monthly</button>
+              </li>
+              <li class="tabs__item">
+                <button class="tabs__link">Weekly</button>
+              </li>
+              <li class="tabs__item">
+                <button class="tabs__link">Daily</button>
+              </li>
+            </ul>
+            <div class="tabs__content">
+              <div class="tabs__pane tabs__pane--active">
+                <h4 class="text-lg font-semibold mb-4">Monthly Performance</h4>
+                <div class="grid grid-cols-3 gap-4">
+                  <div>
+                    <div class="text-sm text-gray-600">Total Sales</div>
+                    <div class="text-2xl font-bold text-gray-900">$156,789</div>
+                  </div>
+                  <div>
+                    <div class="text-sm text-gray-600">Orders</div>
+                    <div class="text-2xl font-bold text-gray-900">1,234</div>
+                  </div>
+                  <div>
+                    <div class="text-sm text-gray-600">Growth</div>
+                    <div class="text-2xl font-bold text-success">+23.5%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <script>
+    // Simple toggle for mobile sidebar (demo)
+    document.querySelector('.topbar__toggle')?.addEventListener('click', function() {
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.classList.toggle('sidebar--open');
+    });
+  </script>
+
+</body>
+</html>
