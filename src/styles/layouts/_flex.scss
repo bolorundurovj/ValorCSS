@@ -41,3 +41,103 @@
 .justify-end {
   justify-content: flex-end;
 }
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+// Align content
+.content-start {
+  align-content: flex-start;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-end {
+  align-content: flex-end;
+}
+
+.content-between {
+  align-content: space-between;
+}
+
+.content-around {
+  align-content: space-around;
+}
+
+// Flex wrap
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+// Flex grow/shrink
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.flex-initial {
+  flex: 0 1 auto;
+}
+
+.flex-none {
+  flex: none;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-grow-0 {
+  flex-grow: 0;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+// Gap utilities (for flex and grid)
+@import "../_variables.scss";
+@import "../utilities/_spacing.scss";
+
+@each $key, $value in $spacing-scale {
+  .gap-#{$key} { gap: $value; }
+  .gap-x-#{$key} { column-gap: $value; }
+  .gap-y-#{$key} { row-gap: $value; }
+}
+
+// Space between utilities (alternative to gap for older browsers)
+@each $key, $value in $spacing-scale {
+  .space-x-#{$key} > * + * {
+    margin-left: $value;
+  }
+
+  .space-y-#{$key} > * + * {
+    margin-top: $value;
+  }
+}

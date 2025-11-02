@@ -1,9 +1,105 @@
 /* Utility classes for typography */
-.text-lg {
-  font-size: $base-font-size * 1.2;
+@import "../_variables.scss";
+
+// Font Families
+.font-sans { font-family: $font-family; }
+.font-mono { font-family: $font-family-mono; }
+
+// Font Sizes (Tabler-inspired scale)
+.text-xs { font-size: $font-size-xs; line-height: 1rem; }
+.text-sm { font-size: $font-size-sm; line-height: 1.25rem; }
+.text-base { font-size: $font-size-base; line-height: 1.5rem; }
+.text-lg { font-size: $font-size-lg; line-height: 1.75rem; }
+.text-xl { font-size: $font-size-xl; line-height: 1.75rem; }
+.text-2xl { font-size: $font-size-2xl; line-height: 2rem; }
+.text-3xl { font-size: $font-size-3xl; line-height: 2.25rem; }
+.text-4xl { font-size: $font-size-4xl; line-height: 2.5rem; }
+.text-5xl { font-size: $font-size-5xl; line-height: 1; }
+
+// Font Weights
+.font-light { font-weight: $font-weight-light; }
+.font-normal { font-weight: $font-weight-normal; }
+.font-medium { font-weight: $font-weight-medium; }
+.font-semibold { font-weight: $font-weight-semibold; }
+.font-bold { font-weight: $font-weight-bold; }
+
+// Legacy aliases
+.text-bold { font-weight: $font-weight-bold; }
+
+// Text Alignment
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+// Text Transform
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+.normal-case { text-transform: none; }
+
+// Text Decoration
+.underline { text-decoration: underline; }
+.line-through { text-decoration: line-through; }
+.no-underline { text-decoration: none; }
+
+// Font Style
+.italic { font-style: italic; }
+.not-italic { font-style: normal; }
+
+// Line Height
+.leading-none { line-height: 1; }
+.leading-tight { line-height: $line-height-tight; }
+.leading-normal { line-height: $line-height; }
+.leading-relaxed { line-height: $line-height-loose; }
+.leading-loose { line-height: 2; }
+
+// Letter Spacing
+.tracking-tighter { letter-spacing: -0.05em; }
+.tracking-tight { letter-spacing: -0.025em; }
+.tracking-normal { letter-spacing: 0; }
+.tracking-wide { letter-spacing: 0.025em; }
+.tracking-wider { letter-spacing: 0.05em; }
+.tracking-widest { letter-spacing: 0.1em; }
+
+// Text Overflow
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.text-bold {
-  font-weight: bold;
+.text-ellipsis { text-overflow: ellipsis; }
+.text-clip { text-overflow: clip; }
+
+// Whitespace
+.whitespace-normal { white-space: normal; }
+.whitespace-nowrap { white-space: nowrap; }
+.whitespace-pre { white-space: pre; }
+.whitespace-pre-line { white-space: pre-line; }
+.whitespace-pre-wrap { white-space: pre-wrap; }
+
+// Word Break
+.break-normal {
+  overflow-wrap: normal;
+  word-break: normal;
 }
+
+.break-words { overflow-wrap: break-word; }
+.break-all { word-break: break-all; }
+
+// Vertical Alignment
+.align-baseline { vertical-align: baseline; }
+.align-top { vertical-align: top; }
+.align-middle { vertical-align: middle; }
+.align-bottom { vertical-align: bottom; }
+.align-text-top { vertical-align: text-top; }
+.align-text-bottom { vertical-align: text-bottom; }
+
+// Text Opacity
+.text-opacity-0 { color: rgba(0, 0, 0, 0); }
+.text-opacity-25 { opacity: 0.25; }
+.text-opacity-50 { opacity: 0.5; }
+.text-opacity-75 { opacity: 0.75; }
+.text-opacity-100 { opacity: 1; }
 

@@ -1,28 +1,505 @@
-/* Colors */
+/* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
 /* Spacing */
-/* Typography */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
 /* Breakpoints */
-/* Utility classes for colors */
+/* Z-index Scale */
+/* Utility classes for colors */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
 .text-primary {
-  color: #007bff;
-}
-
-.bg-primary {
-  background-color: #007bff;
+  color: #206bc4;
 }
 
 .text-secondary {
-  color: #6c757d;
+  color: #626976;
+}
+
+.text-success {
+  color: #2fb344;
+}
+
+.text-info {
+  color: #17a2b8;
+}
+
+.text-warning {
+  color: #f59f00;
+}
+
+.text-danger {
+  color: #d63939;
+}
+
+.text-light {
+  color: #f8f9fa;
+}
+
+.text-dark {
+  color: #1e293b;
+}
+
+.text-blue {
+  color: #206bc4;
+}
+
+.text-azure {
+  color: #4299e1;
+}
+
+.text-indigo {
+  color: #4263eb;
+}
+
+.text-purple {
+  color: #ae3ec9;
+}
+
+.text-pink {
+  color: #d6336c;
+}
+
+.text-red {
+  color: #d63939;
+}
+
+.text-orange {
+  color: #f76707;
+}
+
+.text-yellow {
+  color: #f59f00;
+}
+
+.text-lime {
+  color: #74b816;
+}
+
+.text-green {
+  color: #2fb344;
+}
+
+.text-teal {
+  color: #0ca678;
+}
+
+.text-cyan {
+  color: #17a2b8;
+}
+
+.text-gray-50 {
+  color: #f8fafc;
+}
+
+.text-gray-100 {
+  color: #f1f5f9;
+}
+
+.text-gray-200 {
+  color: #e2e8f0;
+}
+
+.text-gray-300 {
+  color: #cbd5e1;
+}
+
+.text-gray-400 {
+  color: #94a3b8;
+}
+
+.text-gray-500 {
+  color: #64748b;
+}
+
+.text-gray-600 {
+  color: #475569;
+}
+
+.text-gray-700 {
+  color: #334155;
+}
+
+.text-gray-800 {
+  color: #1e293b;
+}
+
+.text-gray-900 {
+  color: #0f172a;
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.text-black {
+  color: #000000;
+}
+
+.text-transparent {
+  color: transparent;
+}
+
+.bg-primary {
+  background-color: #206bc4;
 }
 
 .bg-secondary {
-  background-color: #6c757d;
+  background-color: #626976;
 }
 
-/* Utility classes for spacing */ /* Colors */
+.bg-success {
+  background-color: #2fb344;
+}
+
+.bg-info {
+  background-color: #17a2b8;
+}
+
+.bg-warning {
+  background-color: #f59f00;
+}
+
+.bg-danger {
+  background-color: #d63939;
+}
+
+.bg-light {
+  background-color: #f8f9fa;
+}
+
+.bg-dark {
+  background-color: #1e293b;
+}
+
+.bg-blue {
+  background-color: #206bc4;
+}
+
+.bg-azure {
+  background-color: #4299e1;
+}
+
+.bg-indigo {
+  background-color: #4263eb;
+}
+
+.bg-purple {
+  background-color: #ae3ec9;
+}
+
+.bg-pink {
+  background-color: #d6336c;
+}
+
+.bg-red {
+  background-color: #d63939;
+}
+
+.bg-orange {
+  background-color: #f76707;
+}
+
+.bg-yellow {
+  background-color: #f59f00;
+}
+
+.bg-lime {
+  background-color: #74b816;
+}
+
+.bg-green {
+  background-color: #2fb344;
+}
+
+.bg-teal {
+  background-color: #0ca678;
+}
+
+.bg-cyan {
+  background-color: #17a2b8;
+}
+
+.bg-gray-50 {
+  background-color: #f8fafc;
+}
+
+.bg-gray-100 {
+  background-color: #f1f5f9;
+}
+
+.bg-gray-200 {
+  background-color: #e2e8f0;
+}
+
+.bg-gray-300 {
+  background-color: #cbd5e1;
+}
+
+.bg-gray-400 {
+  background-color: #94a3b8;
+}
+
+.bg-gray-500 {
+  background-color: #64748b;
+}
+
+.bg-gray-600 {
+  background-color: #475569;
+}
+
+.bg-gray-700 {
+  background-color: #334155;
+}
+
+.bg-gray-800 {
+  background-color: #1e293b;
+}
+
+.bg-gray-900 {
+  background-color: #0f172a;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.bg-black {
+  background-color: #000000;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.border-primary {
+  border-color: #206bc4;
+}
+
+.border-secondary {
+  border-color: #626976;
+}
+
+.border-success {
+  border-color: #2fb344;
+}
+
+.border-info {
+  border-color: #17a2b8;
+}
+
+.border-warning {
+  border-color: #f59f00;
+}
+
+.border-danger {
+  border-color: #d63939;
+}
+
+.border-light {
+  border-color: #f8f9fa;
+}
+
+.border-dark {
+  border-color: #1e293b;
+}
+
+.border-blue {
+  border-color: #206bc4;
+}
+
+.border-azure {
+  border-color: #4299e1;
+}
+
+.border-indigo {
+  border-color: #4263eb;
+}
+
+.border-purple {
+  border-color: #ae3ec9;
+}
+
+.border-pink {
+  border-color: #d6336c;
+}
+
+.border-red {
+  border-color: #d63939;
+}
+
+.border-orange {
+  border-color: #f76707;
+}
+
+.border-yellow {
+  border-color: #f59f00;
+}
+
+.border-lime {
+  border-color: #74b816;
+}
+
+.border-green {
+  border-color: #2fb344;
+}
+
+.border-teal {
+  border-color: #0ca678;
+}
+
+.border-cyan {
+  border-color: #17a2b8;
+}
+
+.border-gray-50 {
+  border-color: #f8fafc;
+}
+
+.border-gray-100 {
+  border-color: #f1f5f9;
+}
+
+.border-gray-200 {
+  border-color: #e2e8f0;
+}
+
+.border-gray-300 {
+  border-color: #cbd5e1;
+}
+
+.border-gray-400 {
+  border-color: #94a3b8;
+}
+
+.border-gray-500 {
+  border-color: #64748b;
+}
+
+.border-gray-600 {
+  border-color: #475569;
+}
+
+.border-gray-700 {
+  border-color: #334155;
+}
+
+.border-gray-800 {
+  border-color: #1e293b;
+}
+
+.border-gray-900 {
+  border-color: #0f172a;
+}
+
+.border-white {
+  border-color: #ffffff;
+}
+
+.border-black {
+  border-color: #000000;
+}
+
+.border-transparent {
+  border-color: transparent;
+}
+
+.text-inherit {
+  color: inherit;
+}
+
+.text-current {
+  color: currentColor;
+}
+
+.bg-inherit {
+  background-color: inherit;
+}
+
+.bg-current {
+  background-color: currentColor;
+}
+
+.bg-opacity-10 {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.bg-opacity-20 {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bg-opacity-30 {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.bg-opacity-40 {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.bg-opacity-50 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.bg-opacity-60 {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.bg-opacity-70 {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.bg-opacity-80 {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.bg-opacity-90 {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Utility classes for spacing */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
 /* Spacing */
-/* Typography */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
 /* Breakpoints */
+/* Z-index Scale */
 .m-0 {
   margin: 0;
 }
@@ -953,14 +1430,42 @@
   padding-bottom: 24rem;
 }
 
-/* Utility classes for sizing (width & height) */ /* Colors */
+/* Utility classes for sizing (width & height) */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
 /* Spacing */
-/* Typography */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
 /* Breakpoints */
-/* Utility classes for spacing */ /* Colors */
+/* Z-index Scale */
+/* Utility classes for spacing */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
 /* Spacing */
-/* Typography */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
 /* Breakpoints */
+/* Z-index Scale */
 .m-0 {
   margin: 0;
 }
@@ -2751,19 +3256,831 @@
   isolation: auto;
 }
 
-/* Utility classes for typography */
+/* Utility classes for typography */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+.font-sans {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+}
+
+.font-mono {
+  font-family: "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 .text-lg {
-  font-size: 19.2px;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .text-bold {
-  font-weight: bold;
+  font-weight: 700;
 }
 
-/* Responsive utility variants */ /* Colors */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.normal-case {
+  text-transform: none;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.not-italic {
+  font-style: normal;
+}
+
+.leading-none {
+  line-height: 1;
+}
+
+.leading-tight {
+  line-height: 1.25;
+}
+
+.leading-normal {
+  line-height: 1.5;
+}
+
+.leading-relaxed {
+  line-height: 1.75;
+}
+
+.leading-loose {
+  line-height: 2;
+}
+
+.tracking-tighter {
+  letter-spacing: -0.05em;
+}
+
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+
+.tracking-normal {
+  letter-spacing: 0;
+}
+
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
+
+.tracking-widest {
+  letter-spacing: 0.1em;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+}
+
+.text-clip {
+  text-overflow: clip;
+}
+
+.whitespace-normal {
+  white-space: normal;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+.whitespace-pre {
+  white-space: pre;
+}
+
+.whitespace-pre-line {
+  white-space: pre-line;
+}
+
+.whitespace-pre-wrap {
+  white-space: pre-wrap;
+}
+
+.break-normal {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.break-words {
+  overflow-wrap: break-word;
+}
+
+.break-all {
+  word-break: break-all;
+}
+
+.align-baseline {
+  vertical-align: baseline;
+}
+
+.align-top {
+  vertical-align: top;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
+.align-bottom {
+  vertical-align: bottom;
+}
+
+.align-text-top {
+  vertical-align: text-top;
+}
+
+.align-text-bottom {
+  vertical-align: text-bottom;
+}
+
+.text-opacity-0 {
+  color: rgba(0, 0, 0, 0);
+}
+
+.text-opacity-25 {
+  opacity: 0.25;
+}
+
+.text-opacity-50 {
+  opacity: 0.5;
+}
+
+.text-opacity-75 {
+  opacity: 0.75;
+}
+
+.text-opacity-100 {
+  opacity: 1;
+}
+
+/* Border utilities - Tabler aesthetic (subtle, clean) */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
 /* Spacing */
-/* Typography */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
 /* Breakpoints */
+/* Z-index Scale */
+.border {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #e2e8f0;
+}
+
+.border-0 {
+  border-width: 0;
+}
+
+.border-2 {
+  border-width: 2px;
+  border-style: solid;
+}
+
+.border-4 {
+  border-width: 4px;
+  border-style: solid;
+}
+
+.border-8 {
+  border-width: 8px;
+  border-style: solid;
+}
+
+.border-t {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #e2e8f0;
+}
+
+.border-r {
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: #e2e8f0;
+}
+
+.border-b {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #e2e8f0;
+}
+
+.border-l {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: #e2e8f0;
+}
+
+.border-t-0 {
+  border-top-width: 0;
+}
+
+.border-r-0 {
+  border-right-width: 0;
+}
+
+.border-b-0 {
+  border-bottom-width: 0;
+}
+
+.border-l-0 {
+  border-left-width: 0;
+}
+
+.border-t-2 {
+  border-top-width: 2px;
+  border-top-style: solid;
+}
+
+.border-r-2 {
+  border-right-width: 2px;
+  border-right-style: solid;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}
+
+.border-l-2 {
+  border-left-width: 2px;
+  border-left-style: solid;
+}
+
+.rounded-none {
+  border-radius: 0;
+}
+
+.rounded-sm {
+  border-radius: 2px;
+}
+
+.rounded {
+  border-radius: 4px;
+}
+
+.rounded-md {
+  border-radius: 6px;
+}
+
+.rounded-lg {
+  border-radius: 8px;
+}
+
+.rounded-xl {
+  border-radius: 12px;
+}
+
+.rounded-2xl {
+  border-radius: 16px;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.rounded-t-none {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.rounded-r-none {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.rounded-b-none {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.rounded-l-none {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.rounded-t {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.rounded-r {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.rounded-b {
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.rounded-l {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.rounded-t-lg {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.rounded-r-lg {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.rounded-b-lg {
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.rounded-l-lg {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.border-solid {
+  border-style: solid;
+}
+
+.border-dashed {
+  border-style: dashed;
+}
+
+.border-dotted {
+  border-style: dotted;
+}
+
+.border-double {
+  border-style: double;
+}
+
+.border-none {
+  border-style: none;
+}
+
+.divide-y > * + * {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #e2e8f0;
+}
+
+.divide-x > * + * {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: #e2e8f0;
+}
+
+.ring {
+  box-shadow: 0 0 0 3px rgba(32, 107, 196, 0.5);
+}
+
+.ring-primary {
+  box-shadow: 0 0 0 3px rgba(32, 107, 196, 0.5);
+}
+
+.ring-success {
+  box-shadow: 0 0 0 3px rgba(47, 179, 68, 0.5);
+}
+
+.ring-danger {
+  box-shadow: 0 0 0 3px rgba(214, 57, 57, 0.5);
+}
+
+.ring-warning {
+  box-shadow: 0 0 0 3px rgba(245, 159, 0, 0.5);
+}
+
+/* Effects utilities - Shadows & Opacity (Tabler aesthetic) */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+.shadow-none {
+  box-shadow: none;
+}
+
+.shadow-xs {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.shadow-sm {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.shadow-md {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-lg {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.shadow-inner {
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-5 {
+  opacity: 0.05;
+}
+
+.opacity-10 {
+  opacity: 0.1;
+}
+
+.opacity-20 {
+  opacity: 0.2;
+}
+
+.opacity-25 {
+  opacity: 0.25;
+}
+
+.opacity-30 {
+  opacity: 0.3;
+}
+
+.opacity-40 {
+  opacity: 0.4;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.opacity-90 {
+  opacity: 0.9;
+}
+
+.opacity-95 {
+  opacity: 0.95;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.mix-blend-normal {
+  mix-blend-mode: normal;
+}
+
+.mix-blend-multiply {
+  mix-blend-mode: multiply;
+}
+
+.mix-blend-screen {
+  mix-blend-mode: screen;
+}
+
+.mix-blend-overlay {
+  mix-blend-mode: overlay;
+}
+
+.mix-blend-darken {
+  mix-blend-mode: darken;
+}
+
+.mix-blend-lighten {
+  mix-blend-mode: lighten;
+}
+
+.bg-blend-normal {
+  background-blend-mode: normal;
+}
+
+.bg-blend-multiply {
+  background-blend-mode: multiply;
+}
+
+.bg-blend-screen {
+  background-blend-mode: screen;
+}
+
+.bg-blend-overlay {
+  background-blend-mode: overlay;
+}
+
+.bg-blend-darken {
+  background-blend-mode: darken;
+}
+
+.bg-blend-lighten {
+  background-blend-mode: lighten;
+}
+
+.blur-none {
+  filter: blur(0);
+}
+
+.blur-sm {
+  filter: blur(4px);
+}
+
+.blur {
+  filter: blur(8px);
+}
+
+.blur-md {
+  filter: blur(12px);
+}
+
+.blur-lg {
+  filter: blur(16px);
+}
+
+.blur-xl {
+  filter: blur(24px);
+}
+
+.brightness-0 {
+  filter: brightness(0);
+}
+
+.brightness-50 {
+  filter: brightness(0.5);
+}
+
+.brightness-75 {
+  filter: brightness(0.75);
+}
+
+.brightness-100 {
+  filter: brightness(1);
+}
+
+.brightness-125 {
+  filter: brightness(1.25);
+}
+
+.brightness-150 {
+  filter: brightness(1.5);
+}
+
+.contrast-0 {
+  filter: contrast(0);
+}
+
+.contrast-50 {
+  filter: contrast(0.5);
+}
+
+.contrast-75 {
+  filter: contrast(0.75);
+}
+
+.contrast-100 {
+  filter: contrast(1);
+}
+
+.contrast-125 {
+  filter: contrast(1.25);
+}
+
+.contrast-150 {
+  filter: contrast(1.5);
+}
+
+.grayscale-0 {
+  filter: grayscale(0);
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.invert-0 {
+  filter: invert(0);
+}
+
+.invert {
+  filter: invert(100%);
+}
+
+.sepia-0 {
+  filter: sepia(0);
+}
+
+.sepia {
+  filter: sepia(100%);
+}
+
+.backdrop-blur-none {
+  backdrop-filter: blur(0);
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(8px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+.backdrop-blur-lg {
+  backdrop-filter: blur(16px);
+}
+
+.backdrop-blur-xl {
+  backdrop-filter: blur(24px);
+}
+
+/* Responsive utility variants */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
 /* Media queries */
 @media (min-width: 576px) {
   .sm\:block {
@@ -3321,27 +4638,192 @@
 }
 /* Media queries */
 /* _base.scss */
-/* Reset styles */
+/* ============================================
+   CSS CUSTOM PROPERTIES (CSS Variables)
+   For runtime theming without recompiling
+   ============================================ */
+:root {
+  /* Colors */
+  --color-primary: #206bc4;
+  --color-secondary: #626976;
+  --color-success: #2fb344;
+  --color-info: #17a2b8;
+  --color-warning: #f59f00;
+  --color-danger: #d63939;
+  --color-light: #f8f9fa;
+  --color-dark: #1e293b;
+  /* Grays */
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+  /* Typography */
+  --font-sans: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Helvetica Neue, Arial, sans-serif;
+  --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+  /* Spacing */
+  --spacing-unit: 1rem;
+  /* Borders */
+  --border-width: 1px;
+  --border-color: #e2e8f0;
+  --border-radius: 4px;
+  --border-radius-sm: 2px;
+  --border-radius-lg: 8px;
+  /* Shadows */
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+}
+
+/* Dark theme (optional - can be toggled with data-theme="dark") */
+[data-theme=dark] {
+  --color-primary: #3884df;
+  --color-light: #1e293b;
+  --color-dark: #f1f5f9;
+  --gray-50: #0f172a;
+  --gray-100: #1e293b;
+  --gray-200: #334155;
+  --gray-300: #475569;
+  --gray-700: #cbd5e1;
+  --gray-800: #e2e8f0;
+  --gray-900: #f1f5f9;
+  --border-color: #334155;
+}
+
+/* ============================================
+   RESET & BASE STYLES
+   Clean, professional reset inspired by Tabler
+   ============================================ */
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margins */
 body,
-ul,
-ol,
-li,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p {
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
   margin: 0;
   padding: 0;
 }
 
-/* Typography styles */
+/* Body defaults - Tabler aesthetic */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: #0f172a;
+  background-color: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Heading defaults */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  color: #0f172a;
+}
+
+/* Remove list styles on ul, ol with class */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+a:hover {
+  color: #195398;
+}
+
+/* Images */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Form elements */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Button reset */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+/* Remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* Selection color */
+::selection {
+  background-color: rgba(32, 107, 196, 0.2);
+  color: #0f172a;
+}
+
+/* Focus visible (accessibility) */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 /* _flex.scss */
@@ -3385,6 +4867,1348 @@ body {
 
 .justify-end {
   justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.content-start {
+  align-content: flex-start;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-end {
+  align-content: flex-end;
+}
+
+.content-between {
+  align-content: space-between;
+}
+
+.content-around {
+  align-content: space-around;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
+}
+
+.flex-initial {
+  flex: 0 1 auto;
+}
+
+.flex-none {
+  flex: none;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.flex-grow-0 {
+  flex-grow: 0;
+}
+
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
+}
+
+/* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+/* Utility classes for spacing */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+.m-0 {
+  margin: 0;
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mr-0 {
+  margin-right: 0;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.ml-0 {
+  margin-left: 0;
+}
+
+.mx-0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.my-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.m-1 {
+  margin: 0.25rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mr-1 {
+  margin-right: 0.25rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.my-1 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.m-2 {
+  margin: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.m-4 {
+  margin: 1rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mr-4 {
+  margin-right: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.m-8 {
+  margin: 2rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mr-8 {
+  margin-right: 2rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.ml-8 {
+  margin-left: 2rem;
+}
+
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.m-12 {
+  margin: 3rem;
+}
+
+.mt-12 {
+  margin-top: 3rem;
+}
+
+.mr-12 {
+  margin-right: 3rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
+.ml-12 {
+  margin-left: 3rem;
+}
+
+.mx-12 {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.m-16 {
+  margin: 4rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+}
+
+.mr-16 {
+  margin-right: 4rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
+.ml-16 {
+  margin-left: 4rem;
+}
+
+.mx-16 {
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.m-20 {
+  margin: 5rem;
+}
+
+.mt-20 {
+  margin-top: 5rem;
+}
+
+.mr-20 {
+  margin-right: 5rem;
+}
+
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
+.ml-20 {
+  margin-left: 5rem;
+}
+
+.mx-20 {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.m-24 {
+  margin: 6rem;
+}
+
+.mt-24 {
+  margin-top: 6rem;
+}
+
+.mr-24 {
+  margin-right: 6rem;
+}
+
+.mb-24 {
+  margin-bottom: 6rem;
+}
+
+.ml-24 {
+  margin-left: 6rem;
+}
+
+.mx-24 {
+  margin-left: 6rem;
+  margin-right: 6rem;
+}
+
+.my-24 {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+.m-32 {
+  margin: 8rem;
+}
+
+.mt-32 {
+  margin-top: 8rem;
+}
+
+.mr-32 {
+  margin-right: 8rem;
+}
+
+.mb-32 {
+  margin-bottom: 8rem;
+}
+
+.ml-32 {
+  margin-left: 8rem;
+}
+
+.mx-32 {
+  margin-left: 8rem;
+  margin-right: 8rem;
+}
+
+.my-32 {
+  margin-top: 8rem;
+  margin-bottom: 8rem;
+}
+
+.m-40 {
+  margin: 10rem;
+}
+
+.mt-40 {
+  margin-top: 10rem;
+}
+
+.mr-40 {
+  margin-right: 10rem;
+}
+
+.mb-40 {
+  margin-bottom: 10rem;
+}
+
+.ml-40 {
+  margin-left: 10rem;
+}
+
+.mx-40 {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.my-40 {
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+}
+
+.m-48 {
+  margin: 12rem;
+}
+
+.mt-48 {
+  margin-top: 12rem;
+}
+
+.mr-48 {
+  margin-right: 12rem;
+}
+
+.mb-48 {
+  margin-bottom: 12rem;
+}
+
+.ml-48 {
+  margin-left: 12rem;
+}
+
+.mx-48 {
+  margin-left: 12rem;
+  margin-right: 12rem;
+}
+
+.my-48 {
+  margin-top: 12rem;
+  margin-bottom: 12rem;
+}
+
+.m-64 {
+  margin: 16rem;
+}
+
+.mt-64 {
+  margin-top: 16rem;
+}
+
+.mr-64 {
+  margin-right: 16rem;
+}
+
+.mb-64 {
+  margin-bottom: 16rem;
+}
+
+.ml-64 {
+  margin-left: 16rem;
+}
+
+.mx-64 {
+  margin-left: 16rem;
+  margin-right: 16rem;
+}
+
+.my-64 {
+  margin-top: 16rem;
+  margin-bottom: 16rem;
+}
+
+.m-80 {
+  margin: 20rem;
+}
+
+.mt-80 {
+  margin-top: 20rem;
+}
+
+.mr-80 {
+  margin-right: 20rem;
+}
+
+.mb-80 {
+  margin-bottom: 20rem;
+}
+
+.ml-80 {
+  margin-left: 20rem;
+}
+
+.mx-80 {
+  margin-left: 20rem;
+  margin-right: 20rem;
+}
+
+.my-80 {
+  margin-top: 20rem;
+  margin-bottom: 20rem;
+}
+
+.m-96 {
+  margin: 24rem;
+}
+
+.mt-96 {
+  margin-top: 24rem;
+}
+
+.mr-96 {
+  margin-right: 24rem;
+}
+
+.mb-96 {
+  margin-bottom: 24rem;
+}
+
+.ml-96 {
+  margin-left: 24rem;
+}
+
+.mx-96 {
+  margin-left: 24rem;
+  margin-right: 24rem;
+}
+
+.my-96 {
+  margin-top: 24rem;
+  margin-bottom: 24rem;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.pt-0 {
+  padding-top: 0;
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+
+.pb-0 {
+  padding-bottom: 0;
+}
+
+.pl-0 {
+  padding-left: 0;
+}
+
+.px-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
+}
+
+.pr-1 {
+  padding-right: 0.25rem;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
+.pr-2 {
+  padding-right: 0.5rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
+}
+
+.pr-4 {
+  padding-right: 1rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pl-4 {
+  padding-left: 1rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
+}
+
+.pr-8 {
+  padding-right: 2rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
+.pl-8 {
+  padding-left: 2rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.p-12 {
+  padding: 3rem;
+}
+
+.pt-12 {
+  padding-top: 3rem;
+}
+
+.pr-12 {
+  padding-right: 3rem;
+}
+
+.pb-12 {
+  padding-bottom: 3rem;
+}
+
+.pl-12 {
+  padding-left: 3rem;
+}
+
+.px-12 {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.p-16 {
+  padding: 4rem;
+}
+
+.pt-16 {
+  padding-top: 4rem;
+}
+
+.pr-16 {
+  padding-right: 4rem;
+}
+
+.pb-16 {
+  padding-bottom: 4rem;
+}
+
+.pl-16 {
+  padding-left: 4rem;
+}
+
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.p-20 {
+  padding: 5rem;
+}
+
+.pt-20 {
+  padding-top: 5rem;
+}
+
+.pr-20 {
+  padding-right: 5rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
+.pl-20 {
+  padding-left: 5rem;
+}
+
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.p-24 {
+  padding: 6rem;
+}
+
+.pt-24 {
+  padding-top: 6rem;
+}
+
+.pr-24 {
+  padding-right: 6rem;
+}
+
+.pb-24 {
+  padding-bottom: 6rem;
+}
+
+.pl-24 {
+  padding-left: 6rem;
+}
+
+.px-24 {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.p-32 {
+  padding: 8rem;
+}
+
+.pt-32 {
+  padding-top: 8rem;
+}
+
+.pr-32 {
+  padding-right: 8rem;
+}
+
+.pb-32 {
+  padding-bottom: 8rem;
+}
+
+.pl-32 {
+  padding-left: 8rem;
+}
+
+.px-32 {
+  padding-left: 8rem;
+  padding-right: 8rem;
+}
+
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.p-40 {
+  padding: 10rem;
+}
+
+.pt-40 {
+  padding-top: 10rem;
+}
+
+.pr-40 {
+  padding-right: 10rem;
+}
+
+.pb-40 {
+  padding-bottom: 10rem;
+}
+
+.pl-40 {
+  padding-left: 10rem;
+}
+
+.px-40 {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+.py-40 {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.p-48 {
+  padding: 12rem;
+}
+
+.pt-48 {
+  padding-top: 12rem;
+}
+
+.pr-48 {
+  padding-right: 12rem;
+}
+
+.pb-48 {
+  padding-bottom: 12rem;
+}
+
+.pl-48 {
+  padding-left: 12rem;
+}
+
+.px-48 {
+  padding-left: 12rem;
+  padding-right: 12rem;
+}
+
+.py-48 {
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+}
+
+.p-64 {
+  padding: 16rem;
+}
+
+.pt-64 {
+  padding-top: 16rem;
+}
+
+.pr-64 {
+  padding-right: 16rem;
+}
+
+.pb-64 {
+  padding-bottom: 16rem;
+}
+
+.pl-64 {
+  padding-left: 16rem;
+}
+
+.px-64 {
+  padding-left: 16rem;
+  padding-right: 16rem;
+}
+
+.py-64 {
+  padding-top: 16rem;
+  padding-bottom: 16rem;
+}
+
+.p-80 {
+  padding: 20rem;
+}
+
+.pt-80 {
+  padding-top: 20rem;
+}
+
+.pr-80 {
+  padding-right: 20rem;
+}
+
+.pb-80 {
+  padding-bottom: 20rem;
+}
+
+.pl-80 {
+  padding-left: 20rem;
+}
+
+.px-80 {
+  padding-left: 20rem;
+  padding-right: 20rem;
+}
+
+.py-80 {
+  padding-top: 20rem;
+  padding-bottom: 20rem;
+}
+
+.p-96 {
+  padding: 24rem;
+}
+
+.pt-96 {
+  padding-top: 24rem;
+}
+
+.pr-96 {
+  padding-right: 24rem;
+}
+
+.pb-96 {
+  padding-bottom: 24rem;
+}
+
+.pl-96 {
+  padding-left: 24rem;
+}
+
+.px-96 {
+  padding-left: 24rem;
+  padding-right: 24rem;
+}
+
+.py-96 {
+  padding-top: 24rem;
+  padding-bottom: 24rem;
+}
+
+.gap-0 {
+  gap: 0;
+}
+
+.gap-x-0 {
+  column-gap: 0;
+}
+
+.gap-y-0 {
+  row-gap: 0;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-x-1 {
+  column-gap: 0.25rem;
+}
+
+.gap-y-1 {
+  row-gap: 0.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-x-2 {
+  column-gap: 0.5rem;
+}
+
+.gap-y-2 {
+  row-gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.gap-x-4 {
+  column-gap: 1rem;
+}
+
+.gap-y-4 {
+  row-gap: 1rem;
+}
+
+.gap-8 {
+  gap: 2rem;
+}
+
+.gap-x-8 {
+  column-gap: 2rem;
+}
+
+.gap-y-8 {
+  row-gap: 2rem;
+}
+
+.gap-12 {
+  gap: 3rem;
+}
+
+.gap-x-12 {
+  column-gap: 3rem;
+}
+
+.gap-y-12 {
+  row-gap: 3rem;
+}
+
+.gap-16 {
+  gap: 4rem;
+}
+
+.gap-x-16 {
+  column-gap: 4rem;
+}
+
+.gap-y-16 {
+  row-gap: 4rem;
+}
+
+.gap-20 {
+  gap: 5rem;
+}
+
+.gap-x-20 {
+  column-gap: 5rem;
+}
+
+.gap-y-20 {
+  row-gap: 5rem;
+}
+
+.gap-24 {
+  gap: 6rem;
+}
+
+.gap-x-24 {
+  column-gap: 6rem;
+}
+
+.gap-y-24 {
+  row-gap: 6rem;
+}
+
+.gap-32 {
+  gap: 8rem;
+}
+
+.gap-x-32 {
+  column-gap: 8rem;
+}
+
+.gap-y-32 {
+  row-gap: 8rem;
+}
+
+.gap-40 {
+  gap: 10rem;
+}
+
+.gap-x-40 {
+  column-gap: 10rem;
+}
+
+.gap-y-40 {
+  row-gap: 10rem;
+}
+
+.gap-48 {
+  gap: 12rem;
+}
+
+.gap-x-48 {
+  column-gap: 12rem;
+}
+
+.gap-y-48 {
+  row-gap: 12rem;
+}
+
+.gap-64 {
+  gap: 16rem;
+}
+
+.gap-x-64 {
+  column-gap: 16rem;
+}
+
+.gap-y-64 {
+  row-gap: 16rem;
+}
+
+.gap-80 {
+  gap: 20rem;
+}
+
+.gap-x-80 {
+  column-gap: 20rem;
+}
+
+.gap-y-80 {
+  row-gap: 20rem;
+}
+
+.gap-96 {
+  gap: 24rem;
+}
+
+.gap-x-96 {
+  column-gap: 24rem;
+}
+
+.gap-y-96 {
+  row-gap: 24rem;
+}
+
+.space-x-0 > * + * {
+  margin-left: 0;
+}
+
+.space-y-0 > * + * {
+  margin-top: 0;
+}
+
+.space-x-1 > * + * {
+  margin-left: 0.25rem;
+}
+
+.space-y-1 > * + * {
+  margin-top: 0.25rem;
+}
+
+.space-x-2 > * + * {
+  margin-left: 0.5rem;
+}
+
+.space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+
+.space-x-4 > * + * {
+  margin-left: 1rem;
+}
+
+.space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.space-x-8 > * + * {
+  margin-left: 2rem;
+}
+
+.space-y-8 > * + * {
+  margin-top: 2rem;
+}
+
+.space-x-12 > * + * {
+  margin-left: 3rem;
+}
+
+.space-y-12 > * + * {
+  margin-top: 3rem;
+}
+
+.space-x-16 > * + * {
+  margin-left: 4rem;
+}
+
+.space-y-16 > * + * {
+  margin-top: 4rem;
+}
+
+.space-x-20 > * + * {
+  margin-left: 5rem;
+}
+
+.space-y-20 > * + * {
+  margin-top: 5rem;
+}
+
+.space-x-24 > * + * {
+  margin-left: 6rem;
+}
+
+.space-y-24 > * + * {
+  margin-top: 6rem;
+}
+
+.space-x-32 > * + * {
+  margin-left: 8rem;
+}
+
+.space-y-32 > * + * {
+  margin-top: 8rem;
+}
+
+.space-x-40 > * + * {
+  margin-left: 10rem;
+}
+
+.space-y-40 > * + * {
+  margin-top: 10rem;
+}
+
+.space-x-48 > * + * {
+  margin-left: 12rem;
+}
+
+.space-y-48 > * + * {
+  margin-top: 12rem;
+}
+
+.space-x-64 > * + * {
+  margin-left: 16rem;
+}
+
+.space-y-64 > * + * {
+  margin-top: 16rem;
+}
+
+.space-x-80 > * + * {
+  margin-left: 20rem;
+}
+
+.space-y-80 > * + * {
+  margin-top: 20rem;
+}
+
+.space-x-96 > * + * {
+  margin-left: 24rem;
+}
+
+.space-y-96 > * + * {
+  margin-top: 24rem;
 }
 
 /* _grid.scss */
@@ -3504,36 +6328,36 @@ body {
   border: none;
   border-radius: 4px;
   transition: background-color 0.3s ease-in-out;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
 }
 .btn--primary {
-  background-color: #007bff;
+  background-color: #206bc4;
   color: #fff;
 }
 .btn--primary:hover {
-  background-color: #0062cc;
+  background-color: #195398;
 }
 .btn--secondary {
-  background-color: #6c757d;
+  background-color: #626976;
   color: #fff;
 }
 .btn--secondary:hover {
-  background-color: #545b62;
+  background-color: #4b505a;
 }
 .btn--success {
-  background-color: #28a745;
+  background-color: #2fb344;
   color: #fff;
 }
 .btn--success:hover {
-  background-color: #1e7e34;
+  background-color: #248b35;
 }
 .btn--error {
-  background-color: #dc3545;
+  background-color: #d63939;
   color: #fff;
 }
 .btn--error:hover {
-  background-color: #bd2130;
+  background-color: #b62626;
 }
 .btn :disabled {
   opacity: 0.5;
@@ -3542,7 +6366,7 @@ body {
 
 .card {
   /* Card base styles */
-  border: 1px solid #6c757d;
+  border: 1px solid #626976;
   border-radius: 4px;
   padding: 1rem;
   background-color: white;
@@ -3556,7 +6380,7 @@ body {
   margin-bottom: 0.5rem;
 }
 .card .card-content {
-  color: #6c757d;
+  color: #626976;
   line-height: 1.5;
 }
 

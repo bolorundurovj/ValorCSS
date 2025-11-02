@@ -1,25 +1,199 @@
 /* _base.scss */
 
-/* Reset styles */
+/* ============================================
+   CSS CUSTOM PROPERTIES (CSS Variables)
+   For runtime theming without recompiling
+   ============================================ */
+:root {
+  /* Colors */
+  --color-primary: #{$primary};
+  --color-secondary: #{$secondary};
+  --color-success: #{$success};
+  --color-info: #{$info};
+  --color-warning: #{$warning};
+  --color-danger: #{$danger};
+  --color-light: #{$light};
+  --color-dark: #{$dark};
+
+  /* Grays */
+  --gray-50: #{$gray-50};
+  --gray-100: #{$gray-100};
+  --gray-200: #{$gray-200};
+  --gray-300: #{$gray-300};
+  --gray-400: #{$gray-400};
+  --gray-500: #{$gray-500};
+  --gray-600: #{$gray-600};
+  --gray-700: #{$gray-700};
+  --gray-800: #{$gray-800};
+  --gray-900: #{$gray-900};
+
+  /* Typography */
+  --font-sans: #{$font-family};
+  --font-mono: #{$font-family-mono};
+  --font-size-base: #{$base-font-size};
+  --line-height-base: #{$line-height};
+
+  /* Spacing */
+  --spacing-unit: #{$spacing-unit};
+
+  /* Borders */
+  --border-width: #{$border-width};
+  --border-color: #{$border-color};
+  --border-radius: #{$border-radius};
+  --border-radius-sm: #{$border-radius-sm};
+  --border-radius-lg: #{$border-radius-lg};
+
+  /* Shadows */
+  --shadow-xs: #{$shadow-xs};
+  --shadow-sm: #{$shadow-sm};
+  --shadow: #{$shadow};
+  --shadow-md: #{$shadow-md};
+  --shadow-lg: #{$shadow-lg};
+  --shadow-xl: #{$shadow-xl};
+
+  /* Transitions */
+  --transition-fast: #{$transition-fast};
+  --transition-base: #{$transition-base};
+  --transition-slow: #{$transition-slow};
+}
+
+/* Dark theme (optional - can be toggled with data-theme="dark") */
+[data-theme="dark"] {
+  --color-primary: #{lighten($primary, 10%)};
+  --color-light: #{$gray-800};
+  --color-dark: #{$gray-100};
+  --gray-50: #{$gray-900};
+  --gray-100: #{$gray-800};
+  --gray-200: #{$gray-700};
+  --gray-300: #{$gray-600};
+  --gray-700: #{$gray-300};
+  --gray-800: #{$gray-200};
+  --gray-900: #{$gray-100};
+  --border-color: #{$gray-700};
+}
+
+/* ============================================
+   RESET & BASE STYLES
+   Clean, professional reset inspired by Tabler
+   ============================================ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margins */
 body,
-ul,
-ol,
-li,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-p {
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
   margin: 0;
   padding: 0;
 }
 
-/* Typography styles */
+/* Body defaults - Tabler aesthetic */
 body {
-  font-family: $font-family;
-  font-size: $base-font-size;
-  line-height: $line-height;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: $gray-900;
+  background-color: $gray-50;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Heading defaults */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-tight;
+  color: $gray-900;
+}
+
+/* Remove list styles on ul, ol with class */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+
+  &:hover {
+    color: #{darken($primary, 10%)};
+  }
+}
+
+/* Images */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Form elements */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Button reset */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+/* Remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba($primary, 0.2);
+  color: $gray-900;
+}
+
+/* Focus visible (accessibility) */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 

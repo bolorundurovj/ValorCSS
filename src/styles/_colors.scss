@@ -1,17 +1,87 @@
 /* Utility classes for colors */
-.text-primary {
-  color: $primary-color;
+@import "_variables.scss";
+
+// Map of all colors
+$colors: (
+  // Semantic colors
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+
+  // Brand colors
+  "blue": $blue,
+  "azure": $azure,
+  "indigo": $indigo,
+  "purple": $purple,
+  "pink": $pink,
+  "red": $red,
+  "orange": $orange,
+  "yellow": $yellow,
+  "lime": $lime,
+  "green": $green,
+  "teal": $teal,
+  "cyan": $cyan,
+
+  // Grays
+  "gray-50": $gray-50,
+  "gray-100": $gray-100,
+  "gray-200": $gray-200,
+  "gray-300": $gray-300,
+  "gray-400": $gray-400,
+  "gray-500": $gray-500,
+  "gray-600": $gray-600,
+  "gray-700": $gray-700,
+  "gray-800": $gray-800,
+  "gray-900": $gray-900,
+
+  // Special
+  "white": #ffffff,
+  "black": #000000,
+  "transparent": transparent
+);
+
+// Generate text color utilities
+@each $name, $color in $colors {
+  .text-#{$name} {
+    color: $color;
+  }
 }
 
-.bg-primary {
-  background-color: $primary-color;
+// Generate background color utilities
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color: $color;
+  }
 }
 
-.text-secondary {
-  color: $secondary-color;
+// Generate border color utilities
+@each $name, $color in $colors {
+  .border-#{$name} {
+    border-color: $color;
+  }
 }
 
-.bg-secondary {
-  background-color: $secondary-color;
-}
+// Additional text utilities
+.text-inherit { color: inherit; }
+.text-current { color: currentColor; }
+
+// Additional background utilities
+.bg-inherit { background-color: inherit; }
+.bg-current { background-color: currentColor; }
+
+// Background opacity utilities (for hover states, etc.)
+.bg-opacity-10 { background-color: rgba(0, 0, 0, 0.1); }
+.bg-opacity-20 { background-color: rgba(0, 0, 0, 0.2); }
+.bg-opacity-30 { background-color: rgba(0, 0, 0, 0.3); }
+.bg-opacity-40 { background-color: rgba(0, 0, 0, 0.4); }
+.bg-opacity-50 { background-color: rgba(0, 0, 0, 0.5); }
+.bg-opacity-60 { background-color: rgba(0, 0, 0, 0.6); }
+.bg-opacity-70 { background-color: rgba(0, 0, 0, 0.7); }
+.bg-opacity-80 { background-color: rgba(0, 0, 0, 0.8); }
+.bg-opacity-90 { background-color: rgba(0, 0, 0, 0.9); }
 

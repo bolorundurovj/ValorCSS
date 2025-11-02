@@ -1,0 +1,92 @@
+/* Border utilities - Tabler aesthetic (subtle, clean) */
+@import "../_variables.scss";
+
+// Border Width
+.border { border-width: $border-width; border-style: solid; border-color: $border-color; }
+.border-0 { border-width: 0; }
+.border-2 { border-width: $border-width-thick; border-style: solid; }
+.border-4 { border-width: 4px; border-style: solid; }
+.border-8 { border-width: 8px; border-style: solid; }
+
+// Individual sides
+.border-t { border-top-width: $border-width; border-top-style: solid; border-top-color: $border-color; }
+.border-r { border-right-width: $border-width; border-right-style: solid; border-right-color: $border-color; }
+.border-b { border-bottom-width: $border-width; border-bottom-style: solid; border-bottom-color: $border-color; }
+.border-l { border-left-width: $border-width; border-left-style: solid; border-left-color: $border-color; }
+
+.border-t-0 { border-top-width: 0; }
+.border-r-0 { border-right-width: 0; }
+.border-b-0 { border-bottom-width: 0; }
+.border-l-0 { border-left-width: 0; }
+
+.border-t-2 { border-top-width: $border-width-thick; border-top-style: solid; }
+.border-r-2 { border-right-width: $border-width-thick; border-right-style: solid; }
+.border-b-2 { border-bottom-width: $border-width-thick; border-bottom-style: solid; }
+.border-l-2 { border-left-width: $border-width-thick; border-left-style: solid; }
+
+// Border Radius (Tabler-style - subtle rounding)
+.rounded-none { border-radius: 0; }
+.rounded-sm { border-radius: $border-radius-sm; }
+.rounded { border-radius: $border-radius; }
+.rounded-md { border-radius: $border-radius-md; }
+.rounded-lg { border-radius: $border-radius-lg; }
+.rounded-xl { border-radius: $border-radius-xl; }
+.rounded-2xl { border-radius: $border-radius-2xl; }
+.rounded-full { border-radius: $border-radius-full; }
+
+// Individual corners
+.rounded-t-none { border-top-left-radius: 0; border-top-right-radius: 0; }
+.rounded-r-none { border-top-right-radius: 0; border-bottom-right-radius: 0; }
+.rounded-b-none { border-bottom-right-radius: 0; border-bottom-left-radius: 0; }
+.rounded-l-none { border-top-left-radius: 0; border-bottom-left-radius: 0; }
+
+.rounded-t { border-top-left-radius: $border-radius; border-top-right-radius: $border-radius; }
+.rounded-r { border-top-right-radius: $border-radius; border-bottom-right-radius: $border-radius; }
+.rounded-b { border-bottom-right-radius: $border-radius; border-bottom-left-radius: $border-radius; }
+.rounded-l { border-top-left-radius: $border-radius; border-bottom-left-radius: $border-radius; }
+
+.rounded-t-lg { border-top-left-radius: $border-radius-lg; border-top-right-radius: $border-radius-lg; }
+.rounded-r-lg { border-top-right-radius: $border-radius-lg; border-bottom-right-radius: $border-radius-lg; }
+.rounded-b-lg { border-bottom-right-radius: $border-radius-lg; border-bottom-left-radius: $border-radius-lg; }
+.rounded-l-lg { border-top-left-radius: $border-radius-lg; border-bottom-left-radius: $border-radius-lg; }
+
+// Border Style
+.border-solid { border-style: solid; }
+.border-dashed { border-style: dashed; }
+.border-dotted { border-style: dotted; }
+.border-double { border-style: double; }
+.border-none { border-style: none; }
+
+// Divide utilities (for spacing between elements)
+.divide-y > * + * {
+  border-top-width: $border-width;
+  border-top-style: solid;
+  border-top-color: $border-color;
+}
+
+.divide-x > * + * {
+  border-left-width: $border-width;
+  border-left-style: solid;
+  border-left-color: $border-color;
+}
+
+// Ring utilities (for focus states, inspired by Tailwind)
+.ring {
+  box-shadow: 0 0 0 3px rgba($primary, 0.5);
+}
+
+.ring-primary {
+  box-shadow: 0 0 0 3px rgba($primary, 0.5);
+}
+
+.ring-success {
+  box-shadow: 0 0 0 3px rgba($success, 0.5);
+}
+
+.ring-danger {
+  box-shadow: 0 0 0 3px rgba($danger, 0.5);
+}
+
+.ring-warning {
+  box-shadow: 0 0 0 3px rgba($warning, 0.5);
+}

@@ -1,8 +1,49 @@
-/* Colors */
-$primary-color: #007bff;
-$secondary-color: #6c757d;
-$success-color: #28a745;
-$error-color: #dc3545;
+/* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+
+/* Brand Colors - Clean & Professional */
+$blue: #206bc4;
+$azure: #4299e1;
+$indigo: #4263eb;
+$purple: #ae3ec9;
+$pink: #d6336c;
+$red: #d63939;
+$orange: #f76707;
+$yellow: #f59f00;
+$lime: #74b816;
+$green: #2fb344;
+$teal: #0ca678;
+$cyan: #17a2b8;
+
+/* Semantic Colors - UI States */
+$primary: $blue;
+$secondary: #626976;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: $red;
+$light: #f8f9fa;
+$dark: #1e293b;
+
+/* Gray Scale - For Subtle UI Elements */
+$gray-50: #f8fafc;
+$gray-100: #f1f5f9;
+$gray-200: #e2e8f0;
+$gray-300: #cbd5e1;
+$gray-400: #94a3b8;
+$gray-500: #64748b;
+$gray-600: #475569;
+$gray-700: #334155;
+$gray-800: #1e293b;
+$gray-900: #0f172a;
+
+/* Legacy color names (for backwards compatibility) */
+$primary-color: $primary;
+$secondary-color: $secondary;
+$success-color: $success;
+$error-color: $danger;
 
 /* Spacing */
 $spacing-unit: 1rem;
@@ -12,13 +53,72 @@ $spacing-large: calc($spacing-unit * 2);
 $spacing-xlarge: calc($spacing-unit * 3);
 $spacing-xxlarge: calc($spacing-unit * 4);
 
-/* Typography */
+/* Typography - Clean & Readable */
 $base-font-size: 16px;
-$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+$font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', Arial, sans-serif;
+$font-family-mono: 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
 $line-height: 1.5;
+$line-height-tight: 1.25;
+$line-height-loose: 1.75;
+
+/* Font Sizes */
+$font-size-xs: 0.75rem;    // 12px
+$font-size-sm: 0.875rem;   // 14px
+$font-size-base: 1rem;     // 16px
+$font-size-lg: 1.125rem;   // 18px
+$font-size-xl: 1.25rem;    // 20px
+$font-size-2xl: 1.5rem;    // 24px
+$font-size-3xl: 1.875rem;  // 30px
+$font-size-4xl: 2.25rem;   // 36px
+$font-size-5xl: 3rem;      // 48px
+
+/* Font Weights */
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+/* Borders - Subtle & Clean */
+$border-width: 1px;
+$border-width-thick: 2px;
+$border-color: $gray-200;
+$border-color-dark: $gray-300;
+
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+$border-radius-sm: 2px;
+$border-radius: 4px;
+$border-radius-md: 6px;
+$border-radius-lg: 8px;
+$border-radius-xl: 12px;
+$border-radius-2xl: 16px;
+$border-radius-full: 9999px;
+
+/* Shadows - Subtle Depth (Tabler style) */
+$shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+$shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+/* Transitions */
+$transition-fast: 150ms ease-in-out;
+$transition-base: 200ms ease-in-out;
+$transition-slow: 300ms ease-in-out;
 
 /* Breakpoints */
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
+
+/* Z-index Scale */
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
