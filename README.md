@@ -2,6 +2,29 @@
 
 A modern, utility-first CSS framework combining Tailwind CSS's utility approach with Tabler UI's clean, professional aesthetic. Built with SCSS and optimized for production use.
 
+## Monorepo Structure
+
+ValorCSS is organized as an NX-powered monorepo to support multiple framework integrations:
+
+```
+valorcss-monorepo/
+├── packages/
+│   ├── core/              # CSS framework (SCSS)
+│   ├── react/             # React components (Coming Soon)
+│   ├── vue/               # Vue 3 components (Coming Soon)
+│   └── svelte/            # Svelte components (Coming Soon)
+├── index.html             # Documentation hub
+└── nx.json                # NX configuration
+```
+
+**Current Packages:**
+- `@valorcss/core` - Core CSS framework with 14 components and 500+ utilities
+
+**Coming Soon:**
+- `@valorcss/react` - React component library
+- `@valorcss/vue` - Vue 3 component library
+- `@valorcss/svelte` - Svelte component library
+
 ## Features
 
 - **Utility-First Approach**: Comprehensive utility classes for rapid development
@@ -509,6 +532,7 @@ Use responsive utilities:
 
 - Node.js 14+ and Yarn
 - Dart Sass
+- NX CLI (installed as dev dependency)
 
 ### Development
 
@@ -516,20 +540,33 @@ Use responsive utilities:
 # Install dependencies
 yarn install
 
-# Watch for changes
-yarn watch
+# Build core CSS package
+yarn build:core
 
-# Build development version
+# Watch core package for changes
+yarn watch:core
+
+# Build all packages
 yarn build
 
-# Build production version
-yarn build:prod
+# View dependency graph
+yarn graph
+```
 
-# Build with PurgeCSS optimization
-yarn build:purge
+### NX Commands
 
-# Build all versions
-yarn build:all
+```bash
+# Build specific package
+nx build @valorcss/core
+
+# Watch for changes
+nx watch @valorcss/core
+
+# Run production build with PurgeCSS
+nx build:purge @valorcss/core
+
+# Show affected projects
+nx affected:graph
 ```
 
 ### Production Optimization

@@ -1,0 +1,28 @@
+{
+  "name": "@valorcss/core",
+  "version": "1.0.0",
+  "description": "Modern utility-first CSS framework combining Tailwind's approach with Tabler's aesthetic",
+  "main": "dist/main.css",
+  "style": "dist/main.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "css",
+    "css-framework",
+    "utility-first",
+    "bem",
+    "sass",
+    "scss",
+    "tabler",
+    "tailwind"
+  ],
+  "author": "Valiant-Joshua Bolorunduro <valiantjoshuabolorunduro@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bolorundurovj/ValorCSS.git",
+    "directory": "packages/core"
+  }
+}
