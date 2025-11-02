@@ -12,12 +12,17 @@
     "start:dev": "nodemon index.js",
     "build": "sass src/styles/main.scss dist/main.css --style=expanded --source-map",
     "build:prod": "sass src/styles/main.scss dist/main.min.css --style=compressed --no-source-map",
+    "build:purge": "sass src/styles/main.scss dist/main.min.css --style=compressed --no-source-map && postcss dist/main.min.css -o dist/main.min.css",
     "build:all": "npm run build && npm run build:prod && cp dist/main.css public/main.css",
+    "build:optimized": "npm run build && npm run build:purge && cp dist/main.css public/main.css && cp dist/main.min.css public/main.min.css",
     "watch": "sass --watch src/styles/main.scss dist/main.css --style=expanded --source-map"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^7.0.2",
     "express": "^4.20.0",
     "nodemon": "^2.0.22",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
     "sass": "^1.63.6"
   },
   "dependencies": {}
