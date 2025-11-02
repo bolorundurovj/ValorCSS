@@ -1,26 +1,29 @@
 {
-  "name": "ValorCSS",
+  "name": "valorcss-monorepo",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "description": "ValorCSS Design System - Monorepo",
   "repository": "git@github.com-bolorundurovj:bolorundurovj/ValorCSS.git",
   "author": "Valiant-Joshua Bolorunduro <valiantjoshuabolorunduro@gmail.com>",
   "license": "MIT",
-  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "nx run-many -t build",
+    "build:core": "nx build @valorcss/core",
+    "watch:core": "nx watch @valorcss/core",
     "start": "node index.js",
     "start:dev": "nodemon index.js",
-    "build": "sass src/styles/main.scss dist/main.css --style=expanded --source-map",
-    "build:prod": "sass src/styles/main.scss dist/main.min.css --style=compressed --no-source-map",
-    "build:purge": "sass src/styles/main.scss dist/main.min.css --style=compressed --no-source-map && postcss dist/main.min.css -o dist/main.min.css",
-    "build:all": "npm run build && npm run build:prod && cp dist/main.css public/main.css",
-    "build:optimized": "npm run build && npm run build:purge && cp dist/main.css public/main.css && cp dist/main.min.css public/main.min.css",
-    "watch": "sass --watch src/styles/main.scss dist/main.css --style=expanded --source-map"
+    "test": "nx run-many -t test",
+    "graph": "nx graph"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^7.0.2",
+    "@nx/js": "^22.0.2",
     "express": "^4.20.0",
     "nodemon": "^2.0.22",
+    "nx": "^22.0.2",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
     "sass": "^1.63.6"
