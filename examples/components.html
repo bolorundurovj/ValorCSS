@@ -15,7 +15,7 @@
 
   <!-- Navigation -->
   <nav class="navbar bg-white shadow-sm">
-    <a href="#" class="navbar__brand">ValorCSS</a>
+    <a href="../index.html" class="navbar__brand">ValorCSS</a>
     <ul class="navbar__nav">
       <li class="navbar__item">
         <a href="landing.html" class="navbar__link">Home</a>
@@ -42,7 +42,7 @@
     </div>
 
     <!-- Buttons -->
-    <div class="component-section">
+    <div class="component-section" id="buttons">
       <div class="card">
         <div class="card__header">
           <h2 class="card__title">Buttons</h2>
@@ -95,7 +95,7 @@
     </div>
 
     <!-- Badges -->
-    <div class="component-section">
+    <div class="component-section" id="badges">
       <div class="card">
         <div class="card__header">
           <h2 class="card__title">Badges</h2>
@@ -136,7 +136,7 @@
     </div>
 
     <!-- Alerts -->
-    <div class="component-section">
+    <div class="component-section" id="alerts">
       <div class="card">
         <div class="card__header">
           <h2 class="card__title">Alerts</h2>
@@ -167,7 +167,7 @@
     </div>
 
     <!-- Cards -->
-    <div class="component-section">
+    <div class="component-section" id="cards">
       <div class="card">
         <div class="card__header">
           <h2 class="card__title">Cards</h2>
@@ -209,7 +209,7 @@
     </div>
 
     <!-- Tables -->
-    <div class="component-section">
+    <div class="component-section" id="tables">
       <div class="card">
         <div class="card__header">
           <h2 class="card__title">Tables</h2>
@@ -254,7 +254,7 @@
     </div>
 
     <!-- Tabs -->
-    <div class="component-section">
+    <div class="component-section" id="tabs">
       <div class="card">
         <div class="card__header">
           <h2 class="card__title">Tabs</h2>
@@ -302,7 +302,7 @@
     </div>
 
     <!-- Accordion -->
-    <div class="component-section">
+    <div class="component-section" id="accordion">
       <div class="card">
         <div class="card__header">
           <h2 class="card__title">Accordion</h2>
@@ -350,7 +350,7 @@
     </div>
 
     <!-- Dropdowns -->
-    <div class="component-section">
+    <div class="component-section" id="dropdown">
       <div class="card">
         <div class="card__header">
           <h2 class="card__title">Dropdowns</h2>
@@ -397,7 +397,7 @@
     </div>
 
     <!-- Breadcrumb -->
-    <div class="component-section">
+    <div class="component-section" id="navigation">
       <div class="card">
         <div class="card__header">
           <h2 class="card__title">Breadcrumb</h2>
@@ -447,7 +447,7 @@
     </div>
 
     <!-- Modals -->
-    <div class="component-section">
+    <div class="component-section" id="modals">
       <div class="card">
         <div class="card__header">
           <h2 class="card__title">Modals</h2>
@@ -478,8 +478,73 @@
       </div>
     </div>
 
+    <!-- Toasts -->
+    <div class="component-section" id="toasts">
+      <div class="card">
+        <div class="card__header">
+          <h2 class="card__title">Toast Notifications</h2>
+        </div>
+        <div class="card__body">
+          <div class="flex gap-3 flex-wrap mb-4">
+            <button class="btn btn-success" onclick="showToast('success')">Show Success</button>
+            <button class="btn btn-danger" onclick="showToast('danger')">Show Error</button>
+            <button class="btn btn-warning" onclick="showToast('warning')">Show Warning</button>
+            <button class="btn btn-info" onclick="showToast('info')">Show Info</button>
+            <button class="btn btn-primary" onclick="showToast('primary')">Show Primary</button>
+          </div>
+
+          <div class="text-sm text-gray-600">
+            <p class="mb-2"><strong>Usage:</strong> Click the buttons above to see toast notifications in action.</p>
+            <p class="mb-2"><strong>Positions:</strong> Toasts can be positioned at top-right, top-left, bottom-right, bottom-left, top-center, or bottom-center.</p>
+            <p><strong>Features:</strong> Auto-dismiss, color variants, icons, progress bars, and action buttons.</p>
+          </div>
+
+          <!-- Static Examples -->
+          <div class="mt-6">
+            <h4 class="text-sm font-semibold text-gray-700 mb-3">Static Examples</h4>
+
+            <div class="toast toast--success mb-3" style="position: relative;">
+              <div class="toast__icon">✓</div>
+              <div class="toast__content">
+                <div class="toast__title">Success!</div>
+                <div class="toast__message">Your changes have been saved successfully.</div>
+              </div>
+              <button class="toast__close">&times;</button>
+            </div>
+
+            <div class="toast toast--danger mb-3" style="position: relative;">
+              <div class="toast__icon">✕</div>
+              <div class="toast__content">
+                <div class="toast__title">Error</div>
+                <div class="toast__message">There was a problem processing your request.</div>
+              </div>
+              <button class="toast__close">&times;</button>
+            </div>
+
+            <div class="toast toast--warning mb-3" style="position: relative;">
+              <div class="toast__icon">⚠</div>
+              <div class="toast__content">
+                <div class="toast__title">Warning</div>
+                <div class="toast__message">Your session will expire in 5 minutes.</div>
+              </div>
+              <button class="toast__close">&times;</button>
+            </div>
+
+            <div class="toast toast--info" style="position: relative;">
+              <div class="toast__icon">ℹ</div>
+              <div class="toast__content">
+                <div class="toast__title">Info</div>
+                <div class="toast__message">A new version is available. Please refresh.</div>
+              </div>
+              <button class="toast__close">&times;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Stats Cards -->
-    <div class="component-section">
+    <div class="component-section" id="stats">
       <div class="card">
         <div class="card__header">
           <h2 class="card__title">Stats Cards</h2>
@@ -545,6 +610,72 @@
     </div>
 
   </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container toast-container--top-right" id="toastContainer"></div>
+
+  <script>
+    // Toast notification demo
+    let toastCounter = 0;
+
+    function showToast(variant) {
+      const container = document.getElementById('toastContainer');
+      const toastId = `toast-${toastCounter++}`;
+
+      const icons = {
+        success: '✓',
+        danger: '✕',
+        error: '✕',
+        warning: '⚠',
+        info: 'ℹ',
+        primary: '★'
+      };
+
+      const titles = {
+        success: 'Success!',
+        danger: 'Error',
+        error: 'Error',
+        warning: 'Warning',
+        info: 'Info',
+        primary: 'Notification'
+      };
+
+      const messages = {
+        success: 'Your action was completed successfully.',
+        danger: 'There was a problem processing your request.',
+        error: 'There was a problem processing your request.',
+        warning: 'Please review your input and try again.',
+        info: 'This is an informational message.',
+        primary: 'This is a primary notification.'
+      };
+
+      const toast = document.createElement('div');
+      toast.id = toastId;
+      toast.className = `toast toast--${variant} toast-fade-in`;
+      toast.innerHTML = `
+        <div class="toast__icon">${icons[variant]}</div>
+        <div class="toast__content">
+          <div class="toast__title">${titles[variant]}</div>
+          <div class="toast__message">${messages[variant]}</div>
+        </div>
+        <button class="toast__close" onclick="removeToast('${toastId}')">&times;</button>
+      `;
+
+      container.appendChild(toast);
+
+      // Auto dismiss after 5 seconds
+      setTimeout(() => removeToast(toastId), 5000);
+    }
+
+    function removeToast(toastId) {
+      const toast = document.getElementById(toastId);
+      if (toast) {
+        toast.classList.remove('toast-fade-in');
+        toast.classList.add('toast-fade-out');
+        setTimeout(() => toast.remove(), 200);
+      }
+    }
+  </script>
 
 </body>
 </html>
