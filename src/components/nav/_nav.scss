@@ -1,0 +1,193 @@
+/* Navigation Components - Tabler-inspired aesthetic with BEM */
+@import "../../styles/_variables.scss";
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: #fff;
+  border-bottom: $border-width solid $border-color;
+
+  &__brand {
+    display: inline-block;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    margin-right: 1rem;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    line-height: inherit;
+    white-space: nowrap;
+    color: $gray-900;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin: 0 0.5rem;
+  }
+
+  &__link {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: $gray-700;
+    text-decoration: none;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: $primary;
+    }
+
+    &--active {
+      color: $primary;
+      font-weight: $font-weight-semibold;
+    }
+  }
+
+  &--dark {
+    background-color: $dark;
+    border-color: darken($dark, 5%);
+
+    .navbar__brand,
+    .navbar__link {
+      color: rgba(255, 255, 255, 0.9);
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    .navbar__link--active {
+      color: #fff;
+    }
+  }
+}
+
+/* ============================================
+   BREADCRUMB
+   ============================================ */
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: $gray-100;
+  border-radius: $border-radius;
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    & + &::before {
+      display: inline-block;
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      color: $gray-500;
+      content: "/";
+    }
+
+    &--active {
+      color: $gray-600;
+    }
+  }
+
+  &__link {
+    color: $primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+
+.pagination {
+  display: flex;
+  list-style: none;
+  border-radius: $border-radius;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    margin: 0 0.125rem;
+
+    &:first-child .pagination__link {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+
+    &:last-child .pagination__link {
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+
+    &--active .pagination__link {
+      z-index: 3;
+      color: #fff;
+      background-color: $primary;
+      border-color: $primary;
+    }
+
+    &--disabled .pagination__link {
+      color: $gray-400;
+      pointer-events: none;
+      background-color: #fff;
+      border-color: $border-color;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -$border-width;
+    line-height: 1.25;
+    color: $primary;
+    text-decoration: none;
+    background-color: #fff;
+    border: $border-width solid $border-color;
+    transition: all $transition-fast;
+
+    &:hover {
+      z-index: 2;
+      color: darken($primary, 10%);
+      background-color: $gray-100;
+      border-color: $border-color;
+    }
+
+    &:focus {
+      z-index: 3;
+      outline: 0;
+      box-shadow: 0 0 0 3px rgba($primary, 0.15);
+    }
+  }
+}
+
+/* Non-BEM aliases */
+.nav-link { @extend .navbar__link; }
+.breadcrumb-item { @extend .breadcrumb__item; }
+.page-item { @extend .pagination__item; }
+.page-link { @extend .pagination__link; }

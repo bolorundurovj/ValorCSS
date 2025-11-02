@@ -1,0 +1,97 @@
+/* Alert Component - Tabler-inspired aesthetic with BEM */
+@import "../../styles/_variables.scss";
+
+.alert {
+  position: relative;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  border: $border-width solid transparent;
+  border-radius: $border-radius;
+
+  &__title {
+    margin-bottom: 0.5rem;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    color: inherit;
+  }
+
+  &__link {
+    font-weight: $font-weight-semibold;
+    text-decoration: underline;
+    color: inherit;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  // Color variants
+  &--primary {
+    color: darken($primary, 15%);
+    background-color: lighten($primary, 42%);
+    border-color: lighten($primary, 38%);
+  }
+
+  &--secondary {
+    color: darken($secondary, 15%);
+    background-color: lighten($secondary, 42%);
+    border-color: lighten($secondary, 38%);
+  }
+
+  &--success {
+    color: darken($success, 15%);
+    background-color: lighten($success, 48%);
+    border-color: lighten($success, 44%);
+  }
+
+  &--danger {
+    color: darken($danger, 15%);
+    background-color: lighten($danger, 42%);
+    border-color: lighten($danger, 38%);
+  }
+
+  &--warning {
+    color: darken($warning, 25%);
+    background-color: lighten($warning, 42%);
+    border-color: lighten($warning, 38%);
+  }
+
+  &--info {
+    color: darken($info, 15%);
+    background-color: lighten($info, 45%);
+    border-color: lighten($info, 41%);
+  }
+
+  // Dismissible alert
+  &--dismissible {
+    padding-right: 3rem;
+
+    .alert__close {
+      position: absolute;
+      top: 0.75rem;
+      right: 1rem;
+      padding: 0.5rem;
+      background: transparent;
+      border: none;
+      opacity: 0.5;
+      cursor: pointer;
+      color: inherit;
+      font-size: $font-size-lg;
+      line-height: 1;
+      transition: opacity $transition-fast;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+// Non-BEM aliases
+.alert-primary { @extend .alert--primary; }
+.alert-secondary { @extend .alert--secondary; }
+.alert-success { @extend .alert--success; }
+.alert-danger { @extend .alert--danger; }
+.alert-warning { @extend .alert--warning; }
+.alert-info { @extend .alert--info; }
+.alert-dismissible { @extend .alert--dismissible; }

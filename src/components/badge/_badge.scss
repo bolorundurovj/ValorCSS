@@ -1,0 +1,67 @@
+/* Badge Component - Tabler-inspired aesthetic with BEM */
+@import "../../styles/_variables.scss";
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: $border-radius-sm;
+
+  &:empty {
+    display: none;
+  }
+
+  // Badge variants
+  &--primary { background-color: $primary; }
+  &--secondary { background-color: $secondary; }
+  &--success { background-color: $success; }
+  &--danger { background-color: $danger; }
+  &--warning { background-color: $warning; color: $gray-900; }
+  &--info { background-color: $info; }
+  &--light { background-color: $light; color: $gray-900; }
+  &--dark { background-color: $dark; }
+
+  // Outline variants
+  &--outline-primary { background-color: transparent; color: $primary; border: $border-width solid $primary; }
+  &--outline-secondary { background-color: transparent; color: $secondary; border: $border-width solid $secondary; }
+  &--outline-success { background-color: transparent; color: $success; border: $border-width solid $success; }
+  &--outline-danger { background-color: transparent; color: $danger; border: $border-width solid $danger; }
+
+  // Pill style
+  &--pill { border-radius: $border-radius-full; }
+
+  // Dot (small indicator)
+  &--dot {
+    padding: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+  }
+
+  // Sizes
+  &--sm {
+    padding: 0.125rem 0.375rem;
+    font-size: 0.625rem;
+  }
+
+  &--lg {
+    padding: 0.375rem 0.75rem;
+    font-size: $font-size-sm;
+  }
+}
+
+// Non-BEM aliases
+.badge-primary { @extend .badge--primary; }
+.badge-secondary { @extend .badge--secondary; }
+.badge-success { @extend .badge--success; }
+.badge-danger { @extend .badge--danger; }
+.badge-warning { @extend .badge--warning; }
+.badge-info { @extend .badge--info; }
+.badge-pill { @extend .badge--pill; }

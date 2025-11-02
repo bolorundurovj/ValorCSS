@@ -1,21 +1,279 @@
-.card {
-  /* Card base styles */
-  border: 1px solid $secondary-color;
-  border-radius: 4px;
-  padding: $spacing-medium;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Card Component - Tabler-inspired aesthetic with BEM */
+@import "../../styles/_variables.scss";
 
-  /* Card title styles */
-  .card-title {
-    font-size: $base-font-size * 1.1;
-    font-weight: bold;
-    margin-bottom: $spacing-small;
+/* ============================================
+   CARD BLOCK
+   Clean, professional cards with subtle elevation
+   ============================================ */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-sm;
+  transition: all $transition-fast;
+
+  /* ===== CARD ELEMENTS ===== */
+
+  // Card Header
+  &__header {
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 0;
+    background-color: transparent;
+    border-bottom: $border-width solid $border-color;
+
+    &:first-child {
+      border-radius: $border-radius-lg $border-radius-lg 0 0;
+    }
+
+    // Header with actions
+    &--actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
-  /* Card content styles */
-  .card-content {
-    color: $secondary-color;
-    line-height: 1.5;
+  // Card Body
+  &__body {
+    flex: 1 1 auto;
+    padding: 1.5rem;
+    color: $gray-900;
+  }
+
+  // Card Footer
+  &__footer {
+    padding: 1rem 1.5rem;
+    background-color: $gray-50;
+    border-top: $border-width solid $border-color;
+
+    &:last-child {
+      border-radius: 0 0 $border-radius-lg $border-radius-lg;
+    }
+  }
+
+  // Card Title
+  &__title {
+    margin-bottom: 0.75rem;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-tight;
+    color: $gray-900;
+  }
+
+  // Card Subtitle
+  &__subtitle {
+    margin-top: -0.375rem;
+    margin-bottom: 0.5rem;
+    font-size: $font-size-sm;
+    color: $gray-600;
+  }
+
+  // Card Text
+  &__text {
+    margin-bottom: 1rem;
+    color: $gray-700;
+    line-height: $line-height;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // Card Image
+  &__img {
+    width: 100%;
+    border-radius: $border-radius-lg $border-radius-lg 0 0;
+
+    &--top {
+      border-radius: $border-radius-lg $border-radius-lg 0 0;
+    }
+
+    &--bottom {
+      border-radius: 0 0 $border-radius-lg $border-radius-lg;
+    }
+  }
+
+  // Card Link
+  &__link {
+    color: $primary;
+    text-decoration: none;
+    transition: color $transition-fast;
+
+    &:hover {
+      color: darken($primary, 10%);
+      text-decoration: underline;
+    }
+
+    & + & {
+      margin-left: 1rem;
+    }
+  }
+
+  /* ===== CARD MODIFIERS ===== */
+
+  // Hoverable card
+  &--hover {
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  // Borderless card
+  &--borderless {
+    border: none;
+    box-shadow: none;
+  }
+
+  // Compact card
+  &--compact {
+    .card__header {
+      padding: 0.75rem 1rem;
+    }
+
+    .card__body {
+      padding: 1rem;
+    }
+
+    .card__footer {
+      padding: 0.75rem 1rem;
+    }
+  }
+
+  // Colored cards
+  &--primary {
+    border-color: $primary;
+
+    .card__header {
+      background-color: $primary;
+      color: #fff;
+      border-color: $primary;
+    }
+  }
+
+  &--secondary {
+    border-color: $secondary;
+
+    .card__header {
+      background-color: $secondary;
+      color: #fff;
+      border-color: $secondary;
+    }
+  }
+
+  &--success {
+    border-color: $success;
+
+    .card__header {
+      background-color: $success;
+      color: #fff;
+      border-color: $success;
+    }
+  }
+
+  &--danger {
+    border-color: $danger;
+
+    .card__header {
+      background-color: $danger;
+      color: #fff;
+      border-color: $danger;
+    }
+  }
+
+  &--warning {
+    border-color: $warning;
+
+    .card__header {
+      background-color: $warning;
+      color: $gray-900;
+      border-color: $warning;
+    }
+  }
+
+  &--info {
+    border-color: $info;
+
+    .card__header {
+      background-color: $info;
+      color: #fff;
+      border-color: $info;
+    }
   }
 }
+
+/* ============================================
+   CARD GROUP & DECK
+   Multiple cards together
+   ============================================ */
+
+.card-group {
+  display: flex;
+  flex-direction: column;
+
+  > .card {
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > .card {
+      flex: 1 0 0%;
+      margin-bottom: 0;
+
+      &:not(:last-child) {
+        border-right: 0;
+        border-radius: $border-radius-lg 0 0 $border-radius-lg;
+      }
+
+      &:not(:first-child) {
+        border-radius: 0 $border-radius-lg $border-radius-lg 0;
+      }
+
+      &:not(:first-child):not(:last-child) {
+        border-radius: 0;
+      }
+    }
+  }
+}
+
+.card-deck {
+  display: flex;
+  flex-direction: column;
+
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    flex-flow: row wrap;
+    margin-right: -1rem;
+    margin-left: -1rem;
+
+    .card {
+      flex: 1 0 0%;
+      margin-right: 1rem;
+      margin-bottom: 0;
+      margin-left: 1rem;
+    }
+  }
+}
+
+/* Legacy non-BEM support */
+.card-header { @extend .card__header; }
+.card-body { @extend .card__body; }
+.card-footer { @extend .card__footer; }
+.card-title { @extend .card__title; }
+.card-subtitle { @extend .card__subtitle; }
+.card-text { @extend .card__text; }
+.card-content { @extend .card__text; } // Legacy alias
+

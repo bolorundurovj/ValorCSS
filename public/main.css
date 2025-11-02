@@ -6316,72 +6316,1437 @@ button {
   gap: 1rem;
 }
 
-/* _button.scss */
-/* Button base styles */
+/* Button Component - Tabler-inspired aesthetic */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+/* ============================================
+   BASE BUTTON STYLES
+   Clean, professional buttons with subtle effects
+   ============================================ */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
   padding: 0.5rem 1rem;
-  font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
   text-align: center;
   text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
   cursor: pointer;
-  border: none;
+  user-select: none;
+  border: 1px solid transparent;
   border-radius: 4px;
-  transition: background-color 0.3s ease-in-out;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
+  background-color: transparent;
+  transition: all 150ms ease-in-out;
 }
-.btn--primary {
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.btn:active {
+  transform: translateY(0);
+}
+.btn:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(32, 107, 196, 0.3);
+}
+.btn:disabled, .btn.disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ============================================
+   BUTTON SIZES
+   ============================================ */
+.btn-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  border-radius: 2px;
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  border-radius: 8px;
+}
+
+.btn-xl {
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  line-height: 1.75;
+  border-radius: 8px;
+}
+
+/* ============================================
+   SOLID BUTTONS (Primary style)
+   ============================================ */
+.btn-primary, .btn--primary {
+  color: #fff;
   background-color: #206bc4;
+  border-color: #206bc4;
+}
+.btn-primary:hover, .btn--primary:hover {
+  background-color: #1a58a1;
+  border-color: #1a58a1;
+}
+.btn-primary:active, .btn--primary:active {
+  background-color: #174e8f;
+  border-color: #174e8f;
+}
+
+.btn-secondary, .btn--secondary {
   color: #fff;
-}
-.btn--primary:hover {
-  background-color: #195398;
-}
-.btn--secondary {
   background-color: #626976;
+  border-color: #626976;
+}
+.btn-secondary:hover, .btn--secondary:hover {
+  background-color: #4f5560;
+  border-color: #4f5560;
+}
+.btn-secondary:active, .btn--secondary:active {
+  background-color: #464b55;
+  border-color: #464b55;
+}
+
+.btn-success, .btn--success {
   color: #fff;
-}
-.btn--secondary:hover {
-  background-color: #4b505a;
-}
-.btn--success {
   background-color: #2fb344;
+  border-color: #2fb344;
+}
+.btn-success:hover, .btn--success:hover {
+  background-color: #279338;
+  border-color: #279338;
+}
+.btn-success:active, .btn--success:active {
+  background-color: #228332;
+  border-color: #228332;
+}
+
+.btn-danger, .btn--error {
   color: #fff;
-}
-.btn--success:hover {
-  background-color: #248b35;
-}
-.btn--error {
   background-color: #d63939;
+  border-color: #d63939;
+}
+.btn-danger:hover, .btn--error:hover {
+  background-color: #bf2727;
+  border-color: #bf2727;
+}
+.btn-danger:active, .btn--error:active {
+  background-color: #ae2424;
+  border-color: #ae2424;
+}
+
+.btn-warning {
+  color: #0f172a;
+  background-color: #f59f00;
+  border-color: #f59f00;
+}
+.btn-warning:hover {
+  background-color: #cc8500;
+  border-color: #cc8500;
+}
+.btn-warning:active {
+  background-color: #b87700;
+  border-color: #b87700;
+}
+
+.btn-info {
   color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
 }
-.btn--error:hover {
-  background-color: #b62626;
+.btn-info:hover {
+  background-color: #128294;
+  border-color: #128294;
 }
-.btn :disabled {
-  opacity: 0.5;
+.btn-info:active {
+  background-color: #107282;
+  border-color: #107282;
+}
+
+.btn-light {
+  color: #0f172a;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+.btn-light:hover {
+  background-color: #e9ecef;
+  border-color: #e9ecef;
+}
+.btn-light:active {
+  background-color: #e0e5e9;
+  border-color: #e0e5e9;
+}
+
+.btn-dark {
+  color: #fff;
+  background-color: #1e293b;
+  border-color: #1e293b;
+}
+.btn-dark:hover {
+  background-color: #2c3c56;
+  border-color: #2c3c56;
+}
+.btn-dark:active {
+  background-color: #334564;
+  border-color: #334564;
+}
+
+/* ============================================
+   OUTLINE BUTTONS (Tabler style)
+   ============================================ */
+.btn-outline-primary {
+  color: #206bc4;
+  border-color: #206bc4;
+}
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #206bc4;
+  border-color: #206bc4;
+}
+
+.btn-outline-secondary {
+  color: #626976;
+  border-color: #626976;
+}
+.btn-outline-secondary:hover {
+  color: #fff;
+  background-color: #626976;
+  border-color: #626976;
+}
+
+.btn-outline-success {
+  color: #2fb344;
+  border-color: #2fb344;
+}
+.btn-outline-success:hover {
+  color: #fff;
+  background-color: #2fb344;
+  border-color: #2fb344;
+}
+
+.btn-outline-danger {
+  color: #d63939;
+  border-color: #d63939;
+}
+.btn-outline-danger:hover {
+  color: #fff;
+  background-color: #d63939;
+  border-color: #d63939;
+}
+
+.btn-outline-warning {
+  color: #f59f00;
+  border-color: #f59f00;
+}
+.btn-outline-warning:hover {
+  color: #0f172a;
+  background-color: #f59f00;
+  border-color: #f59f00;
+}
+
+.btn-outline-info {
+  color: #17a2b8;
+  border-color: #17a2b8;
+}
+.btn-outline-info:hover {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+/* ============================================
+   GHOST BUTTONS (No border)
+   ============================================ */
+.btn-ghost {
+  color: #206bc4;
+  border-color: transparent;
+}
+.btn-ghost:hover {
+  background-color: rgba(32, 107, 196, 0.1);
+}
+.btn-ghost:active {
+  background-color: rgba(32, 107, 196, 0.15);
+}
+
+.btn-ghost-secondary {
+  color: #626976;
+}
+.btn-ghost-secondary:hover {
+  background-color: rgba(98, 105, 118, 0.1);
+}
+
+/* ============================================
+   SPECIAL BUTTON STYLES
+   ============================================ */
+.btn-icon {
+  padding: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.btn-icon.btn-sm {
+  width: 2rem;
+  height: 2rem;
+  padding: 0.375rem;
+}
+.btn-icon.btn-lg {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.75rem;
+}
+
+.btn-block {
+  display: flex;
+  width: 100%;
+}
+
+.btn-group {
+  display: inline-flex;
+  vertical-align: middle;
+}
+.btn-group > .btn {
+  position: relative;
+  flex: 1 1 auto;
+  border-radius: 0;
+}
+.btn-group > .btn:not(:last-child) {
+  border-right-width: 0;
+}
+.btn-group > .btn:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.btn-group > .btn:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-right-width: 1px;
+}
+.btn-group > .btn:hover, .btn-group > .btn:focus {
+  z-index: 1;
+}
+
+.btn-loading {
+  position: relative;
+  color: transparent;
+  pointer-events: none;
+}
+.btn-loading::after {
+  content: "";
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  top: 50%;
+  left: 50%;
+  margin-left: -0.5rem;
+  margin-top: -0.5rem;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 0.6s linear infinite;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Legacy BEM-style support */
+/* Form Components - Tabler-inspired aesthetic */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+/* ============================================
+   FORM LABELS & HELPERS
+   ============================================ */
+.form-label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+.form-text {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: #475569;
+}
+
+.form-hint {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+/* ============================================
+   TEXT INPUTS
+   ============================================ */
+.form-control, .form-select {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #0f172a;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  appearance: none;
+  transition: all 150ms ease-in-out;
+}
+.form-control::placeholder, .form-select::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+.form-control:focus, .form-select:focus {
+  color: #0f172a;
+  background-color: #fff;
+  border-color: #206bc4;
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(32, 107, 196, 0.1);
+}
+.form-control:disabled, .form-select:disabled, .form-control[readonly], [readonly].form-select {
+  background-color: #f1f5f9;
+  opacity: 0.7;
   cursor: not-allowed;
 }
 
-.card {
-  /* Card base styles */
-  border: 1px solid #626976;
-  border-radius: 4px;
-  padding: 1rem;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* Card title styles */
-  /* Card content styles */
+textarea.form-control, textarea.form-select {
+  min-height: 100px;
+  resize: vertical;
 }
-.card .card-title {
-  font-size: 17.6px;
-  font-weight: bold;
+
+.form-control-sm, .form-select-sm {
+  padding: 0.375rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 2px;
+}
+
+.form-control-lg, .form-select-lg {
+  padding: 0.75rem 1rem;
+  font-size: 1.125rem;
+  border-radius: 8px;
+}
+
+/* ============================================
+   SELECT
+   ============================================ */
+.form-select {
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+}
+.form-select:focus {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23206bc4' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.form-select-sm {
+  padding-right: 2rem;
+  background-position: right 0.5rem center;
+}
+
+.form-select-lg {
+  padding-right: 3rem;
+  background-position: right 1rem center;
+}
+
+/* ============================================
+   CHECKBOX & RADIO
+   ============================================ */
+.form-check {
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 1.75rem;
   margin-bottom: 0.5rem;
 }
-.card .card-content {
-  color: #626976;
+.form-check .form-check-input {
+  float: left;
+  margin-left: -1.75rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.125rem;
+  vertical-align: top;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  border: 1px solid #94a3b8;
+  appearance: none;
+  print-color-adjust: exact;
+  transition: all 150ms ease-in-out;
+}
+.form-check .form-check-input[type=checkbox] {
+  border-radius: 2px;
+}
+.form-check .form-check-input[type=radio] {
+  border-radius: 50%;
+}
+.form-check .form-check-input:active {
+  filter: brightness(95%);
+}
+.form-check .form-check-input:focus {
+  border-color: #206bc4;
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(32, 107, 196, 0.15);
+}
+.form-check .form-check-input:checked {
+  background-color: #206bc4;
+  border-color: #206bc4;
+}
+.form-check .form-check-input:checked[type=checkbox] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
+}
+.form-check .form-check-input:checked[type=radio] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+}
+.form-check .form-check-input:disabled {
+  pointer-events: none;
+  filter: none;
+  opacity: 0.5;
+}
+.form-check .form-check-label {
+  color: #334155;
+  cursor: pointer;
+}
+.form-check .form-check-label:hover {
+  color: #0f172a;
+}
+.form-check.form-check-inline {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+/* ============================================
+   SWITCH (Tabler style)
+   ============================================ */
+.form-switch {
+  padding-left: 2.5rem;
+}
+.form-switch .form-check-input {
+  width: 2rem;
+  margin-left: -2.5rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(0,0,0,0.25)'/%3e%3c/svg%3e");
+  background-position: left center;
+  border-radius: 2rem;
+  transition: background-position 150ms ease-in-out ease-in-out;
+}
+.form-switch .form-check-input:focus {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23206bc4'/%3e%3c/svg%3e");
+}
+.form-switch .form-check-input:checked {
+  background-position: right center;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+/* ============================================
+   INPUT GROUPS
+   ============================================ */
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+.input-group > .form-control,
+.input-group > .form-select {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  min-width: 0;
+}
+.input-group > .form-control:not(:last-child),
+.input-group > .form-select:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.input-group > .form-control:not(:first-child),
+.input-group > .form-select:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group-text {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #334155;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+}
+.input-group-text:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-right: 0;
+}
+.input-group-text:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-left: 0;
+}
+
+/* ============================================
+   VALIDATION STATES
+   ============================================ */
+.is-valid {
+  border-color: #2fb344;
+}
+.is-valid:focus {
+  border-color: #2fb344;
+  box-shadow: 0 0 0 3px rgba(47, 179, 68, 0.15);
+}
+.is-valid ~ .valid-feedback {
+  display: block;
+}
+
+.is-invalid {
+  border-color: #d63939;
+}
+.is-invalid:focus {
+  border-color: #d63939;
+  box-shadow: 0 0 0 3px rgba(214, 57, 57, 0.15);
+}
+.is-invalid ~ .invalid-feedback {
+  display: block;
+}
+
+.valid-feedback,
+.invalid-feedback {
+  display: none;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.valid-feedback {
+  color: #2fb344;
+}
+
+.invalid-feedback {
+  color: #d63939;
+}
+
+/* ============================================
+   RANGE SLIDER
+   ============================================ */
+.form-range {
+  width: 100%;
+  height: 1.5rem;
+  padding: 0;
+  background-color: transparent;
+  appearance: none;
+}
+.form-range:focus {
+  outline: 0;
+}
+.form-range:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(32, 107, 196, 0.3);
+}
+.form-range:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(32, 107, 196, 0.3);
+}
+.form-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 0.5rem;
+  color: transparent;
+  cursor: pointer;
+  background-color: #e2e8f0;
+  border-color: transparent;
+  border-radius: 1rem;
+}
+.form-range::-webkit-slider-thumb {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: -0.375rem;
+  background-color: #206bc4;
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  appearance: none;
+  transition: all 150ms ease-in-out;
+}
+.form-range::-webkit-slider-thumb:active {
+  background-color: #1a58a1;
+}
+.form-range::-moz-range-track {
+  width: 100%;
+  height: 0.5rem;
+  color: transparent;
+  cursor: pointer;
+  background-color: #e2e8f0;
+  border-color: transparent;
+  border-radius: 1rem;
+}
+.form-range::-moz-range-thumb {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #206bc4;
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  appearance: none;
+  transition: all 150ms ease-in-out;
+}
+.form-range::-moz-range-thumb:active {
+  background-color: #1a58a1;
+}
+.form-range:disabled {
+  pointer-events: none;
+}
+.form-range:disabled::-webkit-slider-thumb {
+  background-color: #94a3b8;
+}
+.form-range:disabled::-moz-range-thumb {
+  background-color: #94a3b8;
+}
+
+/* ============================================
+   FILE INPUT
+   ============================================ */
+.form-file {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.form-file input[type=file] {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: calc(2.5rem + 2px);
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.form-file input[type=file]:focus ~ .form-file-label {
+  border-color: #206bc4;
+  box-shadow: 0 0 0 3px rgba(32, 107, 196, 0.1);
+}
+.form-file .form-file-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  height: calc(2.5rem + 2px);
+  padding: 0.5rem 0.75rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #475569;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+.form-file .form-file-label::after {
+  content: "Browse";
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: auto;
+  color: #334155;
+  background-color: #f1f5f9;
+  border-left: 1px solid #e2e8f0;
+  border-radius: 0 4px 4px 0;
+}
+
+/* ============================================
+   FORM GROUPS & LAYOUTS
+   ============================================ */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+}
+.form-row > .col,
+.form-row > [class*=col-] {
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* Floating labels */
+.form-floating {
+  position: relative;
+}
+.form-floating > .form-control,
+.form-floating > .form-select {
+  height: calc(3.5rem + 2px);
+  padding: 1rem 0.75rem;
+}
+.form-floating > .form-control::placeholder,
+.form-floating > .form-select::placeholder {
+  color: transparent;
+}
+.form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown),
+.form-floating > .form-select:focus,
+.form-floating > .form-select:not(:placeholder-shown) {
+  padding-top: 1.625rem;
+  padding-bottom: 0.625rem;
+}
+.form-floating > .form-control:focus ~ label, .form-floating > .form-control:not(:placeholder-shown) ~ label,
+.form-floating > .form-select:focus ~ label,
+.form-floating > .form-select:not(:placeholder-shown) ~ label {
+  opacity: 0.65;
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+.form-floating > label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 1rem 0.75rem;
+  pointer-events: none;
+  border: 1px solid transparent;
+  transform-origin: 0 0;
+  transition: all 150ms ease-in-out;
+}
+
+/* Card Component - Tabler-inspired aesthetic with BEM */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+/* ============================================
+   CARD BLOCK
+   Clean, professional cards with subtle elevation
+   ============================================ */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: all 150ms ease-in-out;
+  /* ===== CARD ELEMENTS ===== */
+  /* ===== CARD MODIFIERS ===== */
+}
+.card__header, .card-header {
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 0;
+  background-color: transparent;
+  border-bottom: 1px solid #e2e8f0;
+}
+.card__header:first-child, .card-header:first-child {
+  border-radius: 8px 8px 0 0;
+}
+.card__header--actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card__body, .card-body {
+  flex: 1 1 auto;
+  padding: 1.5rem;
+  color: #0f172a;
+}
+.card__footer, .card-footer {
+  padding: 1rem 1.5rem;
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+.card__footer:last-child, .card-footer:last-child {
+  border-radius: 0 0 8px 8px;
+}
+.card__title, .card-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #0f172a;
+}
+.card__subtitle, .card-subtitle {
+  margin-top: -0.375rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #475569;
+}
+.card__text, .card-content, .card-text {
+  margin-bottom: 1rem;
+  color: #334155;
   line-height: 1.5;
 }
+.card__text:last-child, .card-content:last-child, .card-text:last-child {
+  margin-bottom: 0;
+}
+.card__img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+.card__img--top {
+  border-radius: 8px 8px 0 0;
+}
+.card__img--bottom {
+  border-radius: 0 0 8px 8px;
+}
+.card__link {
+  color: #206bc4;
+  text-decoration: none;
+  transition: color 150ms ease-in-out;
+}
+.card__link:hover {
+  color: #195398;
+  text-decoration: underline;
+}
+.card__link + .card__link {
+  margin-left: 1rem;
+}
+.card--hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.card--borderless {
+  border: none;
+  box-shadow: none;
+}
+.card--compact .card__header, .card--compact .card-header {
+  padding: 0.75rem 1rem;
+}
+.card--compact .card__body, .card--compact .card-body {
+  padding: 1rem;
+}
+.card--compact .card__footer, .card--compact .card-footer {
+  padding: 0.75rem 1rem;
+}
+.card--primary {
+  border-color: #206bc4;
+}
+.card--primary .card__header, .card--primary .card-header {
+  background-color: #206bc4;
+  color: #fff;
+  border-color: #206bc4;
+}
+.card--secondary {
+  border-color: #626976;
+}
+.card--secondary .card__header, .card--secondary .card-header {
+  background-color: #626976;
+  color: #fff;
+  border-color: #626976;
+}
+.card--success {
+  border-color: #2fb344;
+}
+.card--success .card__header, .card--success .card-header {
+  background-color: #2fb344;
+  color: #fff;
+  border-color: #2fb344;
+}
+.card--danger {
+  border-color: #d63939;
+}
+.card--danger .card__header, .card--danger .card-header {
+  background-color: #d63939;
+  color: #fff;
+  border-color: #d63939;
+}
+.card--warning {
+  border-color: #f59f00;
+}
+.card--warning .card__header, .card--warning .card-header {
+  background-color: #f59f00;
+  color: #0f172a;
+  border-color: #f59f00;
+}
+.card--info {
+  border-color: #17a2b8;
+}
+.card--info .card__header, .card--info .card-header {
+  background-color: #17a2b8;
+  color: #fff;
+  border-color: #17a2b8;
+}
+
+/* ============================================
+   CARD GROUP & DECK
+   Multiple cards together
+   ============================================ */
+.card-group {
+  display: flex;
+  flex-direction: column;
+}
+.card-group > .card {
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .card-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .card-group > .card {
+    flex: 1 0 0%;
+    margin-bottom: 0;
+  }
+  .card-group > .card:not(:last-child) {
+    border-right: 0;
+    border-radius: 8px 0 0 8px;
+  }
+  .card-group > .card:not(:first-child) {
+    border-radius: 0 8px 8px 0;
+  }
+  .card-group > .card:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+}
+
+.card-deck {
+  display: flex;
+  flex-direction: column;
+}
+.card-deck .card {
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .card-deck {
+    flex-flow: row wrap;
+    margin-right: -1rem;
+    margin-left: -1rem;
+  }
+  .card-deck .card {
+    flex: 1 0 0%;
+    margin-right: 1rem;
+    margin-bottom: 0;
+    margin-left: 1rem;
+  }
+}
+
+/* Legacy non-BEM support */
+/* Badge Component - Tabler-inspired aesthetic with BEM */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 2px;
+}
+.badge:empty {
+  display: none;
+}
+.badge--primary, .badge-primary {
+  background-color: #206bc4;
+}
+.badge--secondary, .badge-secondary {
+  background-color: #626976;
+}
+.badge--success, .badge-success {
+  background-color: #2fb344;
+}
+.badge--danger, .badge-danger {
+  background-color: #d63939;
+}
+.badge--warning, .badge-warning {
+  background-color: #f59f00;
+  color: #0f172a;
+}
+.badge--info, .badge-info {
+  background-color: #17a2b8;
+}
+.badge--light {
+  background-color: #f8f9fa;
+  color: #0f172a;
+}
+.badge--dark {
+  background-color: #1e293b;
+}
+.badge--outline-primary {
+  background-color: transparent;
+  color: #206bc4;
+  border: 1px solid #206bc4;
+}
+.badge--outline-secondary {
+  background-color: transparent;
+  color: #626976;
+  border: 1px solid #626976;
+}
+.badge--outline-success {
+  background-color: transparent;
+  color: #2fb344;
+  border: 1px solid #2fb344;
+}
+.badge--outline-danger {
+  background-color: transparent;
+  color: #d63939;
+  border: 1px solid #d63939;
+}
+.badge--pill, .badge-pill {
+  border-radius: 9999px;
+}
+.badge--dot {
+  padding: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+.badge--sm {
+  padding: 0.125rem 0.375rem;
+  font-size: 0.625rem;
+}
+.badge--lg {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* Alert Component - Tabler-inspired aesthetic with BEM */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+.alert {
+  position: relative;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.alert__title {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: inherit;
+}
+.alert__link {
+  font-weight: 600;
+  text-decoration: underline;
+  color: inherit;
+}
+.alert__link:hover {
+  opacity: 0.8;
+}
+.alert--primary, .alert-primary {
+  color: #154782;
+  background-color: #c5dbf5;
+  border-color: #b3d0f3;
+}
+.alert--secondary, .alert-secondary {
+  color: #3f444c;
+  background-color: #d3d6db;
+  border-color: #c8ccd2;
+}
+.alert--success, .alert-success {
+  color: #1f762d;
+  background-color: #e0f7e4;
+  border-color: #d0f3d5;
+}
+.alert--danger, .alert-danger {
+  color: #a12121;
+  background-color: #fbeaea;
+  border-color: #f7dada;
+}
+.alert--warning, .alert-warning {
+  color: #764c00;
+  background-color: #ffedcc;
+  border-color: #ffe6b8;
+}
+.alert--info, .alert-info {
+  color: #0f6674;
+  background-color: #beeff7;
+  border-color: #acebf5;
+}
+.alert--dismissible, .alert-dismissible {
+  padding-right: 3rem;
+}
+.alert--dismissible .alert__close, .alert-dismissible .alert__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  opacity: 0.5;
+  cursor: pointer;
+  color: inherit;
+  font-size: 1.125rem;
+  line-height: 1;
+  transition: opacity 150ms ease-in-out;
+}
+.alert--dismissible .alert__close:hover, .alert-dismissible .alert__close:hover {
+  opacity: 1;
+}
+
+/* Navigation Components - Tabler-inspired aesthetic with BEM */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: #fff;
+  border-bottom: 1px solid #e2e8f0;
+}
+.navbar__brand {
+  display: inline-block;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  margin-right: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: inherit;
+  white-space: nowrap;
+  color: #0f172a;
+  text-decoration: none;
+}
+.navbar__brand:hover {
+  color: #206bc4;
+}
+.navbar__nav {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar__item {
+  margin: 0 0.5rem;
+}
+.navbar__link, .nav-link {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: #334155;
+  text-decoration: none;
+  transition: color 150ms ease-in-out;
+}
+.navbar__link:hover, .nav-link:hover {
+  color: #206bc4;
+}
+.navbar__link--active {
+  color: #206bc4;
+  font-weight: 600;
+}
+.navbar--dark {
+  background-color: #1e293b;
+  border-color: #151d2a;
+}
+.navbar--dark .navbar__brand,
+.navbar--dark .navbar__link,
+.navbar--dark .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+.navbar--dark .navbar__brand:hover,
+.navbar--dark .navbar__link:hover,
+.navbar--dark .nav-link:hover {
+  color: #fff;
+}
+.navbar--dark .navbar__link--active {
+  color: #fff;
+}
+
+/* ============================================
+   BREADCRUMB
+   ============================================ */
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: #f1f5f9;
+  border-radius: 4px;
+}
+.breadcrumb__item, .breadcrumb-item {
+  display: flex;
+  align-items: center;
+}
+.breadcrumb__item + .breadcrumb__item::before, .breadcrumb-item + .breadcrumb__item::before, .breadcrumb__item + .breadcrumb-item::before, .breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: #64748b;
+  content: "/";
+}
+.breadcrumb__item--active {
+  color: #475569;
+}
+.breadcrumb__link {
+  color: #206bc4;
+  text-decoration: none;
+}
+.breadcrumb__link:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+.pagination {
+  display: flex;
+  list-style: none;
+  border-radius: 4px;
+  margin: 0;
+  padding: 0;
+}
+.pagination__item, .page-item {
+  margin: 0 0.125rem;
+}
+.pagination__item:first-child .pagination__link, .pagination__item:first-child .page-link, .page-item:first-child .pagination__link, .page-item:first-child .page-link {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.pagination__item:last-child .pagination__link, .pagination__item:last-child .page-link, .page-item:last-child .pagination__link, .page-item:last-child .page-link {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.pagination__item--active .pagination__link, .pagination__item--active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #206bc4;
+  border-color: #206bc4;
+}
+.pagination__item--disabled .pagination__link, .pagination__item--disabled .page-link {
+  color: #94a3b8;
+  pointer-events: none;
+  background-color: #fff;
+  border-color: #e2e8f0;
+}
+.pagination__link, .page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #206bc4;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  transition: all 150ms ease-in-out;
+}
+.pagination__link:hover, .page-link:hover {
+  z-index: 2;
+  color: #195398;
+  background-color: #f1f5f9;
+  border-color: #e2e8f0;
+}
+.pagination__link:focus, .page-link:focus {
+  z-index: 3;
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(32, 107, 196, 0.15);
+}
+
+/* Non-BEM aliases */
 
 /*# sourceMappingURL=main.css.map */
