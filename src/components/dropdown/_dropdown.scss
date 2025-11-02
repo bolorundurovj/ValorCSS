@@ -1,0 +1,441 @@
+/* Dropdown Component - Tabler-inspired aesthetic with BEM */
+@import "../../styles/_variables.scss";
+
+/* ============================================
+   DROPDOWN
+   Contextual menus and actions
+   ============================================ */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  &__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: $gray-900;
+    background-color: #fff;
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &:hover {
+      background-color: $gray-50;
+      border-color: $gray-400;
+    }
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 3px rgba($primary, 0.15);
+    }
+
+    &--primary {
+      color: #fff;
+      background-color: $primary;
+      border-color: $primary;
+
+      &:hover {
+        background-color: darken($primary, 5%);
+        border-color: darken($primary, 5%);
+      }
+    }
+
+    // Split button variant
+    &--split {
+      border-left: none;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      padding: 0.5rem 0.75rem;
+    }
+
+    .caret {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-left: 0.25rem;
+      vertical-align: middle;
+      border-top: 0.3em solid;
+      border-right: 0.3em solid transparent;
+      border-left: 0.3em solid transparent;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: $z-index-dropdown;
+    display: none;
+    min-width: 180px;
+    margin-top: 0.25rem;
+    padding: 0.5rem 0;
+    font-size: $font-size-base;
+    color: $gray-900;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
+    box-shadow: $shadow-lg;
+
+    &--show {
+      display: block;
+    }
+
+    // Right-aligned dropdown
+    &--right {
+      right: 0;
+      left: auto;
+    }
+
+    // Centered dropdown
+    &--center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    // Dropup variant
+    &--up {
+      top: auto;
+      bottom: 100%;
+      margin-top: 0;
+      margin-bottom: 0.25rem;
+    }
+
+    // Dropstart variant
+    &--start {
+      top: 0;
+      right: 100%;
+      left: auto;
+      margin-top: 0;
+      margin-right: 0.25rem;
+    }
+
+    // Dropend variant
+    &--end {
+      top: 0;
+      left: 100%;
+      margin-top: 0;
+      margin-left: 0.25rem;
+    }
+
+    // Large dropdown
+    &--lg {
+      min-width: 240px;
+      font-size: $font-size-lg;
+    }
+
+    // Small dropdown
+    &--sm {
+      min-width: 140px;
+      font-size: $font-size-sm;
+    }
+  }
+
+  &__item {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    clear: both;
+    font-weight: $font-weight-normal;
+    color: $gray-900;
+    text-align: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &:hover,
+    &:focus {
+      color: $gray-900;
+      background-color: $gray-100;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+
+    &--active {
+      color: #fff;
+      background-color: $primary;
+
+      &:hover,
+      &:focus {
+        background-color: darken($primary, 5%);
+      }
+    }
+
+    &:disabled,
+    &--disabled {
+      color: $gray-400;
+      pointer-events: none;
+      background-color: transparent;
+      cursor: not-allowed;
+    }
+
+    // Item with icon
+    &--icon {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      .icon {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: $gray-600;
+      }
+
+      &:hover .icon,
+      &:focus .icon {
+        color: $gray-900;
+      }
+    }
+
+    &--danger {
+      color: $danger;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+        background-color: $danger;
+      }
+
+      .icon {
+        color: $danger;
+      }
+
+      &:hover .icon,
+      &:focus .icon {
+        color: #fff;
+      }
+    }
+  }
+
+  &__header {
+    display: block;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $gray-700;
+    white-space: nowrap;
+  }
+
+  &__divider {
+    height: 0;
+    margin: 0.5rem 0;
+    overflow: hidden;
+    border-top: $border-width solid $border-color;
+  }
+
+  &__text {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: $gray-700;
+    font-size: $font-size-sm;
+  }
+
+  // Open state
+  &--show {
+    .dropdown__menu {
+      display: block;
+    }
+  }
+}
+
+/* ============================================
+   BUTTON GROUP WITH DROPDOWN
+   ============================================ */
+
+.btn-group {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+
+  > .btn {
+    position: relative;
+    flex: 1 1 auto;
+
+    &:hover,
+    &:focus {
+      z-index: 1;
+    }
+
+    &:not(:first-child) {
+      margin-left: -$border-width;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  .dropdown-toggle-split {
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+
+    &::after {
+      margin-left: 0;
+    }
+  }
+}
+
+/* ============================================
+   MENU (Alternative dropdown style)
+   ============================================ */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  margin: 0;
+  list-style: none;
+  background-color: #fff;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+  box-shadow: $shadow-lg;
+
+  &__item {
+    position: relative;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 1rem;
+    color: $gray-900;
+    text-decoration: none;
+    transition: all $transition-fast;
+
+    &:hover {
+      background-color: $gray-100;
+    }
+
+    &--active {
+      color: $primary;
+      background-color: rgba($primary, 0.1);
+      font-weight: $font-weight-medium;
+    }
+
+    .icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: $gray-600;
+    }
+
+    &:hover .icon {
+      color: $gray-900;
+    }
+
+    &--active .icon {
+      color: $primary;
+    }
+  }
+
+  &__badge {
+    margin-left: auto;
+  }
+
+  &__divider {
+    height: 0;
+    margin: 0.5rem 0;
+    overflow: hidden;
+    border-top: $border-width solid $border-color;
+  }
+
+  &__header {
+    padding: 0.5rem 1rem 0.25rem;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-semibold;
+    color: $gray-500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  // Compact variant
+  &--compact {
+    min-width: 160px;
+    padding: 0.25rem 0;
+
+    .menu__link {
+      padding: 0.5rem 0.75rem;
+      font-size: $font-size-sm;
+    }
+  }
+
+  // With submenu
+  &__item--has-submenu {
+    > .menu__link::after {
+      content: "";
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin-left: auto;
+      border-top: 0.3em solid transparent;
+      border-bottom: 0.3em solid transparent;
+      border-left: 0.3em solid;
+    }
+
+    &:hover > .menu {
+      display: flex;
+    }
+  }
+
+  // Nested submenu
+  .menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 0.25rem;
+    display: none;
+  }
+}
+
+/* ============================================
+   CONTEXT MENU (Right-click menu)
+   ============================================ */
+
+.context-menu {
+  position: fixed;
+  z-index: $z-index-modal;
+  display: none;
+
+  &--show {
+    display: block;
+  }
+
+  .menu {
+    animation: fadeIn $transition-fast;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Non-BEM aliases */
+.dropdown-toggle { @extend .dropdown__toggle; }
+.dropdown-menu { @extend .dropdown__menu; }
+.dropdown-item { @extend .dropdown__item; }
+.dropdown-header { @extend .dropdown__header; }
+.dropdown-divider { @extend .dropdown__divider; }

@@ -1,0 +1,185 @@
+/* Modal Component - Tabler-inspired aesthetic with BEM */
+@import "../../styles/_variables.scss";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-index-modal;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+
+  &.show {
+    display: block;
+  }
+
+  &__dialog {
+    position: relative;
+    width: auto;
+    max-width: 500px;
+    margin: 1.75rem auto;
+    pointer-events: none;
+
+    &--sm {
+      max-width: 300px;
+    }
+
+    &--lg {
+      max-width: 800px;
+    }
+
+    &--xl {
+      max-width: 1140px;
+    }
+
+    &--fullscreen {
+      max-width: none;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+
+      .modal__content {
+        height: 100%;
+        border: 0;
+        border-radius: 0;
+      }
+    }
+
+    &--centered {
+      display: flex;
+      align-items: center;
+      min-height: calc(100% - 3.5rem);
+    }
+
+    &--scrollable {
+      max-height: calc(100% - 3.5rem);
+
+      .modal__content {
+        max-height: calc(100vh - 3.5rem);
+        overflow: hidden;
+      }
+
+      .modal__body {
+        overflow-y: auto;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: $border-width solid rgba(0, 0, 0, 0.2);
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-xl;
+    outline: 0;
+  }
+
+  &__header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    border-bottom: $border-width solid $border-color;
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
+
+    .btn-close {
+      padding: 0.5rem;
+      margin: -0.5rem -0.5rem -0.5rem auto;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    line-height: 1.5;
+    color: $gray-900;
+  }
+
+  &__body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: 1.5rem;
+    color: $gray-700;
+  }
+
+  &__footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1.25rem 1.5rem;
+    background-color: $gray-50;
+    border-top: $border-width solid $border-color;
+    border-bottom-right-radius: $border-radius-lg;
+    border-bottom-left-radius: $border-radius-lg;
+
+    > * {
+      margin: 0.25rem;
+    }
+  }
+}
+
+// Modal backdrop
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $z-index-modal-backdrop;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  &.show {
+    opacity: 1;
+  }
+
+  &.fade {
+    opacity: 0;
+    transition: opacity $transition-base;
+  }
+}
+
+// Close button
+.btn-close {
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  padding: 0.25em;
+  color: $gray-900;
+  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+  border: 0;
+  border-radius: $border-radius-sm;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity $transition-fast;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// Non-BEM aliases
+.modal-dialog { @extend .modal__dialog; }
+.modal-dialog-centered { @extend .modal__dialog--centered; }
+.modal-dialog-scrollable { @extend .modal__dialog--scrollable; }
+.modal-sm { @extend .modal__dialog--sm; }
+.modal-lg { @extend .modal__dialog--lg; }
+.modal-xl { @extend .modal__dialog--xl; }
+.modal-content { @extend .modal__content; }
+.modal-header { @extend .modal__header; }
+.modal-title { @extend .modal__title; }
+.modal-body { @extend .modal__body; }
+.modal-footer { @extend .modal__footer; }

@@ -6873,7 +6873,7 @@ textarea.form-control, textarea.form-select {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(0,0,0,0.25)'/%3e%3c/svg%3e");
   background-position: left center;
   border-radius: 2rem;
-  transition: background-position 150ms ease-in-out ease-in-out;
+  transition: background-position 150ms ease-in-out;
 }
 .form-switch .form-check-input:focus {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23206bc4'/%3e%3c/svg%3e");
@@ -7747,6 +7747,1924 @@ textarea.form-control, textarea.form-select {
   box-shadow: 0 0 0 3px rgba(32, 107, 196, 0.15);
 }
 
+/* Non-BEM aliases */
+/* Table Component - Tabler-inspired aesthetic with BEM */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #0f172a;
+  vertical-align: top;
+  border-color: #e2e8f0;
+  border-collapse: collapse;
+}
+.table th,
+.table td {
+  padding: 0.75rem;
+  background-color: transparent;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #e2e8f0;
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.table tbody + tbody {
+  border-top: 2px solid #e2e8f0;
+}
+.table--striped tbody tr:nth-of-type(odd), .table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(241, 245, 249, 0.5);
+}
+.table--bordered, .table-bordered {
+  border: 1px solid #e2e8f0;
+}
+.table--bordered th, .table-bordered th,
+.table--bordered td,
+.table-bordered td {
+  border: 1px solid #e2e8f0;
+}
+.table--borderless th,
+.table--borderless td {
+  border: none;
+}
+.table--hover tbody tr, .table-hover tbody tr {
+  transition: background-color 150ms ease-in-out;
+}
+.table--hover tbody tr:hover, .table-hover tbody tr:hover {
+  background-color: #f1f5f9;
+  cursor: pointer;
+}
+.table--sm th, .table-sm th,
+.table--sm td,
+.table-sm td {
+  padding: 0.5rem;
+  font-size: 0.875rem;
+}
+.table--lg th,
+.table--lg td {
+  padding: 1rem;
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.table-responsive > .table {
+  margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  .table-responsive {
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+  }
+}
+
+/* Modal Component - Tabler-inspired aesthetic with BEM */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+.modal.show {
+  display: block;
+}
+.modal__dialog, .modal-dialog {
+  position: relative;
+  width: auto;
+  max-width: 500px;
+  margin: 1.75rem auto;
+  pointer-events: none;
+}
+.modal__dialog--sm, .modal-sm {
+  max-width: 300px;
+}
+.modal__dialog--lg, .modal-lg {
+  max-width: 800px;
+}
+.modal__dialog--xl, .modal-xl {
+  max-width: 1140px;
+}
+.modal__dialog--fullscreen {
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.modal__dialog--fullscreen .modal__content, .modal__dialog--fullscreen .modal-content {
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+}
+.modal__dialog--centered, .modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - 3.5rem);
+}
+.modal__dialog--scrollable, .modal-dialog-scrollable {
+  max-height: calc(100% - 3.5rem);
+}
+.modal__dialog--scrollable .modal__content, .modal__dialog--scrollable .modal-content, .modal-dialog-scrollable .modal__content, .modal-dialog-scrollable .modal-content {
+  max-height: calc(100vh - 3.5rem);
+  overflow: hidden;
+}
+.modal__dialog--scrollable .modal__body, .modal__dialog--scrollable .modal-body, .modal-dialog-scrollable .modal__body, .modal-dialog-scrollable .modal-body {
+  overflow-y: auto;
+}
+.modal__content, .modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  outline: 0;
+}
+.modal__header, .modal-header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.modal__header .btn-close, .modal-header .btn-close {
+  padding: 0.5rem;
+  margin: -0.5rem -0.5rem -0.5rem auto;
+}
+.modal__title, .modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #0f172a;
+}
+.modal__body, .modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: 1.5rem;
+  color: #334155;
+}
+.modal__footer, .modal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1.25rem 1.5rem;
+  background-color: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.modal__footer > *, .modal-footer > * {
+  margin: 0.25rem;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-backdrop.show {
+  opacity: 1;
+}
+.modal-backdrop.fade {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.btn-close {
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  padding: 0.25em;
+  color: #0f172a;
+  background: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
+  border: 0;
+  border-radius: 2px;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 150ms ease-in-out;
+}
+.btn-close:hover {
+  opacity: 1;
+}
+
+/* Dashboard & Sidebar Components - Tabler-inspired aesthetic with BEM */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+/* ============================================
+   SIDEBAR NAVIGATION
+   Fixed or responsive sidebar for dashboards
+   ============================================ */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1020;
+  width: 260px;
+  background-color: #fff;
+  border-right: 1px solid #e2e8f0;
+  overflow-y: auto;
+  transition: transform 200ms ease-in-out;
+}
+.sidebar__header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+.sidebar__brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sidebar__brand:hover {
+  color: #206bc4;
+}
+.sidebar__body {
+  padding: 1rem;
+}
+.sidebar__nav, .sidebar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar__item, .sidebar-item {
+  margin-bottom: 0.25rem;
+}
+.sidebar__link, .sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  color: #334155;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: all 150ms ease-in-out;
+}
+.sidebar__link:hover, .sidebar-link:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+.sidebar__link--active {
+  background-color: rgba(32, 107, 196, 0.1);
+  color: #206bc4;
+  font-weight: 500;
+}
+.sidebar__link .icon, .sidebar-link .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+.sidebar__label, .sidebar-label {
+  padding: 0.5rem 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.sidebar__footer {
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+  margin-top: auto;
+}
+.sidebar--dark {
+  background-color: #1e293b;
+  border-color: #151d2a;
+}
+.sidebar--dark .sidebar__brand {
+  color: rgba(255, 255, 255, 0.95);
+}
+.sidebar--dark .sidebar__brand:hover {
+  color: #fff;
+}
+.sidebar--dark .sidebar__link, .sidebar--dark .sidebar-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+.sidebar--dark .sidebar__link:hover, .sidebar--dark .sidebar-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.95);
+}
+.sidebar--dark .sidebar__link--active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+.sidebar--dark .sidebar__label, .sidebar--dark .sidebar-label {
+  color: rgba(255, 255, 255, 0.5);
+}
+.sidebar--dark .sidebar__footer {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.sidebar--collapsed {
+  width: 80px;
+}
+.sidebar--collapsed .sidebar__brand span,
+.sidebar--collapsed .sidebar__link span,
+.sidebar--collapsed .sidebar-link span,
+.sidebar--collapsed .sidebar__label,
+.sidebar--collapsed .sidebar-label {
+  display: none;
+}
+.sidebar--collapsed .sidebar__link, .sidebar--collapsed .sidebar-link {
+  justify-content: center;
+  padding: 0.75rem;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+  .sidebar--open {
+    transform: translateX(0);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* ============================================
+   DASHBOARD LAYOUT
+   Main layout structure for dashboard pages
+   ============================================ */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+.dashboard__sidebar {
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .dashboard__sidebar {
+    position: fixed;
+    z-index: 1050;
+  }
+}
+.dashboard__main {
+  flex: 1;
+  min-width: 0;
+  margin-left: 260px;
+}
+@media (max-width: 768px) {
+  .dashboard__main {
+    margin-left: 0;
+  }
+}
+.dashboard--sidebar-collapsed .dashboard__main {
+  margin-left: 80px;
+}
+@media (max-width: 768px) {
+  .dashboard--sidebar-collapsed .dashboard__main {
+    margin-left: 0;
+  }
+}
+
+/* ============================================
+   TOPBAR / NAVBAR FOR DASHBOARD
+   Header bar above main content
+   ============================================ */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1019;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background-color: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.topbar__left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.topbar__toggle {
+  display: none;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  color: #334155;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 150ms ease-in-out;
+}
+.topbar__toggle:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+@media (max-width: 768px) {
+  .topbar__toggle {
+    display: flex;
+  }
+}
+.topbar__title, .topbar-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+.topbar__search {
+  display: none;
+}
+@media (min-width: 768px) {
+  .topbar__search {
+    display: block;
+    width: 300px;
+  }
+}
+.topbar__user {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.375rem 0.75rem 0.375rem 0.375rem;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+.topbar__user:hover {
+  background-color: #f1f5f9;
+  border-color: #e2e8f0;
+}
+.topbar__user img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+.topbar__user-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #0f172a;
+}
+@media (max-width: 768px) {
+  .topbar__user-name {
+    display: none;
+  }
+}
+.topbar__notifications {
+  position: relative;
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  color: #334155;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 150ms ease-in-out;
+}
+.topbar__notifications:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+.topbar__notifications .badge {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+}
+
+/* ============================================
+   CONTENT WRAPPER
+   Container for dashboard page content
+   ============================================ */
+.content {
+  padding: 1.5rem;
+}
+@media (min-width: 768px) {
+  .content {
+    padding: 2rem;
+  }
+}
+.content__header, .content-header {
+  margin-bottom: 2rem;
+}
+.content__title, .content-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+.content__subtitle {
+  margin: 0;
+  font-size: 1rem;
+  color: #475569;
+}
+.content__breadcrumb {
+  margin-bottom: 1rem;
+}
+.content__section {
+  margin-bottom: 2rem;
+}
+.content__section:last-child {
+  margin-bottom: 0;
+}
+.content__section-title {
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* ============================================
+   BACKDROP FOR MOBILE SIDEBAR
+   ============================================ */
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1049;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+.sidebar-backdrop.show {
+  display: block;
+  opacity: 1;
+}
+
+/* Non-BEM aliases */
+/* Stats Cards - Tabler-inspired aesthetic with BEM */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+/* ============================================
+   STATS CARD
+   Card variant optimized for displaying metrics
+   ============================================ */
+.stats-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  overflow: hidden;
+  transition: all 150ms ease-in-out;
+}
+.stats-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.stats-card__body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.stats-card__content {
+  flex: 1;
+  min-width: 0;
+}
+.stats-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 4px;
+  background-color: rgba(32, 107, 196, 0.1);
+  color: #206bc4;
+  flex-shrink: 0;
+}
+.stats-card__icon svg,
+.stats-card__icon i {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+.stats-card__label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.stats-card__value {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #0f172a;
+}
+.stats-card__change {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.stats-card__change--positive {
+  color: #2fb344;
+}
+.stats-card__change--negative {
+  color: #d63939;
+}
+.stats-card__change--neutral {
+  color: #475569;
+}
+.stats-card__description {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #475569;
+}
+.stats-card__footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+  font-size: 0.875rem;
+  color: #475569;
+}
+.stats-card__chart {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 80px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+.stats-card--primary {
+  border-color: #206bc4;
+}
+.stats-card--primary .stats-card__icon {
+  background-color: rgba(32, 107, 196, 0.1);
+  color: #206bc4;
+}
+.stats-card--success {
+  border-color: #2fb344;
+}
+.stats-card--success .stats-card__icon {
+  background-color: rgba(47, 179, 68, 0.1);
+  color: #2fb344;
+}
+.stats-card--danger {
+  border-color: #d63939;
+}
+.stats-card--danger .stats-card__icon {
+  background-color: rgba(214, 57, 57, 0.1);
+  color: #d63939;
+}
+.stats-card--warning {
+  border-color: #f59f00;
+}
+.stats-card--warning .stats-card__icon {
+  background-color: rgba(245, 159, 0, 0.1);
+  color: #c27e00;
+}
+.stats-card--info {
+  border-color: #17a2b8;
+}
+.stats-card--info .stats-card__icon {
+  background-color: rgba(23, 162, 184, 0.1);
+  color: #17a2b8;
+}
+.stats-card--compact {
+  padding: 1rem;
+}
+.stats-card--compact .stats-card__value {
+  font-size: 1.5rem;
+}
+.stats-card--compact .stats-card__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.stats-card--compact .stats-card__icon svg,
+.stats-card--compact .stats-card__icon i {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.stats-card--horizontal .stats-card__body {
+  flex-direction: row;
+  align-items: center;
+}
+.stats-card--horizontal .stats-card__icon {
+  order: -1;
+}
+
+/* ============================================
+   STATS GROUP
+   Grid layout for multiple stats cards
+   ============================================ */
+.stats-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 576px) {
+  .stats-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .stats-group {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .stats-group {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 576px) {
+  .stats-group--2-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .stats-group--3-col {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================
+   SIMPLE STAT (Inline stat display)
+   ============================================ */
+.stat {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.stat__label, .stat-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.stat__value, .stat-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.25;
+}
+.stat__change {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.stat__change--positive {
+  color: #2fb344;
+}
+.stat__change--negative {
+  color: #d63939;
+}
+.stat__change--neutral {
+  color: #475569;
+}
+.stat--horizontal {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.stat--horizontal .stat__label, .stat--horizontal .stat-label {
+  order: -1;
+}
+
+/* ============================================
+   PROGRESS STAT
+   Stat with progress bar
+   ============================================ */
+.progress-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.progress-stat__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.progress-stat__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #334155;
+}
+.progress-stat__value {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+.progress-stat__bar {
+  height: 0.5rem;
+  background-color: #e2e8f0;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+.progress-stat__fill {
+  height: 100%;
+  background-color: #206bc4;
+  border-radius: 9999px;
+  transition: width 200ms ease-in-out;
+}
+.progress-stat__fill--success {
+  background-color: #2fb344;
+}
+.progress-stat__fill--danger {
+  background-color: #d63939;
+}
+.progress-stat__fill--warning {
+  background-color: #f59f00;
+}
+.progress-stat__fill--info {
+  background-color: #17a2b8;
+}
+.progress-stat__description {
+  font-size: 0.75rem;
+  color: #475569;
+}
+
+/* ============================================
+   METRIC ROW
+   Horizontal list of metrics
+   ============================================ */
+.metric-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+.metric-row:last-child {
+  border-bottom: none;
+}
+.metric-row .stat {
+  min-width: 120px;
+}
+
+/* Non-BEM aliases */
+/* Tabs Component - Tabler-inspired aesthetic with BEM */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+/* ============================================
+   TABS (Default style)
+   Horizontal tabbed navigation
+   ============================================ */
+.tabs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.tabs__nav, .tab-nav {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid #e2e8f0;
+  gap: 0.5rem;
+}
+.tabs__item, .tab-item {
+  margin-bottom: -2px;
+}
+.tabs__link, .tab-link {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #475569;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+.tabs__link:hover, .tab-link:hover {
+  color: #0f172a;
+  border-bottom-color: #cbd5e1;
+}
+.tabs__link--active {
+  color: #206bc4;
+  border-bottom-color: #206bc4;
+}
+.tabs__link:disabled, .tab-link:disabled {
+  color: #94a3b8;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.tabs__content, .tab-content {
+  padding: 1.5rem 0;
+}
+.tabs__pane, .tab-pane {
+  display: none;
+}
+.tabs__pane--active {
+  display: block;
+}
+.tabs--pills .tabs__nav, .tabs--pills .tab-nav {
+  border-bottom: none;
+  gap: 0.25rem;
+}
+.tabs--pills .tabs__item, .tabs--pills .tab-item {
+  margin-bottom: 0;
+}
+.tabs--pills .tabs__link, .tabs--pills .tab-link {
+  border-bottom: none;
+  border-radius: 4px;
+}
+.tabs--pills .tabs__link:hover, .tabs--pills .tab-link:hover {
+  background-color: #f1f5f9;
+}
+.tabs--pills .tabs__link--active {
+  background-color: #206bc4;
+  color: #fff;
+}
+.tabs--pills .tabs__link--active:hover {
+  background-color: #1c5fae;
+}
+.tabs--boxed .tabs__nav, .tabs--boxed .tab-nav {
+  border-bottom: none;
+  gap: 0;
+}
+.tabs--boxed .tabs__item, .tabs--boxed .tab-item {
+  margin-bottom: 0;
+}
+.tabs--boxed .tabs__link, .tabs--boxed .tab-link {
+  border: 1px solid #e2e8f0;
+  border-bottom: none;
+  border-radius: 4px 4px 0 0;
+  margin-right: -1px;
+}
+.tabs--boxed .tabs__link:hover, .tabs--boxed .tab-link:hover {
+  background-color: #f8fafc;
+}
+.tabs--boxed .tabs__link--active {
+  background-color: #fff;
+  border-bottom: 2px solid #fff;
+  margin-bottom: -2px;
+  z-index: 1;
+}
+.tabs--boxed .tabs__content, .tabs--boxed .tab-content {
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0 4px 4px 4px;
+}
+.tabs--vertical {
+  flex-direction: row;
+}
+.tabs--vertical .tabs__nav, .tabs--vertical .tab-nav {
+  flex-direction: column;
+  border-bottom: none;
+  border-right: 2px solid #e2e8f0;
+  min-width: 180px;
+  gap: 0.25rem;
+}
+.tabs--vertical .tabs__item, .tabs--vertical .tab-item {
+  margin-bottom: 0;
+  margin-right: -2px;
+}
+.tabs--vertical .tabs__link, .tabs--vertical .tab-link {
+  text-align: left;
+  border-bottom: none;
+  border-right: 2px solid transparent;
+}
+.tabs--vertical .tabs__link:hover, .tabs--vertical .tab-link:hover {
+  border-right-color: #cbd5e1;
+  border-bottom-color: transparent;
+}
+.tabs--vertical .tabs__link--active {
+  border-right-color: #206bc4;
+  border-bottom-color: transparent;
+}
+.tabs--vertical .tabs__content, .tabs--vertical .tab-content {
+  flex: 1;
+  padding: 0 1.5rem;
+}
+.tabs--justified .tabs__nav, .tabs--justified .tab-nav {
+  justify-content: space-between;
+}
+.tabs--justified .tabs__item, .tabs--justified .tab-item {
+  flex: 1;
+  text-align: center;
+}
+.tabs--justified .tabs__link, .tabs--justified .tab-link {
+  width: 100%;
+}
+.tabs--centered .tabs__nav, .tabs--centered .tab-nav {
+  justify-content: center;
+}
+.tabs--right .tabs__nav, .tabs--right .tab-nav {
+  justify-content: flex-end;
+}
+.tabs--card {
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.tabs--card .tabs__nav, .tabs--card .tab-nav {
+  padding: 1rem 1.5rem 0;
+  border-bottom: 2px solid #e2e8f0;
+}
+.tabs--card .tabs__content, .tabs--card .tab-content {
+  padding: 1.5rem;
+}
+
+/* ============================================
+   TAB WITH ICONS
+   ============================================ */
+.tabs__link--icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.tabs__link--icon .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* ============================================
+   TAB WITH BADGE
+   ============================================ */
+.tabs__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.375rem;
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  background-color: #64748b;
+  border-radius: 9999px;
+}
+.tabs__link--active .tabs__badge {
+  background-color: #206bc4;
+}
+
+/* ============================================
+   SEGMENTED CONTROL (Alternative tab style)
+   ============================================ */
+.segmented-control {
+  display: inline-flex;
+  background-color: #f1f5f9;
+  border-radius: 4px;
+  padding: 0.25rem;
+  gap: 0.25rem;
+}
+.segmented-control__input {
+  display: none;
+}
+.segmented-control__input:checked + .segmented-control__label {
+  background-color: #fff;
+  color: #0f172a;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.segmented-control__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #475569;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+  white-space: nowrap;
+}
+.segmented-control__label:hover {
+  color: #0f172a;
+}
+.segmented-control--fullwidth {
+  display: flex;
+  width: 100%;
+}
+.segmented-control--fullwidth .segmented-control__label {
+  flex: 1;
+}
+.segmented-control--sm {
+  padding: 0.125rem;
+}
+.segmented-control--sm .segmented-control__label {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.75rem;
+}
+.segmented-control--lg {
+  padding: 0.375rem;
+}
+.segmented-control--lg .segmented-control__label {
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+}
+
+/* Non-BEM aliases */
+/* Accordion Component - Tabler-inspired aesthetic with BEM */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+/* ============================================
+   ACCORDION
+   Collapsible content panels
+   ============================================ */
+.accordion {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.accordion__item, .accordion-item {
+  border-bottom: 1px solid #e2e8f0;
+}
+.accordion__item:last-child, .accordion-item:last-child {
+  border-bottom: none;
+}
+.accordion__item:last-child .accordion__button, .accordion__item:last-child .accordion-button, .accordion-item:last-child .accordion__button, .accordion-item:last-child .accordion-button {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.accordion__item:last-child .accordion__body, .accordion__item:last-child .accordion-body, .accordion-item:last-child .accordion__body, .accordion-item:last-child .accordion-body {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.accordion__item:first-child .accordion__button, .accordion__item:first-child .accordion-button, .accordion-item:first-child .accordion__button, .accordion-item:first-child .accordion-button {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.accordion__item--active .accordion__button, .accordion__item--active .accordion-button {
+  color: #206bc4;
+  background-color: rgba(32, 107, 196, 0.05);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.accordion__item--active .accordion__icon {
+  transform: rotate(180deg);
+}
+.accordion__item--active .accordion__body, .accordion__item--active .accordion-body {
+  display: block;
+}
+.accordion__button, .accordion-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0f172a;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+.accordion__button:hover, .accordion-button:hover {
+  background-color: #f8fafc;
+}
+.accordion__button:focus, .accordion-button:focus {
+  outline: 0;
+  box-shadow: inset 0 0 0 2px rgba(32, 107, 196, 0.2);
+}
+.accordion__title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+.accordion__title .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #475569;
+}
+.accordion__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #64748b;
+  flex-shrink: 0;
+  transition: transform 150ms ease-in-out;
+}
+.accordion__body, .accordion-body {
+  display: none;
+  padding: 0 1.5rem 1.5rem;
+  color: #334155;
+  line-height: 1.5;
+}
+.accordion__content {
+  padding-top: 0.5rem;
+}
+.accordion--flush {
+  border: none;
+  background-color: transparent;
+}
+.accordion--flush .accordion__item, .accordion--flush .accordion-item {
+  border: none;
+  border-bottom: 1px solid #e2e8f0;
+}
+.accordion--flush .accordion__item:last-child, .accordion--flush .accordion-item:last-child {
+  border-bottom: none;
+}
+.accordion--flush .accordion__button, .accordion--flush .accordion-button {
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+}
+.accordion--flush .accordion__button:hover, .accordion--flush .accordion-button:hover {
+  background-color: transparent;
+  color: #206bc4;
+}
+.accordion--flush .accordion__item--active .accordion__button, .accordion--flush .accordion__item--active .accordion-button {
+  background-color: transparent;
+}
+.accordion--compact .accordion__button, .accordion--compact .accordion-button {
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+}
+.accordion--compact .accordion__body, .accordion--compact .accordion-body {
+  padding: 0 1rem 1rem;
+}
+.accordion--lg .accordion__button, .accordion--lg .accordion-button {
+  padding: 1.25rem 1.75rem;
+  font-size: 1.125rem;
+}
+.accordion--lg .accordion__body, .accordion--lg .accordion-body {
+  padding: 0 1.75rem 1.75rem;
+}
+.accordion--separated {
+  border: none;
+  background-color: transparent;
+}
+.accordion--separated .accordion__item, .accordion--separated .accordion-item {
+  margin-bottom: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: #fff;
+}
+.accordion--separated .accordion__item:last-child, .accordion--separated .accordion-item:last-child {
+  margin-bottom: 0;
+}
+.accordion--separated .accordion__item--active {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+.accordion--separated .accordion__button, .accordion--separated .accordion-button {
+  border-radius: 8px;
+}
+.accordion--separated .accordion__item--active .accordion__button, .accordion--separated .accordion__item--active .accordion-button {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.accordion--separated .accordion__item:last-child .accordion__button, .accordion--separated .accordion__item:last-child .accordion-button, .accordion--separated .accordion-item:last-child .accordion__button, .accordion--separated .accordion-item:last-child .accordion-button {
+  border-radius: 8px;
+}
+.accordion--separated .accordion__item:last-child.accordion__item--active .accordion__button, .accordion--separated .accordion__item:last-child.accordion__item--active .accordion-button, .accordion--separated .accordion-item:last-child.accordion__item--active .accordion__button, .accordion--separated .accordion-item:last-child.accordion__item--active .accordion-button {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* ============================================
+   COLLAPSE (Simple collapsible)
+   Simpler version without accordion styling
+   ============================================ */
+.collapse:not(.show) {
+  display: none;
+}
+.collapse.show {
+  display: block;
+}
+.collapse--horizontal:not(.show) {
+  width: 0;
+  overflow: hidden;
+}
+.collapse--horizontal.show {
+  width: auto;
+}
+
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: height 200ms ease-in-out;
+}
+.collapsing--horizontal {
+  width: 0;
+  height: auto;
+  transition: width 200ms ease-in-out;
+}
+
+/* ============================================
+   TOGGLE BUTTON FOR COLLAPSE
+   ============================================ */
+.collapse-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #206bc4;
+  background-color: transparent;
+  border: 1px solid #206bc4;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+.collapse-toggle:hover {
+  background-color: rgba(32, 107, 196, 0.1);
+}
+.collapse-toggle:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(32, 107, 196, 0.15);
+}
+.collapse-toggle__icon {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 150ms ease-in-out;
+}
+.collapse-toggle[aria-expanded=true] .collapse-toggle__icon {
+  transform: rotate(180deg);
+}
+.collapse-toggle--link {
+  padding: 0;
+  border: none;
+  text-decoration: none;
+}
+.collapse-toggle--link:hover {
+  background-color: transparent;
+  text-decoration: underline;
+}
+.collapse-toggle--link:focus {
+  box-shadow: none;
+}
+
+/* ============================================
+   EXPANSION PANEL (Material Design style)
+   ============================================ */
+.expansion-panel {
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: all 150ms ease-in-out;
+}
+.expansion-panel:last-child {
+  margin-bottom: 0;
+}
+.expansion-panel--expanded {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.expansion-panel--expanded .expansion-panel__header {
+  border-bottom: 1px solid #e2e8f0;
+}
+.expansion-panel--expanded .expansion-panel__icon {
+  transform: rotate(180deg);
+}
+.expansion-panel--expanded .expansion-panel__body {
+  display: block;
+}
+.expansion-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+.expansion-panel__header:hover {
+  background-color: #f8fafc;
+}
+.expansion-panel__title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.expansion-panel__heading {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+.expansion-panel__description {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #475569;
+}
+.expansion-panel__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #64748b;
+  flex-shrink: 0;
+  transition: transform 150ms ease-in-out;
+}
+.expansion-panel__body {
+  display: none;
+  padding: 1.5rem;
+  color: #334155;
+  line-height: 1.5;
+}
+.expansion-panel__actions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+}
+.expansion-panel--flat {
+  box-shadow: none;
+}
+.expansion-panel--flat.expansion-panel--expanded {
+  box-shadow: none;
+}
+
+/* Non-BEM aliases */
+/* Dropdown Component - Tabler-inspired aesthetic with BEM */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+/* ============================================
+   DROPDOWN
+   Contextual menus and actions
+   ============================================ */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown__toggle, .dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0f172a;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+.dropdown__toggle:hover, .dropdown-toggle:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
+.dropdown__toggle:focus, .dropdown-toggle:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(32, 107, 196, 0.15);
+}
+.dropdown__toggle--primary {
+  color: #fff;
+  background-color: #206bc4;
+  border-color: #206bc4;
+}
+.dropdown__toggle--primary:hover {
+  background-color: #1c5fae;
+  border-color: #1c5fae;
+}
+.dropdown__toggle--split {
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 0.5rem 0.75rem;
+}
+.dropdown__toggle .caret, .dropdown-toggle .caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-left: 0.3em solid transparent;
+}
+.dropdown__menu, .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  min-width: 180px;
+  margin-top: 0.25rem;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: #0f172a;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.dropdown__menu--show {
+  display: block;
+}
+.dropdown__menu--right {
+  right: 0;
+  left: auto;
+}
+.dropdown__menu--center {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.dropdown__menu--up {
+  top: auto;
+  bottom: 100%;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+.dropdown__menu--start {
+  top: 0;
+  right: 100%;
+  left: auto;
+  margin-top: 0;
+  margin-right: 0.25rem;
+}
+.dropdown__menu--end {
+  top: 0;
+  left: 100%;
+  margin-top: 0;
+  margin-left: 0.25rem;
+}
+.dropdown__menu--lg {
+  min-width: 240px;
+  font-size: 1.125rem;
+}
+.dropdown__menu--sm {
+  min-width: 140px;
+  font-size: 0.875rem;
+}
+.dropdown__item, .dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  clear: both;
+  font-weight: 400;
+  color: #0f172a;
+  text-align: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+.dropdown__item:hover, .dropdown-item:hover, .dropdown__item:focus, .dropdown-item:focus {
+  color: #0f172a;
+  background-color: #f1f5f9;
+}
+.dropdown__item:focus, .dropdown-item:focus {
+  outline: 0;
+}
+.dropdown__item--active {
+  color: #fff;
+  background-color: #206bc4;
+}
+.dropdown__item--active:hover, .dropdown__item--active:focus {
+  background-color: #1c5fae;
+}
+.dropdown__item:disabled, .dropdown-item:disabled, .dropdown__item--disabled {
+  color: #94a3b8;
+  pointer-events: none;
+  background-color: transparent;
+  cursor: not-allowed;
+}
+.dropdown__item--icon {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.dropdown__item--icon .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #475569;
+}
+.dropdown__item--icon:hover .icon, .dropdown__item--icon:focus .icon {
+  color: #0f172a;
+}
+.dropdown__item--danger {
+  color: #d63939;
+}
+.dropdown__item--danger:hover, .dropdown__item--danger:focus {
+  color: #fff;
+  background-color: #d63939;
+}
+.dropdown__item--danger .icon {
+  color: #d63939;
+}
+.dropdown__item--danger:hover .icon, .dropdown__item--danger:focus .icon {
+  color: #fff;
+}
+.dropdown__header, .dropdown-header {
+  display: block;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+  white-space: nowrap;
+}
+.dropdown__divider, .dropdown-divider {
+  height: 0;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  border-top: 1px solid #e2e8f0;
+}
+.dropdown__text {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #334155;
+  font-size: 0.875rem;
+}
+.dropdown--show .dropdown__menu, .dropdown--show .dropdown-menu {
+  display: block;
+}
+
+/* ============================================
+   BUTTON GROUP WITH DROPDOWN
+   ============================================ */
+.btn-group {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+}
+.btn-group > .btn {
+  position: relative;
+  flex: 1 1 auto;
+}
+.btn-group > .btn:hover, .btn-group > .btn:focus {
+  z-index: 1;
+}
+.btn-group > .btn:not(:first-child) {
+  margin-left: -1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.btn-group > .btn:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.btn-group .dropdown-toggle-split {
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+.btn-group .dropdown-toggle-split::after {
+  margin-left: 0;
+}
+
+/* ============================================
+   MENU (Alternative dropdown style)
+   ============================================ */
+.menu {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  margin: 0;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.menu__item {
+  position: relative;
+}
+.menu__link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 1rem;
+  color: #0f172a;
+  text-decoration: none;
+  transition: all 150ms ease-in-out;
+}
+.menu__link:hover {
+  background-color: #f1f5f9;
+}
+.menu__link--active {
+  color: #206bc4;
+  background-color: rgba(32, 107, 196, 0.1);
+  font-weight: 500;
+}
+.menu__link .icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #475569;
+}
+.menu__link:hover .icon {
+  color: #0f172a;
+}
+.menu__link--active .icon {
+  color: #206bc4;
+}
+.menu__badge {
+  margin-left: auto;
+}
+.menu__divider {
+  height: 0;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  border-top: 1px solid #e2e8f0;
+}
+.menu__header {
+  padding: 0.5rem 1rem 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.menu--compact {
+  min-width: 160px;
+  padding: 0.25rem 0;
+}
+.menu--compact .menu__link {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+.menu__item--has-submenu > .menu__link::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: auto;
+  border-top: 0.3em solid transparent;
+  border-bottom: 0.3em solid transparent;
+  border-left: 0.3em solid;
+}
+.menu__item--has-submenu:hover > .menu {
+  display: flex;
+}
+.menu .menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 0.25rem;
+  display: none;
+}
+
+/* ============================================
+   CONTEXT MENU (Right-click menu)
+   ============================================ */
+.context-menu {
+  position: fixed;
+  z-index: 1050;
+  display: none;
+}
+.context-menu--show {
+  display: block;
+}
+.context-menu .menu {
+  animation: fadeIn 150ms ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 /* Non-BEM aliases */
 
 /*# sourceMappingURL=main.css.map */

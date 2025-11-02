@@ -1,0 +1,398 @@
+/* Accordion Component - Tabler-inspired aesthetic with BEM */
+@import "../../styles/_variables.scss";
+
+/* ============================================
+   ACCORDION
+   Collapsible content panels
+   ============================================ */
+
+.accordion {
+  border: $border-width solid $border-color;
+  border-radius: $border-radius-lg;
+  background-color: #fff;
+
+  &__item {
+    border-bottom: $border-width solid $border-color;
+
+    &:last-child {
+      border-bottom: none;
+
+      .accordion__button {
+        border-bottom-left-radius: $border-radius-lg;
+        border-bottom-right-radius: $border-radius-lg;
+      }
+
+      .accordion__body {
+        border-bottom-left-radius: $border-radius-lg;
+        border-bottom-right-radius: $border-radius-lg;
+      }
+    }
+
+    &:first-child .accordion__button {
+      border-top-left-radius: $border-radius-lg;
+      border-top-right-radius: $border-radius-lg;
+    }
+
+    &--active {
+      .accordion__button {
+        color: $primary;
+        background-color: rgba($primary, 0.05);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .accordion__icon {
+        transform: rotate(180deg);
+      }
+
+      .accordion__body {
+        display: block;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: $font-size-base;
+    font-weight: $font-weight-medium;
+    color: $gray-900;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &:hover {
+      background-color: $gray-50;
+    }
+
+    &:focus {
+      outline: 0;
+      box-shadow: inset 0 0 0 2px rgba($primary, 0.2);
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+
+    .icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: $gray-600;
+    }
+  }
+
+  &__icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: $gray-500;
+    flex-shrink: 0;
+    transition: transform $transition-fast;
+  }
+
+  &__body {
+    display: none;
+    padding: 0 1.5rem 1.5rem;
+    color: $gray-700;
+    line-height: $line-height;
+  }
+
+  &__content {
+    padding-top: 0.5rem;
+  }
+
+  // Flush variant (no borders/background)
+  &--flush {
+    border: none;
+    background-color: transparent;
+
+    .accordion__item {
+      border: none;
+      border-bottom: $border-width solid $border-color;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .accordion__button {
+      padding-left: 0;
+      padding-right: 0;
+      border-radius: 0;
+
+      &:hover {
+        background-color: transparent;
+        color: $primary;
+      }
+    }
+
+    .accordion__item--active .accordion__button {
+      background-color: transparent;
+    }
+  }
+
+  // Compact variant
+  &--compact {
+    .accordion__button {
+      padding: 0.75rem 1rem;
+      font-size: $font-size-sm;
+    }
+
+    .accordion__body {
+      padding: 0 1rem 1rem;
+    }
+  }
+
+  // Large variant
+  &--lg {
+    .accordion__button {
+      padding: 1.25rem 1.75rem;
+      font-size: $font-size-lg;
+    }
+
+    .accordion__body {
+      padding: 0 1.75rem 1.75rem;
+    }
+  }
+
+  // Separated variant (cards)
+  &--separated {
+    border: none;
+    background-color: transparent;
+
+    .accordion__item {
+      margin-bottom: 0.75rem;
+      border: $border-width solid $border-color;
+      border-radius: $border-radius-lg;
+      background-color: #fff;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &--active {
+        box-shadow: $shadow-sm;
+      }
+    }
+
+    .accordion__button {
+      border-radius: $border-radius-lg;
+    }
+
+    .accordion__item--active .accordion__button {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .accordion__item:last-child .accordion__button {
+      border-radius: $border-radius-lg;
+    }
+
+    .accordion__item:last-child.accordion__item--active .accordion__button {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+}
+
+/* ============================================
+   COLLAPSE (Simple collapsible)
+   Simpler version without accordion styling
+   ============================================ */
+
+.collapse {
+  &:not(.show) {
+    display: none;
+  }
+
+  &.show {
+    display: block;
+  }
+
+  &--horizontal {
+    &:not(.show) {
+      width: 0;
+      overflow: hidden;
+    }
+
+    &.show {
+      width: auto;
+    }
+  }
+}
+
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: height $transition-base;
+
+  &--horizontal {
+    width: 0;
+    height: auto;
+    transition: width $transition-base;
+  }
+}
+
+/* ============================================
+   TOGGLE BUTTON FOR COLLAPSE
+   ============================================ */
+
+.collapse-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  color: $primary;
+  background-color: transparent;
+  border: $border-width solid $primary;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:hover {
+    background-color: rgba($primary, 0.1);
+  }
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba($primary, 0.15);
+  }
+
+  &__icon {
+    width: 1rem;
+    height: 1rem;
+    transition: transform $transition-fast;
+  }
+
+  &[aria-expanded="true"] &__icon {
+    transform: rotate(180deg);
+  }
+
+  // Link variant
+  &--link {
+    padding: 0;
+    border: none;
+    text-decoration: none;
+
+    &:hover {
+      background-color: transparent;
+      text-decoration: underline;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+/* ============================================
+   EXPANSION PANEL (Material Design style)
+   ============================================ */
+
+.expansion-panel {
+  background-color: #fff;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-sm;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: all $transition-fast;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--expanded {
+    box-shadow: $shadow-md;
+
+    .expansion-panel__header {
+      border-bottom: $border-width solid $border-color;
+    }
+
+    .expansion-panel__icon {
+      transform: rotate(180deg);
+    }
+
+    .expansion-panel__body {
+      display: block;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    transition: all $transition-fast;
+
+    &:hover {
+      background-color: $gray-50;
+    }
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__heading {
+    margin: 0;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $gray-900;
+  }
+
+  &__description {
+    margin: 0;
+    font-size: $font-size-sm;
+    color: $gray-600;
+  }
+
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: $gray-500;
+    flex-shrink: 0;
+    transition: transform $transition-fast;
+  }
+
+  &__body {
+    display: none;
+    padding: 1.5rem;
+    color: $gray-700;
+    line-height: $line-height;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem 1.5rem;
+    border-top: $border-width solid $border-color;
+    background-color: $gray-50;
+  }
+
+  // Flat variant (no shadow)
+  &--flat {
+    box-shadow: none;
+
+    &.expansion-panel--expanded {
+      box-shadow: none;
+    }
+  }
+}
+
+/* Non-BEM aliases */
+.accordion-item { @extend .accordion__item; }
+.accordion-button { @extend .accordion__button; }
+.accordion-body { @extend .accordion__body; }

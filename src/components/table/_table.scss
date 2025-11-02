@@ -1,0 +1,102 @@
+/* Table Component - Tabler-inspired aesthetic with BEM */
+@import "../../styles/_variables.scss";
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: $gray-900;
+  vertical-align: top;
+  border-color: $border-color;
+  border-collapse: collapse;
+
+  // Table cells
+  th,
+  td {
+    padding: 0.75rem;
+    background-color: transparent;
+    border-bottom: $border-width solid $border-color;
+    text-align: left;
+  }
+
+  thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid $border-color;
+    font-weight: $font-weight-semibold;
+    color: $gray-700;
+    font-size: $font-size-sm;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  tbody + tbody {
+    border-top: 2px solid $border-color;
+  }
+
+  // Modifiers
+  &--striped tbody tr:nth-of-type(odd) {
+    background-color: rgba($gray-100, 0.5);
+  }
+
+  &--bordered {
+    border: $border-width solid $border-color;
+
+    th,
+    td {
+      border: $border-width solid $border-color;
+    }
+  }
+
+  &--borderless {
+    th,
+    td {
+      border: none;
+    }
+  }
+
+  &--hover tbody tr {
+    transition: background-color $transition-fast;
+
+    &:hover {
+      background-color: $gray-100;
+      cursor: pointer;
+    }
+  }
+
+  &--sm {
+    th,
+    td {
+      padding: 0.5rem;
+      font-size: $font-size-sm;
+    }
+  }
+
+  &--lg {
+    th,
+    td {
+      padding: 1rem;
+    }
+  }
+}
+
+// Responsive table wrapper
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  > .table {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
+  }
+}
+
+// Non-BEM aliases
+.table-striped { @extend .table--striped; }
+.table-bordered { @extend .table--bordered; }
+.table-hover { @extend .table--hover; }
+.table-sm { @extend .table--sm; }
