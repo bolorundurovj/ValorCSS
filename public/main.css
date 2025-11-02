@@ -8007,6 +8007,306 @@ textarea.form-control, textarea.form-select {
   opacity: 1;
 }
 
+/* Toast Component - Tabler-inspired aesthetic with BEM */ /* ============================================
+   VALORCSS DESIGN TOKENS
+   Inspired by Tabler's clean, professional aesthetic
+   ============================================ */
+/* Brand Colors - Clean & Professional */
+/* Semantic Colors - UI States */
+/* Gray Scale - For Subtle UI Elements */
+/* Legacy color names (for backwards compatibility) */
+/* Spacing */
+/* Typography - Clean & Readable */
+/* Font Sizes */
+/* Font Weights */
+/* Borders - Subtle & Clean */
+/* Border Radius - Slightly Rounded (Tabler aesthetic) */
+/* Shadows - Subtle Depth (Tabler style) */
+/* Transitions */
+/* Breakpoints */
+/* Z-index Scale */
+/* ============================================
+   TOAST CONTAINER
+   Fixed positioned containers for toasts
+   ============================================ */
+.toast-container {
+  position: fixed;
+  z-index: 1060;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  pointer-events: none;
+  max-width: 400px;
+}
+.toast-container--top-right {
+  top: 0;
+  right: 0;
+}
+.toast-container--top-left {
+  top: 0;
+  left: 0;
+}
+.toast-container--bottom-right {
+  bottom: 0;
+  right: 0;
+}
+.toast-container--bottom-left {
+  bottom: 0;
+  left: 0;
+}
+.toast-container--top-center {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.toast-container--bottom-center {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+@media (max-width: 576px) {
+  .toast-container {
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    transform: none;
+  }
+  .toast-container--top-center, .toast-container--bottom-center {
+    left: 0;
+    transform: none;
+  }
+}
+
+/* ============================================
+   TOAST
+   Individual toast notification
+   ============================================ */
+.toast {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-width: 300px;
+  padding: 1rem 1.25rem;
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #206bc4;
+  border-radius: 8px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  pointer-events: auto;
+  transition: all 150ms ease-in-out;
+}
+@media (max-width: 576px) {
+  .toast {
+    min-width: 0;
+    width: 100%;
+  }
+}
+.toast:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+.toast__icon, .toast-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  font-size: 1.25rem;
+}
+.toast__content {
+  flex: 1;
+  min-width: 0;
+}
+.toast__title, .toast-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.25;
+}
+.toast__message, .toast-message {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #334155;
+  line-height: 1.5;
+}
+.toast__close, .toast-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 150ms ease-in-out;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.toast__close:hover, .toast-close:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #0f172a;
+}
+.toast__close:focus, .toast-close:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px rgba(32, 107, 196, 0.2);
+}
+.toast--primary, .toast-primary {
+  border-left-color: #206bc4;
+  background-color: rgba(32, 107, 196, 0.02);
+}
+.toast--primary .toast__icon, .toast--primary .toast-icon, .toast-primary .toast__icon, .toast-primary .toast-icon {
+  color: #206bc4;
+}
+.toast--secondary, .toast-secondary {
+  border-left-color: #626976;
+  background-color: rgba(98, 105, 118, 0.02);
+}
+.toast--secondary .toast__icon, .toast--secondary .toast-icon, .toast-secondary .toast__icon, .toast-secondary .toast-icon {
+  color: #626976;
+}
+.toast--success, .toast-success {
+  border-left-color: #2fb344;
+  background-color: rgba(47, 179, 68, 0.02);
+}
+.toast--success .toast__icon, .toast--success .toast-icon, .toast-success .toast__icon, .toast-success .toast-icon {
+  color: #2fb344;
+}
+.toast--danger, .toast-danger, .toast--error, .toast-error {
+  border-left-color: #d63939;
+  background-color: rgba(214, 57, 57, 0.02);
+}
+.toast--danger .toast__icon, .toast--danger .toast-icon, .toast-danger .toast__icon, .toast-danger .toast-icon, .toast--error .toast__icon, .toast--error .toast-icon, .toast-error .toast__icon, .toast-error .toast-icon {
+  color: #d63939;
+}
+.toast--warning, .toast-warning {
+  border-left-color: #f59f00;
+  background-color: rgba(245, 159, 0, 0.02);
+}
+.toast--warning .toast__icon, .toast--warning .toast-icon, .toast-warning .toast__icon, .toast-warning .toast-icon {
+  color: #c27e00;
+}
+.toast--info, .toast-info {
+  border-left-color: #17a2b8;
+  background-color: rgba(23, 162, 184, 0.02);
+}
+.toast--info .toast__icon, .toast--info .toast-icon, .toast-info .toast__icon, .toast-info .toast-icon {
+  color: #17a2b8;
+}
+
+/* ============================================
+   TOAST ANIMATIONS
+   ============================================ */
+@keyframes toast-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes toast-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+}
+@keyframes toast-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes toast-slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.toast.toast-fade-in {
+  animation: toast-fade-in 200ms ease-in-out;
+}
+.toast.toast-fade-out {
+  animation: toast-fade-out 200ms ease-in-out;
+}
+.toast.toast-slide-in-right {
+  animation: toast-slide-in-right 200ms ease-in-out;
+}
+.toast.toast-slide-in-left {
+  animation: toast-slide-in-left 200ms ease-in-out;
+}
+
+/* ============================================
+   TOAST WITH ACTIONS
+   ============================================ */
+.toast__actions, .toast-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.toast__actions .btn, .toast-actions .btn {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+/* ============================================
+   TOAST WITH PROGRESS BAR
+   ============================================ */
+.toast__progress, .toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  overflow: hidden;
+}
+.toast__progress-bar, .toast-progress-bar {
+  height: 100%;
+  background-color: currentColor;
+  transition: width linear;
+}
+.toast--primary .toast__progress-bar, .toast--primary .toast-progress-bar, .toast-primary .toast__progress-bar, .toast-primary .toast-progress-bar {
+  background-color: #206bc4;
+}
+.toast--success .toast__progress-bar, .toast--success .toast-progress-bar, .toast-success .toast__progress-bar, .toast-success .toast-progress-bar {
+  background-color: #2fb344;
+}
+.toast--danger .toast__progress-bar, .toast--danger .toast-progress-bar, .toast-danger .toast__progress-bar, .toast-danger .toast-progress-bar, .toast--error .toast__progress-bar, .toast--error .toast-progress-bar, .toast-error .toast__progress-bar, .toast-error .toast-progress-bar {
+  background-color: #d63939;
+}
+.toast--warning .toast__progress-bar, .toast--warning .toast-progress-bar, .toast-warning .toast__progress-bar, .toast-warning .toast-progress-bar {
+  background-color: #f59f00;
+}
+.toast--info .toast__progress-bar, .toast--info .toast-progress-bar, .toast-info .toast__progress-bar, .toast-info .toast-progress-bar {
+  background-color: #17a2b8;
+}
+
+/* Non-BEM aliases */
 /* Dashboard & Sidebar Components - Tabler-inspired aesthetic with BEM */ /* ============================================
    VALORCSS DESIGN TOKENS
    Inspired by Tabler's clean, professional aesthetic
