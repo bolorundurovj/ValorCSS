@@ -6,19 +6,33 @@ React components for ValorCSS - A modern, utility-first CSS framework.
 
 ```bash
 # Using yarn
-yarn add @valorcss/react @valorcss/core react react-dom
+yarn add @valorcss/react react react-dom
 
 # Using npm
-npm install @valorcss/react @valorcss/core react react-dom
+npm install @valorcss/react react react-dom
 ```
+
+**Note**: The CSS is included with `@valorcss/react`, so you don't need to install `@valorcss/core` separately.
 
 ## Usage
 
-Import the CSS in your app:
+Import the CSS once in your application's main entry file:
 
 ```tsx
-import '@valorcss/core/dist/main.css';
+// main.tsx, index.tsx, or App.tsx
+import '@valorcss/react/dist/valorcss.css';
 ```
+
+**Alternative**: Add to your `index.html`:
+```html
+<link rel="stylesheet" href="node_modules/@valorcss/react/dist/valorcss.css" />
+```
+
+> **Why is the CSS import needed?** ValorCSS uses separate CSS files (not CSS-in-JS) which gives you:
+> - **Better Performance**: CSS loads in parallel with JavaScript
+> - **Smaller Bundles**: CSS is cached separately from JS
+> - **More Control**: Choose when/where to load styles (important for SSR, code splitting)
+> - **Standard Practice**: Same approach as Bootstrap, Ant Design, and other CSS-based libraries
 
 Then use the components:
 

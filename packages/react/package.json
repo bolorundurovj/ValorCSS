@@ -5,12 +5,28 @@
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/valorcss.css": "./dist/valorcss.css",
+    "./dist/styles.css": "./dist/styles.css"
+  },
+  "style": "dist/styles.css",
+  "sideEffects": [
+    "dist/index.js",
+    "dist/index.esm.js",
+    "dist/styles.css",
+    "dist/valorcss.css"
+  ],
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c"
+    "copy-css": "cp ../core/dist/main.css dist/valorcss.css && cp ../core/dist/main.css.map dist/main.css.map",
+    "build": "rollup -c && npm run copy-css"
   },
   "keywords": [
     "react",

@@ -18,7 +18,11 @@
     "start": "node index.js",
     "start:dev": "nodemon index.js",
     "test": "nx run-many -t test",
-    "graph": "nx graph"
+    "graph": "nx graph",
+    "pack:react": "cd packages/react && npm pack",
+    "install:example": "cd react-example && npm uninstall @valorcss/react && npm install ../packages/react/valorcss-react-*.tgz",
+    "setup:example": "npm run build:react && npm run pack:react && npm run install:example",
+    "dev:example": "cd react-example && npm run dev"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^7.0.2",

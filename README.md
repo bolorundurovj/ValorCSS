@@ -19,9 +19,9 @@ valorcss-monorepo/
 
 **Current Packages:**
 - `@valorcss/core` - Core CSS framework with 14 components and 500+ utilities
+- `@valorcss/react` - React component library with 18 components ✅
 
 **Coming Soon:**
-- `@valorcss/react` - React component library
 - `@valorcss/vue` - Vue 3 component library
 - `@valorcss/svelte` - Svelte component library
 
@@ -576,6 +576,29 @@ ValorCSS uses PurgeCSS to remove unused CSS in production:
 1. Update `postcss.config.cjs` to include your template paths
 2. Run `yarn build:purge` for optimized build
 3. File size reduces from 101KB to ~32KB (68% reduction)
+
+### React Package Development
+
+For developing and testing the React component library:
+
+```bash
+# Build the React package
+npm run build:react
+
+# Pack the React package as tarball
+npm run pack:react
+
+# Install the packed package in react-example
+npm run install:example
+
+# Complete setup (build, pack, and install)
+npm run setup:example
+
+# Run the example app
+npm run dev:example
+```
+
+**Note**: The monorepo uses tarball installation for the example app instead of symlinks to avoid Vite CSS resolution issues.
 
 ## Browser Support
 
