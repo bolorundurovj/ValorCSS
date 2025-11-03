@@ -1,0 +1,27 @@
+{
+  "name": "@valorcss/react",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/react/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd packages/react && rollup -c"
+      },
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": ["@valorcss/core"]
+        }
+      ]
+    },
+    "watch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "cd packages/react && rollup -c --watch"
+      }
+    }
+  },
+  "tags": ["type:library", "scope:react"]
+}

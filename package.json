@@ -4,7 +4,7 @@
   "private": true,
   "description": "ValorCSS Design System - Monorepo",
   "repository": "git@github.com-bolorundurovj:bolorundurovj/ValorCSS.git",
-  "author": "Valiant-Joshua Bolorunduro <valiantjoshuabolorunduro@gmail.com>",
+  "author": "Valiant-Joshua Bolorunduro <mail@gmail.com>",
   "license": "MIT",
   "workspaces": [
     "packages/*"
@@ -12,7 +12,9 @@
   "scripts": {
     "build": "nx run-many -t build",
     "build:core": "nx build @valorcss/core",
+    "build:react": "nx build @valorcss/react",
     "watch:core": "nx watch @valorcss/core",
+    "watch:react": "nx watch @valorcss/react",
     "start": "node index.js",
     "start:dev": "nodemon index.js",
     "test": "nx run-many -t test",
