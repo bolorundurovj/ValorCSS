@@ -253,6 +253,262 @@ import { Select } from '@valorcss/react';
 </Select>
 ```
 
+### Navbar
+
+```tsx
+import { Navbar } from '@valorcss/react';
+
+<Navbar>
+  <Navbar.Brand href="/">MyApp</Navbar.Brand>
+  <Navbar.Nav>
+    <Navbar.Item>
+      <Navbar.Link href="/" active>Home</Navbar.Link>
+    </Navbar.Item>
+    <Navbar.Item>
+      <Navbar.Link href="/about">About</Navbar.Link>
+    </Navbar.Item>
+  </Navbar.Nav>
+</Navbar>
+
+// Dark variant
+<Navbar dark>
+  <Navbar.Brand href="/">MyApp</Navbar.Brand>
+  <Navbar.Nav>
+    <Navbar.Item>
+      <Navbar.Link href="/">Home</Navbar.Link>
+    </Navbar.Item>
+  </Navbar.Nav>
+</Navbar>
+```
+
+### Tabs
+
+```tsx
+import { Tabs } from '@valorcss/react';
+
+function MyTabs() {
+  const [activeTab, setActiveTab] = useState('tab1');
+
+  return (
+    <Tabs activeTab={activeTab} onTabChange={setActiveTab}>
+      <Tabs.Nav>
+        <Tabs.Item>
+          <Tabs.Link tabId="tab1">Tab 1</Tabs.Link>
+        </Tabs.Item>
+        <Tabs.Item>
+          <Tabs.Link tabId="tab2">Tab 2</Tabs.Link>
+        </Tabs.Item>
+      </Tabs.Nav>
+      <Tabs.Content>
+        <Tabs.Pane tabId="tab1">Content 1</Tabs.Pane>
+        <Tabs.Pane tabId="tab2">Content 2</Tabs.Pane>
+      </Tabs.Content>
+    </Tabs>
+  );
+}
+
+// Variants
+<Tabs variant="pills">...</Tabs>
+<Tabs variant="boxed">...</Tabs>
+<Tabs variant="card">...</Tabs>
+
+// Orientation
+<Tabs orientation="vertical">...</Tabs>
+
+// Alignment
+<Tabs alignment="center">...</Tabs>
+<Tabs alignment="right">...</Tabs>
+<Tabs alignment="justified">...</Tabs>
+```
+
+### Accordion
+
+```tsx
+import { Accordion } from '@valorcss/react';
+
+<Accordion defaultOpenItems={['item1']}>
+  <Accordion.Item itemId="item1">
+    <Accordion.Button itemId="item1">
+      <Accordion.Title>Section 1</Accordion.Title>
+      <Accordion.Icon />
+    </Accordion.Button>
+    <Accordion.Body itemId="item1">
+      <Accordion.Content>Content goes here</Accordion.Content>
+    </Accordion.Body>
+  </Accordion.Item>
+  <Accordion.Item itemId="item2">
+    <Accordion.Button itemId="item2">
+      <Accordion.Title>Section 2</Accordion.Title>
+      <Accordion.Icon />
+    </Accordion.Button>
+    <Accordion.Body itemId="item2">
+      <Accordion.Content>More content here</Accordion.Content>
+    </Accordion.Body>
+  </Accordion.Item>
+</Accordion>
+
+// Variants
+<Accordion variant="flush">...</Accordion>
+<Accordion variant="compact">...</Accordion>
+<Accordion variant="separated">...</Accordion>
+
+// Allow multiple open
+<Accordion allowMultiple>...</Accordion>
+```
+
+### Dropdown
+
+```tsx
+import { Dropdown } from '@valorcss/react';
+
+<Dropdown>
+  <Dropdown.Toggle variant="primary">
+    Actions
+  </Dropdown.Toggle>
+  <Dropdown.Menu>
+    <Dropdown.Header>Actions</Dropdown.Header>
+    <Dropdown.Item>Edit</Dropdown.Item>
+    <Dropdown.Item>Duplicate</Dropdown.Item>
+    <Dropdown.Divider />
+    <Dropdown.Item danger>Delete</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+
+// Placements
+<Dropdown.Menu placement="bottom-end">...</Dropdown.Menu>
+<Dropdown.Menu placement="top-start">...</Dropdown.Menu>
+
+// Sizes
+<Dropdown.Menu size="sm">...</Dropdown.Menu>
+<Dropdown.Menu size="lg">...</Dropdown.Menu>
+
+// Active state
+<Dropdown.Item active>Current</Dropdown.Item>
+```
+
+### Table
+
+```tsx
+import { Table } from '@valorcss/react';
+
+<Table striped hover>
+  <Table.Head>
+    <Table.Row>
+      <Table.Th>Name</Table.Th>
+      <Table.Th>Email</Table.Th>
+      <Table.Th>Role</Table.Th>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row>
+      <Table.Td>John Doe</Table.Td>
+      <Table.Td>john@example.com</Table.Td>
+      <Table.Td>Admin</Table.Td>
+    </Table.Row>
+    <Table.Row>
+      <Table.Td>Jane Smith</Table.Td>
+      <Table.Td>jane@example.com</Table.Td>
+      <Table.Td>User</Table.Td>
+    </Table.Row>
+  </Table.Body>
+</Table>
+
+// Variants
+<Table bordered>...</Table>
+<Table borderless>...</Table>
+<Table size="sm">...</Table>
+
+// Responsive wrapper
+<Table responsive>...</Table>
+```
+
+### Stats Cards
+
+```tsx
+import { StatsCard, StatsGroup, Stat, ProgressStat } from '@valorcss/react';
+
+// Stats Card
+<StatsCard variant="primary">
+  <StatsCard.Body>
+    <StatsCard.Content>
+      <StatsCard.Label>Total Users</StatsCard.Label>
+      <StatsCard.Value>1,234</StatsCard.Value>
+      <StatsCard.Change type="positive">+12%</StatsCard.Change>
+    </StatsCard.Content>
+    <StatsCard.Icon>
+      👥
+    </StatsCard.Icon>
+  </StatsCard.Body>
+</StatsCard>
+
+// Stats Group
+<StatsGroup columns={4}>
+  <StatsCard>...</StatsCard>
+  <StatsCard>...</StatsCard>
+  <StatsCard>...</StatsCard>
+  <StatsCard>...</StatsCard>
+</StatsGroup>
+
+// Simple Stat
+<Stat>
+  <Stat.Label>Revenue</Stat.Label>
+  <Stat.Value>$45,231</Stat.Value>
+  <Stat.Change type="positive">+20.1%</Stat.Change>
+</Stat>
+
+// Progress Stat
+<ProgressStat>
+  <ProgressStat.Header>
+    <ProgressStat.Label>Storage Used</ProgressStat.Label>
+    <ProgressStat.Value>75%</ProgressStat.Value>
+  </ProgressStat.Header>
+  <ProgressStat.Bar>
+    <ProgressStat.Fill value={75} variant="primary" />
+  </ProgressStat.Bar>
+  <ProgressStat.Description>75 GB of 100 GB used</ProgressStat.Description>
+</ProgressStat>
+```
+
+### Breadcrumb
+
+```tsx
+import { Breadcrumb } from '@valorcss/react';
+
+<Breadcrumb>
+  <Breadcrumb.Item>
+    <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
+  </Breadcrumb.Item>
+  <Breadcrumb.Item>
+    <Breadcrumb.Link href="/products">Products</Breadcrumb.Link>
+  </Breadcrumb.Item>
+  <Breadcrumb.Item active>Current Page</Breadcrumb.Item>
+</Breadcrumb>
+```
+
+### Pagination
+
+```tsx
+import { Pagination } from '@valorcss/react';
+
+<Pagination>
+  <Pagination.Item disabled>
+    <Pagination.Link href="#" aria-label="Previous">‹</Pagination.Link>
+  </Pagination.Item>
+  <Pagination.Item active>
+    <Pagination.Link href="#">1</Pagination.Link>
+  </Pagination.Item>
+  <Pagination.Item>
+    <Pagination.Link href="#">2</Pagination.Link>
+  </Pagination.Item>
+  <Pagination.Item>
+    <Pagination.Link href="#">3</Pagination.Link>
+  </Pagination.Item>
+  <Pagination.Item>
+    <Pagination.Link href="#" aria-label="Next">›</Pagination.Link>
+  </Pagination.Item>
+</Pagination>
+```
+
 ## TypeScript
 
 All components are built with TypeScript and include full type definitions.
@@ -295,29 +551,40 @@ All components support these common props:
 
 ## Development Status
 
-### ✅ Completed Components (10/14)
+### ✅ All Components Complete (18/18)
 
+**Core Components:**
 - **Button** - Variants, sizes, outline, ghost, loading states
 - **Card** - Compound component with Header, Body, Footer
 - **Badge** - Pill variant support
 - **Alert** - Dismissible with callbacks
+
+**Overlay Components:**
 - **Modal** - useModal hook, portal rendering, focus management
 - **Toast** - useToast hook, ToastProvider, queue management
+- **Dropdown** - Click-outside handling, keyboard navigation, placement options
+
+**Form Components:**
 - **Input** - Sizes, validation states, full width
 - **Checkbox** - Label support, indeterminate state
 - **Switch** - Toggle switch with label
 - **Select** - Sizes, validation states, full width
 
-### 🚧 Coming Soon (4/14)
+**Navigation Components:**
+- **Navbar** - Brand, navigation links, dark variant
+- **Tabs** - Multiple variants (default, pills, boxed, card), controlled/uncontrolled state
+- **Breadcrumb** - Navigation path with active state
+- **Pagination** - Page navigation with active/disabled states
 
-- Navbar
-- Tabs
-- Accordion
-- Dropdown
-- Table
-- Stats Cards
-- Breadcrumb
-- Pagination
+**Layout Components:**
+- **Accordion** - Multiple variants, single/multiple open modes
+- **Table** - Striped, bordered, hover, responsive wrapper
+
+**Data Display:**
+- **StatsCard** - Metrics display with icons, variants, compact mode
+- **StatsGroup** - Responsive grid layout for stats
+- **Stat** - Simple inline statistics
+- **ProgressStat** - Progress bars with labels
 
 ## License
 

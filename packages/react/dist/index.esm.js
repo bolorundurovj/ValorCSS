@@ -12,6 +12,12 @@ function cn(...inputs) {
     return clsx(inputs);
 }
 /**
+ * Generate BEM modifier class name
+ */
+function bemModifier(block, modifier) {
+    return modifier ? `${block}--${modifier}` : undefined;
+}
+/**
  * Generate BEM element class name
  */
 function bemElement(block, element) {
@@ -486,6 +492,628 @@ const Select = forwardRef(({ size = 'md', isInvalid = false, isValid = false, fu
 Select.displayName = 'Select';
 
 /**
+ * Navbar root component
+ */
+const NavbarRoot = forwardRef(({ dark = false, className, children, ...props }, ref) => {
+    const classes = cn('navbar', { 'navbar--dark': dark }, className);
+    return (jsx("nav", { ref: ref, className: classes, ...props, children: children }));
+});
+NavbarRoot.displayName = 'Navbar';
+const NavbarBrand = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('navbar', 'brand'), className);
+    return (jsx("a", { ref: ref, className: classes, ...props, children: children }));
+});
+NavbarBrand.displayName = 'Navbar.Brand';
+const NavbarNav = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('navbar', 'nav'), className);
+    return (jsx("ul", { ref: ref, className: classes, ...props, children: children }));
+});
+NavbarNav.displayName = 'Navbar.Nav';
+const NavbarItem = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('navbar', 'item'), className);
+    return (jsx("li", { ref: ref, className: classes, ...props, children: children }));
+});
+NavbarItem.displayName = 'Navbar.Item';
+const NavbarLink = forwardRef(({ active = false, className, children, ...props }, ref) => {
+    const classes = cn(bemElement('navbar', 'link'), { [bemModifier(bemElement('navbar', 'link'), 'active')]: active }, className);
+    return (jsx("a", { ref: ref, className: classes, "aria-current": active ? 'page' : undefined, ...props, children: children }));
+});
+NavbarLink.displayName = 'Navbar.Link';
+// Export compound component
+const Navbar = Object.assign(NavbarRoot, {
+    Brand: NavbarBrand,
+    Nav: NavbarNav,
+    Item: NavbarItem,
+    Link: NavbarLink,
+});
+
+const TabsContext = createContext(undefined);
+const useTabsContext = () => {
+    const context = useContext(TabsContext);
+    if (!context) {
+        throw new Error('Tabs compound components must be used within a Tabs component');
+    }
+    return context;
+};
+const TabsRoot = forwardRef(({ activeTab: controlledActiveTab, defaultActiveTab, onTabChange, variant = 'default', alignment = 'left', orientation = 'horizontal', className, children, ...props }, ref) => {
+    const [uncontrolledActiveTab, setUncontrolledActiveTab] = useState(defaultActiveTab || '');
+    const isControlled = controlledActiveTab !== undefined;
+    const activeTab = isControlled ? controlledActiveTab : uncontrolledActiveTab;
+    const setActiveTab = useCallback((tabId) => {
+        if (!isControlled) {
+            setUncontrolledActiveTab(tabId);
+        }
+        onTabChange?.(tabId);
+    }, [isControlled, onTabChange]);
+    const classes = cn('tabs', {
+        [`tabs--${variant}`]: variant !== 'default',
+        [`tabs--${alignment}`]: alignment !== 'left',
+        [`tabs--${orientation}`]: orientation !== 'horizontal',
+    }, className);
+    return (jsx(TabsContext.Provider, { value: { activeTab, setActiveTab, variant, orientation }, children: jsx("div", { ref: ref, className: classes, ...props, children: children }) }));
+});
+TabsRoot.displayName = 'Tabs';
+const TabsNav = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('tabs', 'nav'), className);
+    return (jsx("ul", { ref: ref, className: classes, role: "tablist", ...props, children: children }));
+});
+TabsNav.displayName = 'Tabs.Nav';
+const TabsItem = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('tabs', 'item'), className);
+    return (jsx("li", { ref: ref, className: classes, ...props, children: children }));
+});
+TabsItem.displayName = 'Tabs.Item';
+const TabsLink = forwardRef(({ tabId, asAnchor = false, href, className, children, disabled, onClick, ...props }, ref) => {
+    const { activeTab, setActiveTab } = useTabsContext();
+    const isActive = activeTab === tabId;
+    const classes = cn(bemElement('tabs', 'link'), { [bemModifier(bemElement('tabs', 'link'), 'active')]: isActive }, className);
+    const handleClick = (e) => {
+        if (!disabled) {
+            setActiveTab(tabId);
+            onClick?.(e);
+        }
+    };
+    if (asAnchor) {
+        return (jsx("a", { ref: ref, href: href || `#${tabId}`, className: classes, role: "tab", "aria-selected": isActive, "aria-controls": tabId, tabIndex: isActive ? 0 : -1, onClick: handleClick, ...props, children: children }));
+    }
+    return (jsx("button", { ref: ref, type: "button", className: classes, role: "tab", "aria-selected": isActive, "aria-controls": tabId, tabIndex: isActive ? 0 : -1, disabled: disabled, onClick: handleClick, ...props, children: children }));
+});
+TabsLink.displayName = 'Tabs.Link';
+const TabsContent = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('tabs', 'content'), className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+TabsContent.displayName = 'Tabs.Content';
+const TabsPane = forwardRef(({ tabId, keepMounted = false, className, children, ...props }, ref) => {
+    const { activeTab } = useTabsContext();
+    const isActive = activeTab === tabId;
+    const classes = cn(bemElement('tabs', 'pane'), { [bemModifier(bemElement('tabs', 'pane'), 'active')]: isActive }, className);
+    if (!keepMounted && !isActive) {
+        return null;
+    }
+    return (jsx("div", { ref: ref, className: classes, role: "tabpanel", id: tabId, "aria-labelledby": `${tabId}-tab`, ...props, children: children }));
+});
+TabsPane.displayName = 'Tabs.Pane';
+// Export compound component
+const Tabs = Object.assign(TabsRoot, {
+    Nav: TabsNav,
+    Item: TabsItem,
+    Link: TabsLink,
+    Content: TabsContent,
+    Pane: TabsPane,
+});
+
+const AccordionContext = createContext(undefined);
+const useAccordionContext = () => {
+    const context = useContext(AccordionContext);
+    if (!context) {
+        throw new Error('Accordion compound components must be used within an Accordion component');
+    }
+    return context;
+};
+const AccordionRoot = forwardRef(({ allowMultiple = false, defaultOpenItems = [], openItems: controlledOpenItems, onItemsChange, variant = 'default', className, children, ...props }, ref) => {
+    const [uncontrolledOpenItems, setUncontrolledOpenItems] = useState(new Set(defaultOpenItems));
+    const isControlled = controlledOpenItems !== undefined;
+    const openItems = isControlled ? new Set(controlledOpenItems) : uncontrolledOpenItems;
+    const toggleItem = useCallback((id) => {
+        const newOpenItems = new Set(openItems);
+        if (newOpenItems.has(id)) {
+            newOpenItems.delete(id);
+        }
+        else {
+            if (!allowMultiple) {
+                newOpenItems.clear();
+            }
+            newOpenItems.add(id);
+        }
+        if (!isControlled) {
+            setUncontrolledOpenItems(newOpenItems);
+        }
+        onItemsChange?.(Array.from(newOpenItems));
+    }, [openItems, allowMultiple, isControlled, onItemsChange]);
+    const classes = cn('accordion', { [`accordion--${variant}`]: variant !== 'default' }, className);
+    return (jsx(AccordionContext.Provider, { value: { openItems, toggleItem, variant, allowMultiple }, children: jsx("div", { ref: ref, className: classes, ...props, children: children }) }));
+});
+AccordionRoot.displayName = 'Accordion';
+const AccordionItem = forwardRef(({ itemId, className, children, ...props }, ref) => {
+    const { openItems } = useAccordionContext();
+    const isOpen = openItems.has(itemId);
+    const classes = cn(bemElement('accordion', 'item'), { [bemModifier(bemElement('accordion', 'item'), 'active')]: isOpen }, className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+AccordionItem.displayName = 'Accordion.Item';
+const AccordionButton = forwardRef(({ itemId, className, children, onClick, ...props }, ref) => {
+    const { openItems, toggleItem } = useAccordionContext();
+    const isOpen = openItems.has(itemId);
+    const classes = cn(bemElement('accordion', 'button'), className);
+    const handleClick = (e) => {
+        toggleItem(itemId);
+        onClick?.(e);
+    };
+    return (jsx("button", { ref: ref, type: "button", className: classes, onClick: handleClick, "aria-expanded": isOpen, "aria-controls": `accordion-body-${itemId}`, id: `accordion-button-${itemId}`, ...props, children: children }));
+});
+AccordionButton.displayName = 'Accordion.Button';
+const AccordionTitle = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('accordion', 'title'), className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+AccordionTitle.displayName = 'Accordion.Title';
+const AccordionIcon = forwardRef(({ icon, className, children, ...props }, ref) => {
+    const classes = cn(bemElement('accordion', 'icon'), className);
+    return (jsx("span", { ref: ref, className: classes, "aria-hidden": "true", ...props, children: icon || children || '▼' }));
+});
+AccordionIcon.displayName = 'Accordion.Icon';
+const AccordionBody = forwardRef(({ itemId, className, children, ...props }, ref) => {
+    const classes = cn(bemElement('accordion', 'body'), className);
+    return (jsx("div", { ref: ref, className: classes, id: `accordion-body-${itemId}`, "aria-labelledby": `accordion-button-${itemId}`, role: "region", ...props, children: children }));
+});
+AccordionBody.displayName = 'Accordion.Body';
+const AccordionContent = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('accordion', 'content'), className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+AccordionContent.displayName = 'Accordion.Content';
+// Export compound component
+const Accordion = Object.assign(AccordionRoot, {
+    Item: AccordionItem,
+    Button: AccordionButton,
+    Title: AccordionTitle,
+    Icon: AccordionIcon,
+    Body: AccordionBody,
+    Content: AccordionContent,
+});
+
+const DropdownContext = createContext(undefined);
+const useDropdownContext = () => {
+    const context = useContext(DropdownContext);
+    if (!context) {
+        throw new Error('Dropdown compound components must be used within a Dropdown component');
+    }
+    return context;
+};
+const DropdownRoot = forwardRef(({ isOpen: controlledIsOpen, defaultOpen = false, onOpenChange, closeOnClickOutside = true, closeOnEscape = true, className, children, ...props }, ref) => {
+    const [uncontrolledIsOpen, setUncontrolledIsOpen] = useState(defaultOpen);
+    const isControlled = controlledIsOpen !== undefined;
+    const isOpen = isControlled ? controlledIsOpen : uncontrolledIsOpen;
+    const dropdownRef = useRef(null);
+    const open = useCallback(() => {
+        if (!isControlled) {
+            setUncontrolledIsOpen(true);
+        }
+        onOpenChange?.(true);
+    }, [isControlled, onOpenChange]);
+    const close = useCallback(() => {
+        if (!isControlled) {
+            setUncontrolledIsOpen(false);
+        }
+        onOpenChange?.(false);
+    }, [isControlled, onOpenChange]);
+    const toggle = useCallback(() => {
+        if (isOpen) {
+            close();
+        }
+        else {
+            open();
+        }
+    }, [isOpen, open, close]);
+    // Click outside handler
+    useEffect(() => {
+        if (!closeOnClickOutside || !isOpen)
+            return;
+        const handleClickOutside = (event) => {
+            const target = event.target;
+            if (dropdownRef.current && !dropdownRef.current.contains(target)) {
+                close();
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, [isOpen, close, closeOnClickOutside]);
+    // Escape key handler
+    useEffect(() => {
+        if (!closeOnEscape || !isOpen)
+            return;
+        const handleEscape = (event) => {
+            if (event.key === 'Escape') {
+                close();
+            }
+        };
+        document.addEventListener('keydown', handleEscape);
+        return () => document.removeEventListener('keydown', handleEscape);
+    }, [isOpen, close, closeOnEscape]);
+    const classes = cn('dropdown', { 'dropdown--show': isOpen }, className);
+    return (jsx(DropdownContext.Provider, { value: { isOpen, open, close, toggle }, children: jsx("div", { ref: ref || dropdownRef, className: classes, ...props, children: children }) }));
+});
+DropdownRoot.displayName = 'Dropdown';
+const DropdownToggle = forwardRef(({ variant, showCaret = true, className, children, onClick, ...props }, ref) => {
+    const { isOpen, toggle } = useDropdownContext();
+    const classes = cn(bemElement('dropdown', 'toggle'), { [bemModifier(bemElement('dropdown', 'toggle'), variant)]: variant }, className);
+    const handleClick = (e) => {
+        toggle();
+        onClick?.(e);
+    };
+    return (jsxs("button", { ref: ref, type: "button", className: classes, onClick: handleClick, "aria-expanded": isOpen, "aria-haspopup": "true", ...props, children: [children, showCaret && jsx("span", { className: "caret" })] }));
+});
+DropdownToggle.displayName = 'Dropdown.Toggle';
+const DropdownMenu = forwardRef(({ placement = 'bottom-start', size = 'md', className, children, ...props }, ref) => {
+    const { isOpen } = useDropdownContext();
+    const placementClass = (() => {
+        switch (placement) {
+            case 'bottom-end':
+                return bemModifier(bemElement('dropdown', 'menu'), 'right');
+            case 'bottom-center':
+                return bemModifier(bemElement('dropdown', 'menu'), 'center');
+            case 'top-start':
+            case 'top-end':
+                return bemModifier(bemElement('dropdown', 'menu'), 'up');
+            case 'start':
+                return bemModifier(bemElement('dropdown', 'menu'), 'start');
+            case 'end':
+                return bemModifier(bemElement('dropdown', 'menu'), 'end');
+            default:
+                return undefined;
+        }
+    })();
+    const classes = cn(bemElement('dropdown', 'menu'), {
+        [bemModifier(bemElement('dropdown', 'menu'), 'show')]: isOpen,
+        [bemModifier(bemElement('dropdown', 'menu'), size)]: size !== 'md',
+        [placementClass]: placementClass,
+    }, className);
+    return (jsx("div", { ref: ref, className: classes, role: "menu", ...props, children: children }));
+});
+DropdownMenu.displayName = 'Dropdown.Menu';
+const DropdownItem = forwardRef(({ active = false, danger = false, closeOnClick = true, className, children, onClick, disabled, ...props }, ref) => {
+    const { close } = useDropdownContext();
+    const classes = cn(bemElement('dropdown', 'item'), {
+        [bemModifier(bemElement('dropdown', 'item'), 'active')]: active,
+        [bemModifier(bemElement('dropdown', 'item'), 'danger')]: danger,
+        [bemModifier(bemElement('dropdown', 'item'), 'disabled')]: disabled,
+    }, className);
+    const handleClick = (e) => {
+        if (!disabled) {
+            onClick?.(e);
+            if (closeOnClick) {
+                close();
+            }
+        }
+    };
+    return (jsx("button", { ref: ref, type: "button", className: classes, role: "menuitem", onClick: handleClick, disabled: disabled, ...props, children: children }));
+});
+DropdownItem.displayName = 'Dropdown.Item';
+const DropdownHeader = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('dropdown', 'header'), className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+DropdownHeader.displayName = 'Dropdown.Header';
+const DropdownDivider = forwardRef(({ className, ...props }, ref) => {
+    const classes = cn(bemElement('dropdown', 'divider'), className);
+    return jsx("hr", { ref: ref, className: classes, ...props });
+});
+DropdownDivider.displayName = 'Dropdown.Divider';
+const DropdownText = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('dropdown', 'text'), className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+DropdownText.displayName = 'Dropdown.Text';
+// Export compound component
+const Dropdown = Object.assign(DropdownRoot, {
+    Toggle: DropdownToggle,
+    Menu: DropdownMenu,
+    Item: DropdownItem,
+    Header: DropdownHeader,
+    Divider: DropdownDivider,
+    Text: DropdownText,
+});
+
+/**
+ * Table component following ValorCSS design system
+ *
+ * @example
+ * ```tsx
+ * <Table striped hover>
+ *   <Table.Head>
+ *     <Table.Row>
+ *       <Table.Th>Name</Table.Th>
+ *       <Table.Th>Email</Table.Th>
+ *     </Table.Row>
+ *   </Table.Head>
+ *   <Table.Body>
+ *     <Table.Row>
+ *       <Table.Td>John Doe</Table.Td>
+ *       <Table.Td>john@example.com</Table.Td>
+ *     </Table.Row>
+ *   </Table.Body>
+ * </Table>
+ * ```
+ */
+const TableRoot = forwardRef(({ striped = false, bordered = false, borderless = false, hover = false, size = 'md', responsive = false, className, children, ...props }, ref) => {
+    const classes = cn('table', {
+        'table--striped': striped,
+        'table--bordered': bordered,
+        'table--borderless': borderless,
+        'table--hover': hover,
+        [`table--${size}`]: size !== 'md',
+    }, className);
+    const table = (jsx("table", { ref: ref, className: classes, ...props, children: children }));
+    if (responsive) {
+        return jsx("div", { className: "table-responsive", children: table });
+    }
+    return table;
+});
+TableRoot.displayName = 'Table';
+const TableHead = forwardRef(({ className, children, ...props }, ref) => {
+    return (jsx("thead", { ref: ref, className: className, ...props, children: children }));
+});
+TableHead.displayName = 'Table.Head';
+const TableBody = forwardRef(({ className, children, ...props }, ref) => {
+    return (jsx("tbody", { ref: ref, className: className, ...props, children: children }));
+});
+TableBody.displayName = 'Table.Body';
+const TableFoot = forwardRef(({ className, children, ...props }, ref) => {
+    return (jsx("tfoot", { ref: ref, className: className, ...props, children: children }));
+});
+TableFoot.displayName = 'Table.Foot';
+const TableRow = forwardRef(({ className, children, ...props }, ref) => {
+    return (jsx("tr", { ref: ref, className: className, ...props, children: children }));
+});
+TableRow.displayName = 'Table.Row';
+const TableTh = forwardRef(({ className, children, ...props }, ref) => {
+    return (jsx("th", { ref: ref, className: className, ...props, children: children }));
+});
+TableTh.displayName = 'Table.Th';
+const TableTd = forwardRef(({ className, children, ...props }, ref) => {
+    return (jsx("td", { ref: ref, className: className, ...props, children: children }));
+});
+TableTd.displayName = 'Table.Td';
+// Export compound component
+const Table = Object.assign(TableRoot, {
+    Head: TableHead,
+    Body: TableBody,
+    Foot: TableFoot,
+    Row: TableRow,
+    Th: TableTh,
+    Td: TableTd,
+});
+
+const StatsCardRoot = forwardRef(({ variant, compact = false, horizontal = false, className, children, ...props }, ref) => {
+    const classes = cn('stats-card', {
+        [`stats-card--${variant}`]: variant,
+        'stats-card--compact': compact,
+        'stats-card--horizontal': horizontal,
+    }, className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+StatsCardRoot.displayName = 'StatsCard';
+const StatsCardBody = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('stats-card', 'body'), className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+StatsCardBody.displayName = 'StatsCard.Body';
+const StatsCardContent = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('stats-card', 'content'), className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+StatsCardContent.displayName = 'StatsCard.Content';
+const StatsCardIcon = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('stats-card', 'icon'), className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+StatsCardIcon.displayName = 'StatsCard.Icon';
+const StatsCardLabel = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('stats-card', 'label'), className);
+    return (jsx("span", { ref: ref, className: classes, ...props, children: children }));
+});
+StatsCardLabel.displayName = 'StatsCard.Label';
+const StatsCardValue = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('stats-card', 'value'), className);
+    return (jsx("span", { ref: ref, className: classes, ...props, children: children }));
+});
+StatsCardValue.displayName = 'StatsCard.Value';
+const StatsCardChange = forwardRef(({ type, className, children, ...props }, ref) => {
+    const classes = cn(bemElement('stats-card', 'change'), { [bemModifier(bemElement('stats-card', 'change'), type)]: type }, className);
+    return (jsx("span", { ref: ref, className: classes, ...props, children: children }));
+});
+StatsCardChange.displayName = 'StatsCard.Change';
+const StatsCardDescription = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('stats-card', 'description'), className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+StatsCardDescription.displayName = 'StatsCard.Description';
+const StatsCardFooter = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('stats-card', 'footer'), className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+StatsCardFooter.displayName = 'StatsCard.Footer';
+// Export StatsCard compound component
+const StatsCard = Object.assign(StatsCardRoot, {
+    Body: StatsCardBody,
+    Content: StatsCardContent,
+    Icon: StatsCardIcon,
+    Label: StatsCardLabel,
+    Value: StatsCardValue,
+    Change: StatsCardChange,
+    Description: StatsCardDescription,
+    Footer: StatsCardFooter,
+});
+const StatsGroup = forwardRef(({ columns, className, children, ...props }, ref) => {
+    const classes = cn('stats-group', { [`stats-group--${columns}-col`]: columns && columns !== 4 }, className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+StatsGroup.displayName = 'StatsGroup';
+const StatRoot = forwardRef(({ horizontal = false, className, children, ...props }, ref) => {
+    const classes = cn('stat', { 'stat--horizontal': horizontal }, className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+StatRoot.displayName = 'Stat';
+const StatLabel = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('stat', 'label'), className);
+    return (jsx("span", { ref: ref, className: classes, ...props, children: children }));
+});
+StatLabel.displayName = 'Stat.Label';
+const StatValue = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('stat', 'value'), className);
+    return (jsx("span", { ref: ref, className: classes, ...props, children: children }));
+});
+StatValue.displayName = 'Stat.Value';
+const StatChange = forwardRef(({ type, className, children, ...props }, ref) => {
+    const classes = cn(bemElement('stat', 'change'), { [bemModifier(bemElement('stat', 'change'), type)]: type }, className);
+    return (jsx("span", { ref: ref, className: classes, ...props, children: children }));
+});
+StatChange.displayName = 'Stat.Change';
+// Export Stat compound component
+const Stat = Object.assign(StatRoot, {
+    Label: StatLabel,
+    Value: StatValue,
+    Change: StatChange,
+});
+const ProgressStatRoot = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn('progress-stat', className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+ProgressStatRoot.displayName = 'ProgressStat';
+const ProgressStatHeader = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('progress-stat', 'header'), className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+ProgressStatHeader.displayName = 'ProgressStat.Header';
+const ProgressStatLabel = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('progress-stat', 'label'), className);
+    return (jsx("span", { ref: ref, className: classes, ...props, children: children }));
+});
+ProgressStatLabel.displayName = 'ProgressStat.Label';
+const ProgressStatValue = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('progress-stat', 'value'), className);
+    return (jsx("span", { ref: ref, className: classes, ...props, children: children }));
+});
+ProgressStatValue.displayName = 'ProgressStat.Value';
+const ProgressStatBar = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('progress-stat', 'bar'), className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+ProgressStatBar.displayName = 'ProgressStat.Bar';
+const ProgressStatFill = forwardRef(({ value, variant, className, style, ...props }, ref) => {
+    const classes = cn(bemElement('progress-stat', 'fill'), { [bemModifier(bemElement('progress-stat', 'fill'), variant)]: variant }, className);
+    return (jsx("div", { ref: ref, className: classes, style: { width: `${Math.min(100, Math.max(0, value))}%`, ...style }, role: "progressbar", "aria-valuenow": value, "aria-valuemin": 0, "aria-valuemax": 100, ...props }));
+});
+ProgressStatFill.displayName = 'ProgressStat.Fill';
+const ProgressStatDescription = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('progress-stat', 'description'), className);
+    return (jsx("div", { ref: ref, className: classes, ...props, children: children }));
+});
+ProgressStatDescription.displayName = 'ProgressStat.Description';
+// Export ProgressStat compound component
+const ProgressStat = Object.assign(ProgressStatRoot, {
+    Header: ProgressStatHeader,
+    Label: ProgressStatLabel,
+    Value: ProgressStatValue,
+    Bar: ProgressStatBar,
+    Fill: ProgressStatFill,
+    Description: ProgressStatDescription,
+});
+
+/**
+ * Breadcrumb navigation component
+ *
+ * @example
+ * ```tsx
+ * <Breadcrumb>
+ *   <Breadcrumb.Item>
+ *     <Breadcrumb.Link href="/">Home</Breadcrumb.Link>
+ *   </Breadcrumb.Item>
+ *   <Breadcrumb.Item>
+ *     <Breadcrumb.Link href="/products">Products</Breadcrumb.Link>
+ *   </Breadcrumb.Item>
+ *   <Breadcrumb.Item active>Current Page</Breadcrumb.Item>
+ * </Breadcrumb>
+ * ```
+ */
+const BreadcrumbRoot = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn('breadcrumb', className);
+    return (jsx("nav", { ref: ref, "aria-label": "breadcrumb", ...props, children: jsx("ol", { className: classes, children: children }) }));
+});
+BreadcrumbRoot.displayName = 'Breadcrumb';
+const BreadcrumbItem = forwardRef(({ active = false, className, children, ...props }, ref) => {
+    const classes = cn(bemElement('breadcrumb', 'item'), { [bemModifier(bemElement('breadcrumb', 'item'), 'active')]: active }, className);
+    return (jsx("li", { ref: ref, className: classes, "aria-current": active ? 'page' : undefined, ...props, children: children }));
+});
+BreadcrumbItem.displayName = 'Breadcrumb.Item';
+const BreadcrumbLink = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn(bemElement('breadcrumb', 'link'), className);
+    return (jsx("a", { ref: ref, className: classes, ...props, children: children }));
+});
+BreadcrumbLink.displayName = 'Breadcrumb.Link';
+// Export compound component
+const Breadcrumb = Object.assign(BreadcrumbRoot, {
+    Item: BreadcrumbItem,
+    Link: BreadcrumbLink,
+});
+
+/**
+ * Pagination navigation component
+ *
+ * @example
+ * ```tsx
+ * <Pagination>
+ *   <Pagination.Item>
+ *     <Pagination.Link href="#" aria-label="Previous">‹</Pagination.Link>
+ *   </Pagination.Item>
+ *   <Pagination.Item>
+ *     <Pagination.Link href="#" active>1</Pagination.Link>
+ *   </Pagination.Item>
+ *   <Pagination.Item>
+ *     <Pagination.Link href="#">2</Pagination.Link>
+ *   </Pagination.Item>
+ *   <Pagination.Item>
+ *     <Pagination.Link href="#" aria-label="Next">›</Pagination.Link>
+ *   </Pagination.Item>
+ * </Pagination>
+ * ```
+ */
+const PaginationRoot = forwardRef(({ className, children, ...props }, ref) => {
+    const classes = cn('pagination', className);
+    return (jsx("nav", { ref: ref, "aria-label": "pagination", ...props, children: jsx("ul", { className: classes, children: children }) }));
+});
+PaginationRoot.displayName = 'Pagination';
+const PaginationItem = forwardRef(({ active = false, disabled = false, className, children, ...props }, ref) => {
+    const classes = cn(bemElement('pagination', 'item'), {
+        [bemModifier(bemElement('pagination', 'item'), 'active')]: active,
+        [bemModifier(bemElement('pagination', 'item'), 'disabled')]: disabled,
+    }, className);
+    return (jsx("li", { ref: ref, className: classes, ...props, children: children }));
+});
+PaginationItem.displayName = 'Pagination.Item';
+const PaginationLink = forwardRef(({ active = false, className, children, ...props }, ref) => {
+    const classes = cn(bemElement('pagination', 'link'), className);
+    return (jsx("a", { ref: ref, className: classes, "aria-current": active ? 'page' : undefined, ...props, children: children }));
+});
+PaginationLink.displayName = 'Pagination.Link';
+// Export compound component
+const Pagination = Object.assign(PaginationRoot, {
+    Item: PaginationItem,
+    Link: PaginationLink,
+});
+
+/**
  * Hook for managing modal state
  *
  * @param defaultOpen - Initial open state
@@ -539,5 +1167,5 @@ function useModal(defaultOpen = false) {
     return { isOpen, open, close, toggle };
 }
 
-export { Alert, Badge, Button, Card, Checkbox, Input, Modal, Select, Switch, Toast, ToastContainer, ToastProvider, cn, useModal, useToast, useToastContext };
+export { Accordion, Alert, Badge, Breadcrumb, Button, Card, Checkbox, Dropdown, Input, Modal, Navbar, Pagination, ProgressStat, Select, Stat, StatsCard, StatsGroup, Switch, Table, Tabs, Toast, ToastContainer, ToastProvider, cn, useModal, useToast, useToastContext };
 //# sourceMappingURL=index.esm.js.map

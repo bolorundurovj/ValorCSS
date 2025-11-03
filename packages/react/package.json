@@ -9,6 +9,9 @@
   "files": [
     "dist"
   ],
+  "scripts": {
+    "build": "rollup -c"
+  },
   "keywords": [
     "react",
     "components",
