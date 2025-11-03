@@ -187,6 +187,72 @@ function MyComponent() {
 }
 ```
 
+### Form Components
+
+#### Input
+
+```tsx
+import { Input } from '@valorcss/react';
+
+// Basic input
+<Input type="email" placeholder="Enter email" />
+
+// Sizes
+<Input size="sm" placeholder="Small" />
+<Input size="lg" placeholder="Large" />
+
+// Validation states
+<Input isValid placeholder="Valid input" />
+<Input isInvalid placeholder="Invalid input" />
+
+// Full width
+<Input fullWidth placeholder="Full width input" />
+```
+
+#### Checkbox
+
+```tsx
+import { Checkbox } from '@valorcss/react';
+
+// With label
+<Checkbox
+  label="Remember me"
+  checked={isChecked}
+  onChange={(e) => setIsChecked(e.target.checked)}
+/>
+
+// Without label
+<Checkbox checked={isChecked} onChange={handleChange} />
+
+// Indeterminate state
+<Checkbox indeterminate label="Select all" />
+```
+
+#### Switch
+
+```tsx
+import { Switch } from '@valorcss/react';
+
+<Switch
+  label="Enable notifications"
+  checked={isEnabled}
+  onChange={(e) => setIsEnabled(e.target.checked)}
+/>
+```
+
+#### Select
+
+```tsx
+import { Select } from '@valorcss/react';
+
+<Select size="lg" isValid fullWidth>
+  <option value="">Choose...</option>
+  <option value="1">Option 1</option>
+  <option value="2">Option 2</option>
+  <option value="3">Option 3</option>
+</Select>
+```
+
 ## TypeScript
 
 All components are built with TypeScript and include full type definitions.
@@ -229,18 +295,21 @@ All components support these common props:
 
 ## Development Status
 
-### ✅ Completed Components (6/14)
+### ✅ Completed Components (10/14)
 
-- Button (with all variants and states)
-- Card (compound component with Header, Body, Footer)
-- Badge (with pill variant)
-- Alert (dismissible with callbacks)
-- Modal (with useModal hook, portal rendering, focus management)
-- Toast (with useToast hook, ToastProvider, queue management)
+- **Button** - Variants, sizes, outline, ghost, loading states
+- **Card** - Compound component with Header, Body, Footer
+- **Badge** - Pill variant support
+- **Alert** - Dismissible with callbacks
+- **Modal** - useModal hook, portal rendering, focus management
+- **Toast** - useToast hook, ToastProvider, queue management
+- **Input** - Sizes, validation states, full width
+- **Checkbox** - Label support, indeterminate state
+- **Switch** - Toggle switch with label
+- **Select** - Sizes, validation states, full width
 
-### 🚧 Coming Soon
+### 🚧 Coming Soon (4/14)
 
-- Form Controls (Input, Checkbox, Switch, Select)
 - Navbar
 - Tabs
 - Accordion
@@ -248,6 +317,7 @@ All components support these common props:
 - Table
 - Stats Cards
 - Breadcrumb
+- Pagination
 
 ## License
 

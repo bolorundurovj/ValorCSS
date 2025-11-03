@@ -5,6 +5,10 @@ export { Badge } from './components/Badge';
 export { Alert } from './components/Alert';
 export { Modal } from './components/Modal';
 export { Toast, ToastContainer } from './components/Toast';
+export { Input } from './components/Input';
+export { Checkbox } from './components/Checkbox';
+export { Switch } from './components/Switch';
+export { Select } from './components/Select';
 
 // Hooks
 export { useModal } from './hooks/useModal';
@@ -38,6 +42,10 @@ export type {
   ToastTitleProps,
   ToastMessageProps,
 } from './components/Toast';
+export type { InputProps } from './components/Input';
+export type { CheckboxProps } from './components/Checkbox';
+export type { SwitchProps } from './components/Switch';
+export type { SelectProps } from './components/Select';
 
 export type { ColorVariant, SizeVariant, BaseComponentProps, ToastPosition, ModalSize } from './types/common';
 export type { UseModalReturn } from './hooks/useModal';

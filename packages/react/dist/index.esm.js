@@ -384,6 +384,108 @@ const Toast = Object.assign(ToastRoot, {
 });
 
 /**
+ * Input component following ValorCSS design system
+ *
+ * @example
+ * ```tsx
+ * <Input
+ *   type="email"
+ *   placeholder="Enter email"
+ *   size="lg"
+ *   isValid={isValid}
+ * />
+ * ```
+ */
+const Input = forwardRef(({ size = 'md', isInvalid = false, isValid = false, fullWidth = false, className, disabled, ...props }, ref) => {
+    const classes = cn('form-control', {
+        [`form-control-${size}`]: size && size !== 'md',
+        'is-invalid': isInvalid,
+        'is-valid': isValid,
+        'w-full': fullWidth,
+    }, className);
+    return (jsx("input", { ref: ref, className: classes, disabled: disabled, "aria-invalid": isInvalid ? 'true' : undefined, ...props }));
+});
+Input.displayName = 'Input';
+
+/**
+ * Checkbox component following ValorCSS design system
+ *
+ * @example
+ * ```tsx
+ * <Checkbox
+ *   label="Remember me"
+ *   checked={isChecked}
+ *   onChange={(e) => setIsChecked(e.target.checked)}
+ * />
+ * ```
+ */
+const Checkbox = forwardRef(({ label, labelId, indeterminate = false, className, id, ...props }, ref) => {
+    const inputId = id || labelId || `checkbox-${Math.random().toString(36).substr(2, 9)}`;
+    const inputClasses = cn(bemElement('form-check', 'input'), className);
+    const handleRef = (node) => {
+        if (node) {
+            node.indeterminate = indeterminate;
+        }
+        if (typeof ref === 'function') {
+            ref(node);
+        }
+        else if (ref) {
+            ref.current = node;
+        }
+    };
+    if (label) {
+        return (jsxs("div", { className: "form-check", children: [jsx("input", { ref: handleRef, type: "checkbox", className: inputClasses, id: inputId, ...props }), jsx("label", { className: bemElement('form-check', 'label'), htmlFor: inputId, children: label })] }));
+    }
+    return (jsx("input", { ref: handleRef, type: "checkbox", className: inputClasses, id: inputId, ...props }));
+});
+Checkbox.displayName = 'Checkbox';
+
+/**
+ * Switch component following ValorCSS design system
+ *
+ * @example
+ * ```tsx
+ * <Switch
+ *   label="Enable notifications"
+ *   checked={isEnabled}
+ *   onChange={(e) => setIsEnabled(e.target.checked)}
+ * />
+ * ```
+ */
+const Switch = forwardRef(({ label, labelId, className, id, ...props }, ref) => {
+    const inputId = id || labelId || `switch-${Math.random().toString(36).substr(2, 9)}`;
+    const inputClasses = cn(bemElement('form-check', 'input'), className);
+    if (label) {
+        return (jsxs("div", { className: "form-check form-switch", children: [jsx("input", { ref: ref, type: "checkbox", role: "switch", className: inputClasses, id: inputId, ...props }), jsx("label", { className: bemElement('form-check', 'label'), htmlFor: inputId, children: label })] }));
+    }
+    return (jsx("div", { className: "form-check form-switch", children: jsx("input", { ref: ref, type: "checkbox", role: "switch", className: inputClasses, id: inputId, ...props }) }));
+});
+Switch.displayName = 'Switch';
+
+/**
+ * Select component following ValorCSS design system
+ *
+ * @example
+ * ```tsx
+ * <Select size="lg" isValid={isValid}>
+ *   <option value="">Choose...</option>
+ *   <option value="1">Option 1</option>
+ *   <option value="2">Option 2</option>
+ * </Select>
+ * ```
+ */
+const Select = forwardRef(({ size = 'md', isInvalid = false, isValid = false, fullWidth = false, className, disabled, children, ...props }, ref) => {
+    const classes = cn('form-control', {
+        [`form-control-${size}`]: size && size !== 'md',
+        'is-invalid': isInvalid,
+        'is-valid': isValid,
+        'w-full': fullWidth,
+    }, className);
+    return (jsx("select", { ref: ref, className: classes, disabled: disabled, "aria-invalid": isInvalid ? 'true' : undefined, ...props, children: children }));
+});
+Select.displayName = 'Select';
+
+/**
  * Hook for managing modal state
  *
  * @param defaultOpen - Initial open state
@@ -437,5 +539,5 @@ function useModal(defaultOpen = false) {
     return { isOpen, open, close, toggle };
 }
 
-export { Alert, Badge, Button, Card, Modal, Toast, ToastContainer, ToastProvider, cn, useModal, useToast, useToastContext };
+export { Alert, Badge, Button, Card, Checkbox, Input, Modal, Select, Switch, Toast, ToastContainer, ToastProvider, cn, useModal, useToast, useToastContext };
 //# sourceMappingURL=index.esm.js.map
